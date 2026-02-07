@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez l'équipe Anim'Tools">
+    <title>Contact - Anim'Tools</title>
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Anim'Tools</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
+                <li><a href="planning.html" class="nav-link">Planning</a></li>
+                <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
+                <li><a href="administratif.html" class="nav-link">Administratif</a></li>
+            </ul>
+            
+            <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-header">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="Rechercher une activité..." autocomplete="off">
+                <button class="search-close" id="searchClose" aria-label="Fermer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+    
+    <!-- PAGE HEADER -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Contact</h1>
+            <p class="hero-subtitle">Une question, une suggestion, un retour d'expérience ?</p>
+            <p class="hero-description">
+                Nous sommes à votre écoute pour améliorer Anim'Tools et mieux répondre à vos besoins.
+            </p>
+        </div>
+    </section>
+    
+    <!-- FORMULAIRE DE CONTACT -->
+    <section class="section">
+        <div class="container container-narrow">
+            <div class="card" style="padding: 2.5rem;">
+                <div style="background: #fff3cd; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #ff9500;">
+                    <p style="margin: 0; color: #856404; font-size: 0.95rem;">
+                        ℹ️ <strong>Version 1 :</strong> Ce formulaire n'est pas encore connecté à un système d'envoi. 
+                        Pour nous contacter, merci d'utiliser temporairement l'email : 
+                        <a href="mailto:contact@animtools.fr" style="color: #0071e3;">contact@animtools.fr</a>
+                    </p>
+                </div>
+                
+                <form id="contactForm" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div>
+                        <label for="name" style="display: block; font-weight: 500; margin-bottom: 0.5rem; color: #1d1d1f;">
+                            Nom complet *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required
+                            style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #d2d2d7; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s;"
+                            onfocus="this.style.borderColor='#0071e3'"
+                            onblur="this.style.borderColor='#d2d2d7'"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="email" style="display: block; font-weight: 500; margin-bottom: 0.5rem; color: #1d1d1f;">
+                            Email *
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required
+                            style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #d2d2d7; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s;"
+                            onfocus="this.style.borderColor='#0071e3'"
+                            onblur="this.style.borderColor='#d2d2d7'"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="role" style="display: block; font-weight: 500; margin-bottom: 0.5rem; color: #1d1d1f;">
+                            Vous êtes... *
+                        </label>
+                        <select 
+                            id="role" 
+                            name="role" 
+                            required
+                            style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #d2d2d7; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s; background: white;"
+                            onfocus="this.style.borderColor='#0071e3'"
+                            onblur="this.style.borderColor='#d2d2d7'"
+                        >
+                            <option value="">Sélectionnez...</option>
+                            <option value="animateur-periscolaire">Animateur périscolaire</option>
+                            <option value="animateur-centre">Animateur centre de loisirs</option>
+                            <option value="stagiaire-bafa">Stagiaire BAFA/BAFD</option>
+                            <option value="directeur">Directeur ACM</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="subject" style="display: block; font-weight: 500; margin-bottom: 0.5rem; color: #1d1d1f;">
+                            Sujet *
+                        </label>
+                        <select 
+                            id="subject" 
+                            name="subject" 
+                            required
+                            style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #d2d2d7; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s; background: white;"
+                            onfocus="this.style.borderColor='#0071e3'"
+                            onblur="this.style.borderColor='#d2d2d7'"
+                        >
+                            <option value="">Sélectionnez...</option>
+                            <option value="question">Question générale</option>
+                            <option value="suggestion">Suggestion d'amélioration</option>
+                            <option value="activite">Proposer une activité</option>
+                            <option value="bug">Signaler un problème technique</option>
+                            <option value="partenariat">Partenariat</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" style="display: block; font-weight: 500; margin-bottom: 0.5rem; color: #1d1d1f;">
+                            Message *
+                        </label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="6" 
+                            required
+                            style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #d2d2d7; border-radius: 8px; font-size: 1rem; outline: none; transition: border-color 0.2s; resize: vertical; font-family: inherit;"
+                            onfocus="this.style.borderColor='#0071e3'"
+                            onblur="this.style.borderColor='#d2d2d7'"
+                        ></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
+                        Envoyer le message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- AUTRES MOYENS DE CONTACT -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Autres moyens de nous contacter</h2>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card text-center">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📧</div>
+                    <h3 class="card-title">Email</h3>
+                    <p class="card-subtitle">
+                        <a href="mailto:contact@animtools.fr" style="color: #0071e3;">
+                            contact@animtools.fr
+                        </a>
+                    </p>
+                    <p style="font-size: 0.875rem; color: #6e6e73; margin-top: 0.5rem;">
+                        Réponse sous 48h ouvrées
+                    </p>
+                </div>
+                
+                <div class="card text-center">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
+                    <h3 class="card-title">Assistant virtuel</h3>
+                    <p class="card-subtitle">
+                        Anim' le renard peut répondre à vos questions sur les activités
+                    </p>
+                    <p style="font-size: 0.875rem; color: #6e6e73; margin-top: 0.5rem;">
+                        Disponible sur la page d'accueil
+                    </p>
+                </div>
+                
+                <div class="card text-center">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📚</div>
+                    <h3 class="card-title">FAQ</h3>
+                    <p class="card-subtitle">
+                        Consultez notre foire aux questions
+                    </p>
+                    <a href="aide.html" class="btn btn-secondary" style="margin-top: 1rem;">
+                        Voir la FAQ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Anim'Tools</h4>
+                    <p>Votre assistant personnel pour l'animation périscolaire. Conçu par des animateurs, pour des animateurs.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="inventaire.html">Inventaire</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <li><a href="reglementation.html">Réglementation</a></li>
+                        <li><a href="administratif.html">Administratif</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="apropos.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="aide.html">Aide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    
+    <!-- Script simple pour feedback formulaire -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('⚠️ Formulaire non connecté (V1)\n\nMerci de nous contacter directement à :\ncontact@animtools.fr\n\nVotre message sera lu et traité rapidement !');
+        });
+    </script>
+</body>
+</html>

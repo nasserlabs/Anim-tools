@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="À propos d'Anim'Tools - Notre mission et notre vision">
+    <title>À propos - Anim'Tools</title>
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Anim'Tools</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
+                <li><a href="planning.html" class="nav-link">Planning</a></li>
+                <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
+                <li><a href="administratif.html" class="nav-link">Administratif</a></li>
+            </ul>
+            
+            <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-header">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="Rechercher une activité..." autocomplete="off">
+                <button class="search-close" id="searchClose" aria-label="Fermer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+    
+    <!-- PAGE HEADER -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">À propos</h1>
+            <p class="hero-subtitle">Notre mission, notre vision, nos valeurs</p>
+        </div>
+    </section>
+    
+    <!-- NOTRE MISSION -->
+    <section class="section">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <h2 class="section-title">Notre mission</h2>
+            </div>
+            
+            <div class="card" style="padding: 2rem;">
+                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    <strong>Anim'Tools</strong> est né d'un constat simple : les animateurs périscolaires 
+                    manquent d'outils pratiques et accessibles pour préparer, organiser et animer 
+                    leurs journées avec les enfants de 3 à 12 ans.
+                </p>
+                
+                <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    Notre mission est de <strong>simplifier le quotidien des animateurs</strong> en leur 
+                    fournissant une boîte à outils complète, gratuite et facile d'accès : des idées 
+                    d'activités variées, des outils de planning, des fiches réglementaires claires 
+                    et bien plus encore.
+                </p>
+                
+                <p style="font-size: 1.125rem; line-height: 1.8;">
+                    Nous croyons que <strong>chaque enfant mérite des animations de qualité</strong>, 
+                    et que les animateurs ont besoin d'être soutenus et valorisés dans leur mission 
+                    éducative quotidienne.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- POUR QUI -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pour qui ?</h2>
+                <p class="section-subtitle">Anim'Tools s'adresse à tous les professionnels de l'animation</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3 class="card-title">👨‍🏫 Animateurs périscolaires</h3>
+                    <p class="card-subtitle">
+                        Accueil du matin, pause méridienne, garderie du soir : trouvez des activités 
+                        adaptées à tous les moments de la journée.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">🏕️ Animateurs de centres de loisirs</h3>
+                    <p class="card-subtitle">
+                        Mercredis et vacances scolaires : organisez des journées variées et 
+                        enrichissantes pour tous les âges.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">🎓 Stagiaires BAFA/BAFD</h3>
+                    <p class="card-subtitle">
+                        En formation ou en stage pratique : découvrez des activités éprouvées 
+                        et enrichissez votre expérience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- NOS VALEURS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos valeurs</h2>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="card-title">🎯 Accessibilité</h3>
+                    <p class="card-subtitle">
+                        Anim'Tools est gratuit, sans publicité et accessible à tous. 
+                        Pas d'inscription obligatoire, pas de données collectées.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">🤝 Bienveillance</h3>
+                    <p class="card-subtitle">
+                        Nous croyons en une animation bienveillante, respectueuse 
+                        des enfants et de leur rythme de développement.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">📚 Qualité pédagogique</h3>
+                    <p class="card-subtitle">
+                        Toutes nos activités sont pensées avec des objectifs pédagogiques 
+                        clairs et adaptés aux tranches d'âge.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">🚀 Innovation</h3>
+                    <p class="card-subtitle">
+                        Nous évoluons en permanence pour répondre aux besoins des animateurs 
+                        et intégrer leurs retours d'expérience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- LE PROJET -->
+    <section class="section section-alt">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <h2 class="section-title">Le projet Anim'Tools</h2>
+            </div>
+            
+            <div class="card" style="padding: 2rem;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Version actuelle : V1</h3>
+                
+                <p style="line-height: 1.8; margin-bottom: 1.5rem;">
+                    Anim'Tools est actuellement en <strong>version 1</strong>. Cette première version 
+                    met à disposition :
+                </p>
+                
+                <ul style="line-height: 2; margin-bottom: 2rem; padding-left: 1.5rem;">
+                    <li>Plus de 200 fiches d'activités détaillées</li>
+                    <li>6 catégories d'activités (manuelles, sportives, expression, etc.)</li>
+                    <li>Un moteur de recherche pour trouver l'activité parfaite</li>
+                    <li>Un assistant virtuel (Anim' le renard)</li>
+                </ul>
+                
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Prochaines évolutions</h3>
+                
+                <p style="line-height: 1.8; margin-bottom: 1rem;">
+                    Nous travaillons activement sur les fonctionnalités suivantes :
+                </p>
+                
+                <ul style="line-height: 2; margin-bottom: 2rem; padding-left: 1.5rem;">
+                    <li>Module de planning complet (journée et semaine)</li>
+                    <li>Fiches réglementaires et checklists interactives</li>
+                    <li>Espace personnel animateur</li>
+                    <li>Export PDF des activités et plannings</li>
+                    <li>Mode hors-ligne (PWA)</li>
+                    <li>Application mobile (iOS et Android)</li>
+                </ul>
+                
+                <p style="line-height: 1.8; color: #6e6e73;">
+                    <strong>Vous avez des suggestions ?</strong> N'hésitez pas à nous les partager 
+                    via la page <a href="contact.html" style="color: #0071e3;">Contact</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="section-title">Rejoignez la communauté Anim'Tools</h2>
+            <p class="section-subtitle mb-lg">
+                Découvrez nos activités et commencez à animer dès aujourd'hui
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="inventaire.html" class="btn btn-primary">Découvrir les activités</a>
+                <a href="contact.html" class="btn btn-secondary">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Anim'Tools</h4>
+                    <p>Votre assistant personnel pour l'animation périscolaire. Conçu par des animateurs, pour des animateurs.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="inventaire.html">Inventaire</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <li><a href="reglementation.html">Réglementation</a></li>
+                        <li><a href="administratif.html">Administratif</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="apropos.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="aide.html">Aide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

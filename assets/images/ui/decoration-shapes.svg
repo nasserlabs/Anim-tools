@@ -1,0 +1,19 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="illustGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Formes abstraites décoratives -->
+  <circle cx="100" cy="100" r="60" fill="url(#illustGrad)"/>
+  <circle cx="300" cy="150" r="40" fill="#4facfe" opacity="0.2"/>
+  <circle cx="200" cy="280" r="70" fill="#43e97b" opacity="0.15"/>
+  <circle cx="320" cy="320" r="50" fill="#f093fb" opacity="0.2"/>
+  
+  <!-- Étoiles décoratives -->
+  <path d="M50 200L55 210L65 212L58 219L60 229L50 224L40 229L42 219L35 212L45 210Z" fill="#FFD93D" opacity="0.4"/>
+  <path d="M350 80L355 90L365 92L358 99L360 109L350 104L340 109L342 99L335 92L345 90Z" fill="#FFD93D" opacity="0.4"/>
+  <path d="M180 50L185 60L195 62L188 69L190 79L180 74L170 79L172 69L165 62L175 60Z" fill="#FFD93D" opacity="0.3"/>
+</svg>

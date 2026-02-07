@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aide et FAQ - Anim'Tools">
+    <title>Aide - Anim'Tools</title>
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+    
+    <style>
+        /* Styles FAQ Accordéon */
+        .faq-item {
+            background: white;
+            border: 1px solid #e5e5e7;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: #d2d2d7;
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #1d1d1f;
+            transition: background-color 0.2s;
+        }
+        
+        .faq-question:hover {
+            background: #f5f5f7;
+        }
+        
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: #424245;
+            line-height: 1.7;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Anim'Tools</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
+                <li><a href="planning.html" class="nav-link">Planning</a></li>
+                <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
+                <li><a href="administratif.html" class="nav-link">Administratif</a></li>
+            </ul>
+            
+            <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-header">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="Rechercher une activité..." autocomplete="off">
+                <button class="search-close" id="searchClose" aria-label="Fermer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+    
+    <!-- PAGE HEADER -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Aide</h1>
+            <p class="hero-subtitle">Foire aux questions (FAQ)</p>
+            <p class="hero-description">
+                Trouvez rapidement des réponses à vos questions sur Anim'Tools
+            </p>
+        </div>
+    </section>
+    
+    <!-- RECHERCHE RAPIDE -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="section-title">Recherche rapide</h2>
+            <div style="max-width: 600px; margin: 2rem auto 0;">
+                <input 
+                    type="text" 
+                    id="faqSearch" 
+                    placeholder="Rechercher dans la FAQ..." 
+                    style="width: 100%; padding: 1rem 1.5rem; border: 2px solid #d2d2d7; border-radius: 50px; font-size: 1rem; outline: none; transition: border-color 0.2s;"
+                    onfocus="this.style.borderColor='#0071e3'"
+                    onblur="this.style.borderColor='#d2d2d7'"
+                >
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ ACCORDÉON -->
+    <section class="section section-alt">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <h2 class="section-title">Questions fréquentes</h2>
+            </div>
+            
+            <div class="faq-list">
+                <!-- Question 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>À qui s'adresse Anim'Tools ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Anim'Tools s'adresse principalement aux <strong>animateurs périscolaires</strong> 
+                            travaillant avec des enfants de 3 à 12 ans. Cela inclut les animateurs en accueil 
+                            du matin, pause méridienne, garderie du soir, mais aussi les animateurs de centres 
+                            de loisirs (mercredis et vacances). Les <strong>stagiaires BAFA/BAFD</strong> en 
+                            formation ou en stage pratique y trouveront également des ressources précieuses.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>L'application est-elle gratuite ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Oui, Anim'Tools est <strong>100% gratuit</strong> et le restera. Il n'y a pas de 
+                            version payante, pas d'abonnement caché, pas de publicité. Notre mission est de 
+                            rendre les outils d'animation accessibles à tous les animateurs, peu importe leur 
+                            structure ou leur budget.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Puis-je utiliser Anim'Tools en centre de loisirs ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolument ! Bien qu'initialement pensé pour le périscolaire, Anim'Tools convient 
+                            parfaitement aux <strong>centres de loisirs</strong>, accueils de jeunes, et toute 
+                            structure d'animation jeunesse. Les activités sont adaptables à différents contextes 
+                            et durées.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Comment sont choisies les activités ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Toutes les activités proposées ont été <strong>testées sur le terrain</strong> par 
+                            des animateurs expérimentés. Elles sont sélectionnées selon des critères pédagogiques 
+                            stricts : sécurité, adaptation à l'âge, faisabilité, intérêt éducatif. Chaque fiche 
+                            inclut des objectifs pédagogiques clairs et des conseils pratiques.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Une version mobile est-elle prévue ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Oui ! Une <strong>application mobile</strong> (iOS et Android) est prévue pour la V3. 
+                            En attendant, le site est déjà <strong>responsive</strong> et fonctionne parfaitement 
+                            sur smartphone et tablette via votre navigateur. Une version PWA (Progressive Web App) 
+                            sera également proposée pour un usage hors-ligne.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 6 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Puis-je proposer mes propres activités ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Bientôt ! Nous travaillons sur un système permettant aux animateurs de 
+                            <strong>partager leurs activités</strong> avec la communauté. En attendant, vous 
+                            pouvez nous envoyer vos suggestions via la <a href="contact.html" style="color: #0071e3;">page Contact</a>.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 7 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Les activités sont-elles conformes à la réglementation ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Oui, toutes les activités respectent les <strong>normes de sécurité</strong> en vigueur 
+                            pour l'accueil collectif de mineurs. Cependant, il reste de votre responsabilité 
+                            d'adapter chaque activité à votre contexte spécifique (locaux, effectif, compétences, etc.).
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 8 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Comment fonctionne la recherche d'activités ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Vous pouvez rechercher des activités de <strong>3 manières</strong> :<br><br>
+                            1. Via la <strong>barre de recherche</strong> (icône loupe) : recherche par mot-clé<br>
+                            2. Via les <strong>filtres par catégorie</strong> sur la page Inventaire<br>
+                            3. Via <strong>Anim' le renard</strong> (assistant virtuel) qui vous aide à trouver 
+                            l'activité parfaite en répondant à vos questions
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 9 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Mes données sont-elles collectées ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <strong>Non.</strong> Anim'Tools ne collecte aucune donnée personnelle. Pas de cookies 
+                            de tracking, pas d'inscription obligatoire, pas de collecte d'emails. Nous respectons 
+                            votre vie privée. Les seules données stockées le sont localement dans votre navigateur 
+                            (favoris, préférences) et ne sont jamais envoyées à nos serveurs.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 10 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Puis-je utiliser Anim'Tools hors ligne ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Pas encore, mais c'est prévu ! La version PWA (Progressive Web App) permettra un 
+                            <strong>usage hors-ligne complet</strong> : consultation des activités, création de 
+                            plannings, etc. Cette fonctionnalité arrivera dans la V2.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 11 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Comment puis-je contribuer au projet ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Plusieurs façons de contribuer :<br><br>
+                            • <strong>Partagez</strong> Anim'Tools avec vos collègues animateurs<br>
+                            • <strong>Proposez</strong> des activités testées et approuvées<br>
+                            • <strong>Signalez</strong> des bugs ou problèmes techniques<br>
+                            • <strong>Suggérez</strong> des améliorations<br>
+                            • <strong>Témoignez</strong> de votre utilisation<br><br>
+                            Contactez-nous via la <a href="contact.html" style="color: #0071e3;">page Contact</a> !
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Question 12 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Que signifie "Version 1" ?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            La V1 est la <strong>première version publique</strong> d'Anim'Tools. Elle propose 
+                            l'essentiel : inventaire d'activités et recherche. Les prochaines versions ajouteront 
+                            progressivement : planning, réglementation, profil animateur, export PDF, mode 
+                            hors-ligne, application mobile, etc. Nous évoluons en fonction de vos retours !
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONTACT -->
+    <section class="section">
+        <div class="container text-center">
+            <h2 class="section-title">Vous ne trouvez pas de réponse ?</h2>
+            <p class="section-subtitle mb-lg">
+                Notre équipe est là pour vous aider
+            </p>
+            <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Anim'Tools</h4>
+                    <p>Votre assistant personnel pour l'animation périscolaire. Conçu par des animateurs, pour des animateurs.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="inventaire.html">Inventaire</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <li><a href="reglementation.html">Réglementation</a></li>
+                        <li><a href="administratif.html">Administratif</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="apropos.html">À propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="aide.html">Aide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    
+    <!-- Script FAQ Accordéon -->
+    <script>
+        // Accordéon FAQ
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Fermer tous les autres
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Toggle celui-ci
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+        
+        // Recherche dans FAQ
+        const faqSearch = document.getElementById('faqSearch');
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqSearch.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+                
+                if (question.includes(query) || answer.includes(query)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

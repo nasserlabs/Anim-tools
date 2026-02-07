@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestion administrative pour animateurs périscolaires">
+    <title>Administratif - Anim'Tools</title>
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Anim'Tools</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
+                <li><a href="planning.html" class="nav-link">Planning</a></li>
+                <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
+                <li><a href="administratif.html" class="nav-link">Administratif</a></li>
+            </ul>
+            
+            <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <div class="search-header">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="Rechercher une activité..." autocomplete="off">
+                <button class="search-close" id="searchClose" aria-label="Fermer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+    
+    <!-- PAGE HEADER -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Administratif</h1>
+            <p class="hero-subtitle">Gérez votre profil et vos documents</p>
+            <p class="hero-description">
+                Suivez votre parcours BAFA, accédez à vos documents modèles 
+                et personnalisez votre expérience.
+            </p>
+        </div>
+    </section>
+    
+    <!-- COMING SOON -->
+    <section class="section">
+        <div class="container">
+            <div class="card text-center" style="max-width: 600px; margin: 0 auto;">
+                <h2 class="card-title" style="font-size: 2rem; margin-bottom: 1rem;">
+                    🚧 Fonctionnalité en développement
+                </h2>
+                <p class="card-subtitle" style="font-size: 1.125rem; line-height: 1.8;">
+                    Le module administratif est en cours de développement. 
+                    Prochainement disponible :
+                </p>
+                <ul style="text-align: left; margin: 2rem 0; line-height: 2;">
+                    <li>👤 Profil animateur</li>
+                    <li>🎓 Suivi parcours BAFA</li>
+                    <li>📚 Formations complémentaires</li>
+                    <li>📄 Documents modèles téléchargeables</li>
+                    <li>⚙️ Paramètres de l'application</li>
+                    <li>📊 Statistiques personnelles</li>
+                </ul>
+                <a href="inventaire.html" class="btn btn-primary">
+                    Découvrir les activités
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Anim'Tools</h4>
+                    <p>Votre assistant personnel pour l'animation périscolaire.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="inventaire.html">Inventaire</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <li><a href="reglementation.html">Réglementation</a></li>
+                        <li><a href="administratif.html">Administratif</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#aide">Aide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
