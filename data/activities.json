@@ -21,7 +21,12 @@
         "Laisser sécher 10 minutes",
         "Peindre le motif choisi",
         "Appliquer le vernis protecteur"
-      ]
+      ],
+      "environment": "both",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["créativité", "peinture", "nature", "motricité fine", "art"]
     },
     {
       "id": 2,
@@ -43,7 +48,12 @@
         "Démonstration du pliage de base",
         "Réalisation guidée étape par étape",
         "Personnalisation des créations"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["concentration", "japon", "culture", "précision", "papier"]
     },
     {
       "id": 3,
@@ -66,7 +76,12 @@
         "Séchage (ou préparation préalable)",
         "Peinture et décoration",
         "Fixation des élastiques"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["imagination", "théâtre", "carnaval", "déguisement", "art"]
     },
     {
       "id": 4,
@@ -89,7 +104,12 @@
         "Passage individuel chronométré",
         "Relais par équipes",
         "Variantes et défis progressifs"
-      ]
+      ],
+      "environment": "outdoor",
+      "energyLevel": "dynamique",
+      "weather": ["sun"],
+      "groupType": "grand",
+      "tags": ["motricité", "sport", "équipe", "coordination", "extérieur"]
     },
     {
       "id": 5,
@@ -112,7 +132,12 @@
         "Constitution des équipes",
         "Plusieurs manches de 5 minutes",
         "Débriefing sur les stratégies"
-      ]
+      ],
+      "environment": "outdoor",
+      "energyLevel": "dynamique",
+      "weather": ["sun"],
+      "groupType": "grand",
+      "tags": ["équipe", "stratégie", "ballon", "collectif", "réflexes"]
     },
     {
       "id": 6,
@@ -135,7 +160,12 @@
         "Départ par équipes",
         "Recherche des balises",
         "Retour et classement"
-      ]
+      ],
+      "environment": "outdoor",
+      "energyLevel": "dynamique",
+      "weather": ["sun"],
+      "groupType": "moyen",
+      "tags": ["orientation", "carte", "nature", "réflexion", "aventure"]
     },
     {
       "id": 7,
@@ -158,7 +188,12 @@
         "Travail par petits groupes",
         "Présentation des saynètes",
         "Retour positif collectif"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["théâtre", "improvisation", "confiance", "expression", "créativité"]
     },
     {
       "id": 8,
@@ -181,7 +216,12 @@
         "Création de séquences simples",
         "Assemblage de la chorégraphie",
         "Représentation finale"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "dynamique",
+      "weather": ["any"],
+      "groupType": "grand",
+      "tags": ["danse", "musique", "expression", "corps", "chorégraphie"]
     },
     {
       "id": 9,
@@ -204,7 +244,12 @@
         "Création collective ou par groupes",
         "Illustration des contes",
         "Présentation orale"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["conte", "imagination", "narration", "écriture", "oral"]
     },
     {
       "id": 10,
@@ -227,7 +272,12 @@
         "Partie guidée",
         "Parties autonomes",
         "Débriefing sur les stratégies"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "petit",
+      "tags": ["jeux", "coopération", "stratégie", "plateau", "réflexion"]
     },
     {
       "id": 11,
@@ -250,7 +300,12 @@
         "Questions par thèmes",
         "Comptage des points",
         "Remise symbolique de récompenses"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "grand",
+      "tags": ["quiz", "culture", "équipe", "questions", "connaissance"]
     },
     {
       "id": 12,
@@ -273,14 +328,19 @@
         "Lancement du chrono",
         "Résolution des énigmes",
         "Débriefing et explications"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["énigmes", "logique", "escape", "collaboration", "mystère"]
     },
     {
       "id": 13,
       "title": "Visite du parc naturel",
       "category": "sorties",
       "age": "6-12 ans",
-      "duration": "2h30",
+      "duration": "150 min",
       "difficulty": "Moyen",
       "participants": "12-20",
       "description": "Découverte de la faune et flore locale. Sensibilisation à l'environnement.",
@@ -296,7 +356,12 @@
         "Observation guidée",
         "Activités nature",
         "Retour et compte-rendu"
-      ]
+      ],
+      "environment": "outdoor",
+      "energyLevel": "modere",
+      "weather": ["sun"],
+      "groupType": "grand",
+      "tags": ["nature", "sortie", "environnement", "observation", "biodiversité"]
     },
     {
       "id": 14,
@@ -319,7 +384,12 @@
         "Heure du conte",
         "Temps de choix de livres",
         "Retour et partage"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["lecture", "culture", "livres", "sortie", "calme"]
     },
     {
       "id": 15,
@@ -342,7 +412,12 @@
         "Démonstration",
         "Pratique encadrée",
         "Débriefing"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "dynamique",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["escalade", "sport", "sécurité", "défi", "confiance"]
     },
     {
       "id": 16,
@@ -365,7 +440,12 @@
         "Parties par équipes",
         "Comptage des points",
         "Rangement collectif"
-      ]
+      ],
+      "environment": "both",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["golf", "précision", "créativité", "construction", "adresse"]
     },
     {
       "id": 17,
@@ -388,7 +468,12 @@
         "Postures simples (animaux)",
         "Relaxation guidée",
         "Retour progressif"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["yoga", "relaxation", "respiration", "calme", "concentration"]
     },
     {
       "id": 18,
@@ -411,7 +496,1048 @@
         "Découpe et assemblage",
         "Décoration",
         "Présentation des créations"
-      ]
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["recyclage", "écologie", "créativité", "upcycling", "environnement"]
+    },
+    {
+      "id": 19,
+      "title": "Atelier perles et bijoux",
+      "category": "manuelles",
+      "age": "6-10 ans",
+      "duration": "40 min",
+      "difficulty": "Facile",
+      "participants": "8-12",
+      "description": "Création de bracelets, colliers et porte-clés en perles. Motricité fine et patience.",
+      "materials": ["Perles variées", "Fils élastiques", "Fermoirs", "Ciseaux", "Boîtes de rangement"],
+      "objectives": [
+        "Développer la motricité fine",
+        "Travailler la patience",
+        "Créer un objet personnalisé"
+      ],
+      "steps": [
+        "Présentation des techniques",
+        "Choix des perles et motifs",
+        "Enfilage des perles",
+        "Fermeture et finitions",
+        "Présentation des créations"
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["perles", "bijoux", "motricité", "patience", "créativité"]
+    },
+    {
+      "id": 20,
+      "title": "Marionnettes en chaussettes",
+      "category": "manuelles",
+      "age": "5-9 ans",
+      "duration": "50 min",
+      "difficulty": "Facile",
+      "participants": "8-12",
+      "description": "Fabrication de marionnettes à partir de chaussettes. Support pour spectacle ensuite.",
+      "materials": ["Chaussettes", "Feutrine", "Boutons", "Colle", "Feutres", "Laine"],
+      "objectives": [
+        "Créer une marionnette personnalisée",
+        "Développer l'imagination",
+        "Préparer un spectacle"
+      ],
+      "steps": [
+        "Choix du personnage",
+        "Assemblage des éléments",
+        "Décoration de la marionnette",
+        "Animation et voix",
+        "Mini spectacle improvisé"
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["marionnettes", "spectacle", "imagination", "théâtre", "création"]
+    },
+    {
+      "id": 21,
+      "title": "Cartes pop-up",
+      "category": "manuelles",
+      "age": "7-12 ans",
+      "duration": "55 min",
+      "difficulty": "Moyen",
+      "participants": "8-12",
+      "description": "Création de cartes en relief avec mécanismes pop-up. Technique et créativité.",
+      "materials": ["Papier cartonné", "Ciseaux", "Colle", "Feutres", "Règles", "Modèles"],
+      "objectives": [
+        "Découvrir les mécanismes pop-up",
+        "Développer la précision",
+        "Créer une carte unique"
+      ],
+      "steps": [
+        "Explication des mécanismes de base",
+        "Choix du thème de la carte",
+        "Découpage et pliage",
+        "Assemblage des éléments",
+        "Décoration finale"
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["papier", "pop-up", "technique", "carte", "précision"]
+    },
+    {
+      "id": 22,
+      "title": "Pâte à sel créations",
+      "category": "manuelles",
+      "age": "4-8 ans",
+      "duration": "70 min",
+      "difficulty": "Facile",
+      "participants": "8-12",
+      "description": "Modelage avec pâte à sel maison. Cuisson et peinture des créations.",
+      "materials": ["Farine", "Sel", "Eau", "Peinture", "Pinceaux", "Four ou séchage"],
+      "objectives": [
+        "Découvrir le modelage",
+        "Développer la créativité 3D",
+        "Créer un objet durable"
+      ],
+      "steps": [
+        "Fabrication de la pâte à sel",
+        "Modelage libre ou guidé",
+        "Cuisson ou séchage",
+        "Peinture des créations",
+        "Vernissage optionnel"
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["modelage", "pâte à sel", "sculpture", "peinture", "3D"]
+    },
+    {
+      "id": 23,
+      "title": "Collages artistiques",
+      "category": "manuelles",
+      "age": "5-10 ans",
+      "duration": "45 min",
+      "difficulty": "Facile",
+      "participants": "8-15",
+      "description": "Création de tableaux par collage de matériaux variés. Texture et composition.",
+      "materials": ["Magazines", "Papiers colorés", "Tissus", "Colle", "Ciseaux", "Supports carton"],
+      "objectives": [
+        "Développer le sens artistique",
+        "Explorer les textures",
+        "Composer une œuvre"
+      ],
+      "steps": [
+        "Présentation d'œuvres de collage",
+        "Choix du thème",
+        "Découpage des éléments",
+        "Composition et collage",
+        "Exposition des œuvres"
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["collage", "art", "texture", "composition", "créativité"]
+    },
+    {
+      "id": 24,
+      "title": "Tissage sur carton",
+      "category": "manuelles",
+      "age": "6-11 ans",
+      "duration": "50 min",
+      "difficulty": "Moyen",
+      "participants": "8-12",
+      "description": "Initiation au tissage sur métier en carton. Motifs et couleurs.",
+      "materials": ["Carton", "Laine de couleurs", "Ciseaux", "Aiguilles plastique"],
+      "objectives": [
+        "Découvrir le tissage",
+        "Développer la patience",
+        "Créer un objet textile"
+      ],
+      "steps": [
+        "Fabrication du métier en carton",
+        "Installation de la chaîne",
+        "Tissage guidé",
+        "Création de motifs",
+        "Finitions et retrait du carton"
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["tissage", "laine", "patience", "textile", "motifs"]
+    },
+    {
+      "id": 25,
+      "title": "Épervier",
+      "category": "sportifs",
+      "age": "6-12 ans",
+      "duration": "20 min",
+      "difficulty": "Facile",
+      "participants": "10-25",
+      "description": "Jeu de course traditionnel. Un épervier attrape les joueurs qui traversent.",
+      "materials": ["Plots ou cônes", "Sifflet", "Espace dégagé"],
+      "objectives": [
+        "Développer la vitesse et l'agilité",
+        "Apprendre les règles collectives",
+        "Se dépenser physiquement"
+      ],
+      "steps": [
+        "Délimitation de l'aire de jeu",
+        "Explication des règles",
+        "Désignation de l'épervier",
+        "Plusieurs manches",
+        "Rotation des rôles"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "dynamique",
+      "weather": ["sun"],
+      "groupType": "grand",
+      "tags": ["course", "rapidité", "traditionnel", "agilité", "groupe"]
+    },
+    {
+      "id": 26,
+      "title": "Relais athlétisme",
+      "category": "sportifs",
+      "age": "7-12 ans",
+      "duration": "30 min",
+      "difficulty": "Facile",
+      "participants": "12-20",
+      "description": "Courses relais avec passage de témoin. Vitesse et coordination d'équipe.",
+      "materials": ["Témoins", "Cônes", "Chronomètre", "Sifflet"],
+      "objectives": [
+        "Développer la vitesse",
+        "Travailler la transmission du témoin",
+        "Favoriser l'esprit d'équipe"
+      ],
+      "steps": [
+        "Échauffement collectif",
+        "Explication de la transmission",
+        "Formation des équipes",
+        "Entraînement",
+        "Courses finales chronométrées"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "dynamique",
+      "weather": ["sun"],
+      "groupType": "grand",
+      "tags": ["course", "relais", "vitesse", "équipe", "athlétisme"]
+    },
+    {
+      "id": 27,
+      "title": "Ultimate frisbee",
+      "category": "sportifs",
+      "age": "8-12 ans",
+      "duration": "40 min",
+      "difficulty": "Moyen",
+      "participants": "10-16",
+      "description": "Sport collectif avec frisbee. Fair-play, stratégie et passes précises.",
+      "materials": ["Frisbees", "Cônes", "Chasubles", "Sifflet"],
+      "objectives": [
+        "Découvrir un sport collectif",
+        "Développer la précision des passes",
+        "Apprendre l'auto-arbitrage"
+      ],
+      "steps": [
+        "Apprentissage du lancer",
+        "Explication des règles",
+        "Exercices de passes",
+        "Match par équipes",
+        "Débriefing fair-play"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "dynamique",
+      "weather": ["sun"],
+      "groupType": "moyen",
+      "tags": ["frisbee", "collectif", "fair-play", "stratégie", "passes"]
+    },
+    {
+      "id": 28,
+      "title": "Béret sportif",
+      "category": "sportifs",
+      "age": "6-11 ans",
+      "duration": "25 min",
+      "difficulty": "Facile",
+      "participants": "10-20",
+      "description": "Jeu de course et de rapidité. Réflexes et vitesse.",
+      "materials": ["Objet (béret)", "Plots", "Sifflet"],
+      "objectives": [
+        "Développer les réflexes",
+        "Améliorer la vitesse de réaction",
+        "Favoriser la concentration"
+      ],
+      "steps": [
+        "Formation de deux équipes",
+        "Attribution des numéros",
+        "Explication des règles",
+        "Plusieurs manches",
+        "Comptage des points"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "dynamique",
+      "weather": ["sun"],
+      "groupType": "grand",
+      "tags": ["béret", "rapidité", "réflexes", "numéros", "course"]
+    },
+    {
+      "id": 29,
+      "title": "Jeux olympiques rigolos",
+      "category": "sportifs",
+      "age": "5-12 ans",
+      "duration": "60 min",
+      "difficulty": "Facile",
+      "participants": "12-24",
+      "description": "Olympiades avec épreuves fun : course en sac, œuf-cuillère, etc.",
+      "materials": ["Sacs", "Cuillères", "Œufs durs", "Ballons", "Cordes", "Médailles"],
+      "objectives": [
+        "Participer à des épreuves ludiques",
+        "Développer l'esprit sportif",
+        "S'amuser en bougeant"
+      ],
+      "steps": [
+        "Présentation des épreuves",
+        "Formation des équipes",
+        "Rotation sur les ateliers",
+        "Comptage des points",
+        "Remise de médailles"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "dynamique",
+      "weather": ["sun"],
+      "groupType": "grand",
+      "tags": ["olympiades", "fun", "épreuves", "médailles", "variété"]
+    },
+    {
+      "id": 30,
+      "title": "Statues musicales",
+      "category": "expression",
+      "age": "4-8 ans",
+      "duration": "20 min",
+      "difficulty": "Facile",
+      "participants": "8-20",
+      "description": "Danse libre puis immobilisation à l'arrêt de la musique. Écoute et contrôle.",
+      "materials": ["Enceinte", "Playlist variée"],
+      "objectives": [
+        "Développer l'écoute musicale",
+        "Travailler le contrôle corporel",
+        "S'amuser en dansant"
+      ],
+      "steps": [
+        "Explication des règles",
+        "Danse libre sur musique",
+        "Arrêts surprises",
+        "Éliminations ou variantes",
+        "Danse finale collective"
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["musique", "danse", "écoute", "contrôle", "statue"]
+    },
+    {
+      "id": 31,
+      "title": "Mime et devinettes",
+      "category": "expression",
+      "age": "6-12 ans",
+      "duration": "35 min",
+      "difficulty": "Facile",
+      "participants": "8-16",
+      "description": "Jeu de mimes par équipes. Expression corporelle et communication non-verbale.",
+      "materials": ["Cartes avec mots ou thèmes", "Chronomètre", "Tableau de score"],
+      "objectives": [
+        "Développer l'expression corporelle",
+        "Communiquer sans parole",
+        "Favoriser l'observation"
+      ],
+      "steps": [
+        "Formation des équipes",
+        "Explication des règles du mime",
+        "Tours de mimes alternés",
+        "Comptage des points",
+        "Variantes thématiques"
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["mime", "expression", "corporel", "communication", "observation"]
+    },
+    {
+      "id": 32,
+      "title": "Spectacle de marionnettes",
+      "category": "expression",
+      "age": "5-10 ans",
+      "duration": "60 min",
+      "difficulty": "Moyen",
+      "participants": "8-12",
+      "description": "Création et présentation d'un spectacle de marionnettes. Scénario et mise en scène.",
+      "materials": ["Marionnettes", "Castelet", "Décors", "Accessoires"],
+      "objectives": [
+        "Créer une histoire collective",
+        "Manipuler des marionnettes",
+        "Présenter un spectacle"
+      ],
+      "steps": [
+        "Invention de l'histoire",
+        "Répartition des rôles",
+        "Répétitions",
+        "Création des décors",
+        "Représentation finale"
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["marionnettes", "spectacle", "histoire", "théâtre", "scénario"]
+    },
+    {
+      "id": 33,
+      "title": "Création musicale",
+      "category": "expression",
+      "age": "6-11 ans",
+      "duration": "50 min",
+      "difficulty": "Moyen",
+      "participants": "8-15",
+      "description": "Création de rythmes et mélodies avec instruments simples ou objets du quotidien.",
+      "materials": ["Instruments de percussion", "Objets divers", "Enregistreur optionnel"],
+      "objectives": [
+        "Découvrir le rythme",
+        "Créer une composition collective",
+        "Explorer les sons"
+      ],
+      "steps": [
+        "Exploration sonore libre",
+        "Création de rythmes simples",
+        "Assemblage des parties",
+        "Répétition collective",
+        "Enregistrement ou concert"
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["musique", "rythme", "création", "instruments", "son"]
+    },
+    {
+      "id": 34,
+      "title": "Chant choral",
+      "category": "expression",
+      "age": "6-12 ans",
+      "duration": "40 min",
+      "difficulty": "Facile",
+      "participants": "10-25",
+      "description": "Apprentissage et interprétation de chansons en groupe. Harmonie et écoute.",
+      "materials": ["Paroles imprimées", "Enceinte pour accompagnement", "Pupitre optionnel"],
+      "objectives": [
+        "Développer l'écoute musicale",
+        "Chanter en harmonie",
+        "Gagner en confiance vocale"
+      ],
+      "steps": [
+        "Échauffement vocal",
+        "Apprentissage des paroles",
+        "Travail de la mélodie",
+        "Ajout de gestes",
+        "Interprétation finale"
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "grand",
+      "tags": ["chant", "chœur", "musique", "harmonie", "voix"]
+    },
+    {
+      "id": 35,
+      "title": "Jeu de cartes tournoi",
+      "category": "societe",
+      "age": "7-12 ans",
+      "duration": "50 min",
+      "difficulty": "Facile",
+      "participants": "8-16",
+      "description": "Tournoi de jeux de cartes adaptés (Uno, 7 familles, etc.). Stratégie et fair-play.",
+      "materials": ["Jeux de cartes", "Tables", "Tableaux de scores"],
+      "objectives": [
+        "Apprendre les règles de jeux",
+        "Développer la stratégie",
+        "Respecter le fair-play"
+      ],
+      "steps": [
+        "Explication des règles",
+        "Formation des tables",
+        "Plusieurs manches",
+        "Rotation des adversaires",
+        "Classement final"
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["cartes", "stratégie", "tournoi", "règles", "fair-play"]
+    },
+    {
+      "id": 36,
+      "title": "Dobble géant",
+      "category": "societe",
+      "age": "5-10 ans",
+      "duration": "30 min",
+      "difficulty": "Facile",
+      "participants": "6-20",
+      "description": "Version géante du jeu Dobble. Rapidité et observation.",
+      "materials": ["Cartes Dobble géantes", "Tapis ou tables"],
+      "objectives": [
+        "Développer la rapidité d'observation",
+        "Améliorer la concentration",
+        "S'amuser en groupe"
+      ],
+      "steps": [
+        "Explication des règles",
+        "Partie de démonstration",
+        "Plusieurs manches",
+        "Variantes de jeu",
+        "Classement final"
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["dobble", "observation", "rapidité", "concentration", "visuel"]
+    },
+    {
+      "id": 37,
+      "title": "Construction géante",
+      "category": "societe",
+      "age": "5-12 ans",
+      "duration": "60 min",
+      "difficulty": "Moyen",
+      "participants": "8-16",
+      "description": "Construction collaborative avec Kapla, Lego ou cartons. Créativité et coopération.",
+      "materials": ["Kapla ou Lego", "Cartons", "Scotch", "Espace au sol"],
+      "objectives": [
+        "Favoriser la collaboration",
+        "Développer la créativité 3D",
+        "Construire un projet commun"
+      ],
+      "steps": [
+        "Choix du projet collectif",
+        "Répartition des tâches",
+        "Construction par phases",
+        "Assemblage final",
+        "Présentation et photos"
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["construction", "kapla", "lego", "coopération", "créativité"]
+    },
+    {
+      "id": 38,
+      "title": "Jeu de piste intérieur",
+      "category": "societe",
+      "age": "6-11 ans",
+      "duration": "45 min",
+      "difficulty": "Moyen",
+      "participants": "8-16",
+      "description": "Chasse au trésor avec énigmes dans les locaux. Réflexion et recherche.",
+      "materials": ["Énigmes préparées", "Indices cachés", "Trésor final", "Plan optionnel"],
+      "objectives": [
+        "Résoudre des énigmes",
+        "Travailler en équipe",
+        "Explorer les lieux"
+      ],
+      "steps": [
+        "Briefing et équipes",
+        "Distribution de la première énigme",
+        "Recherche et résolution",
+        "Progression d'indice en indice",
+        "Découverte du trésor"
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["énigmes", "trésor", "recherche", "intérieur", "équipe"]
+    },
+    {
+      "id": 39,
+      "title": "Memory géant",
+      "category": "societe",
+      "age": "4-9 ans",
+      "duration": "25 min",
+      "difficulty": "Facile",
+      "participants": "6-15",
+      "description": "Jeu de mémoire avec grandes cartes au sol. Concentration et mémorisation.",
+      "materials": ["Cartes memory géantes", "Espace au sol"],
+      "objectives": [
+        "Développer la mémoire",
+        "Améliorer la concentration",
+        "Respecter le tour de jeu"
+      ],
+      "steps": [
+        "Disposition des cartes",
+        "Explication des règles",
+        "Tours de jeu alternés",
+        "Comptage des paires",
+        "Déclaration du gagnant"
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["mémoire", "concentration", "cartes", "observation", "tour de jeu"]
+    },
+    {
+      "id": 40,
+      "title": "Sortie au musée",
+      "category": "sorties",
+      "age": "7-12 ans",
+      "duration": "120 min",
+      "difficulty": "Facile",
+      "participants": "10-20",
+      "description": "Visite guidée d'un musée local. Culture et découverte.",
+      "materials": ["Autorisations", "Carnets", "Crayons", "Transport"],
+      "objectives": [
+        "Découvrir un lieu culturel",
+        "Apprendre sur un thème",
+        "Développer la curiosité"
+      ],
+      "steps": [
+        "Préparation et autorisations",
+        "Trajet commenté",
+        "Visite guidée",
+        "Atelier ou jeu au musée",
+        "Retour et partage"
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "grand",
+      "tags": ["musée", "culture", "sortie", "découverte", "apprentissage"]
+    },
+    {
+      "id": 41,
+      "title": "Balade nature",
+      "category": "sorties",
+      "age": "5-12 ans",
+      "duration": "90 min",
+      "difficulty": "Facile",
+      "participants": "10-20",
+      "description": "Promenade en forêt ou parc avec observation de la faune et flore.",
+      "materials": ["Guide nature", "Jumelles", "Carnets", "Sacs pour récoltes"],
+      "objectives": [
+        "Observer la nature",
+        "Apprendre sur l'écosystème",
+        "Se dépenser en marchant"
+      ],
+      "steps": [
+        "Consignes de sécurité",
+        "Départ en groupe",
+        "Arrêts observation",
+        "Collecte d'éléments naturels",
+        "Retour et tri des trouvailles"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "modere",
+      "weather": ["sun"],
+      "groupType": "grand",
+      "tags": ["nature", "balade", "observation", "forêt", "écologie"]
+    },
+    {
+      "id": 42,
+      "title": "Visite ferme pédagogique",
+      "category": "sorties",
+      "age": "4-10 ans",
+      "duration": "150 min",
+      "difficulty": "Facile",
+      "participants": "12-20",
+      "description": "Découverte des animaux de la ferme, nourrissage, activités fermières.",
+      "materials": ["Autorisations", "Bottes", "Vêtements adaptés", "Transport"],
+      "objectives": [
+        "Découvrir les animaux de ferme",
+        "Comprendre le métier d'agriculteur",
+        "Participer aux soins"
+      ],
+      "steps": [
+        "Trajet et consignes",
+        "Visite guidée de la ferme",
+        "Nourrissage des animaux",
+        "Atelier fermier",
+        "Retour et discussion"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "modere",
+      "weather": ["sun"],
+      "groupType": "grand",
+      "tags": ["ferme", "animaux", "agriculture", "nature", "découverte"]
+    },
+    {
+      "id": 43,
+      "title": "Piscine municipale",
+      "category": "sorties",
+      "age": "6-12 ans",
+      "duration": "120 min",
+      "difficulty": "Moyen",
+      "participants": "10-20",
+      "description": "Sortie à la piscine. Jeux d'eau, natation, apprentissage.",
+      "materials": ["Maillots", "Serviettes", "Lunettes", "Bouées", "Autorisations"],
+      "objectives": [
+        "Se familiariser avec l'eau",
+        "Apprendre à nager",
+        "S'amuser dans l'eau"
+      ],
+      "steps": [
+        "Préparation et vestiaires",
+        "Douche obligatoire",
+        "Jeux d'eau encadrés",
+        "Temps libre surveillé",
+        "Retour et séchage"
+      ],
+      "environment": "indoor",
+      "energyLevel": "dynamique",
+      "weather": ["any"],
+      "groupType": "grand",
+      "tags": ["piscine", "eau", "natation", "jeux", "sport"]
+    },
+    {
+      "id": 44,
+      "title": "Initiation tennis",
+      "category": "initiation",
+      "age": "7-12 ans",
+      "duration": "60 min",
+      "difficulty": "Moyen",
+      "participants": "8-12",
+      "description": "Découverte du tennis. Maniement de raquette, passes, mini-matchs.",
+      "materials": ["Raquettes adaptées", "Balles molles", "Filet ou corde", "Cônes"],
+      "objectives": [
+        "Découvrir le tennis",
+        "Apprendre les gestes de base",
+        "Jouer des échanges simples"
+      ],
+      "steps": [
+        "Échauffement",
+        "Prise en main de la raquette",
+        "Exercices de frappe",
+        "Échanges par deux",
+        "Mini-matchs"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "dynamique",
+      "weather": ["sun"],
+      "groupType": "moyen",
+      "tags": ["tennis", "raquette", "sport", "initiation", "précision"]
+    },
+    {
+      "id": 45,
+      "title": "Badminton découverte",
+      "category": "initiation",
+      "age": "6-12 ans",
+      "duration": "50 min",
+      "difficulty": "Facile",
+      "participants": "8-16",
+      "description": "Initiation au badminton. Volant, raquette, matchs en double.",
+      "materials": ["Raquettes", "Volants", "Filets", "Terrain délimité"],
+      "objectives": [
+        "Découvrir le badminton",
+        "Développer la coordination œil-main",
+        "Jouer en double"
+      ],
+      "steps": [
+        "Présentation du matériel",
+        "Exercices de service",
+        "Échanges libres",
+        "Matchs en double",
+        "Tournoi amical"
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["badminton", "volant", "coordination", "double", "raquette"]
+    },
+    {
+      "id": 46,
+      "title": "Tir à l'arc adapté",
+      "category": "initiation",
+      "age": "8-12 ans",
+      "duration": "60 min",
+      "difficulty": "Moyen",
+      "participants": "8-12",
+      "description": "Initiation au tir à l'arc avec matériel adapté. Concentration et précision.",
+      "materials": ["Arcs adaptés", "Flèches sécurisées", "Cibles", "Protections", "Encadrement"],
+      "objectives": [
+        "Découvrir le tir à l'arc",
+        "Développer la concentration",
+        "Travailler la précision"
+      ],
+      "steps": [
+        "Briefing sécurité strict",
+        "Positionnement et posture",
+        "Premiers tirs guidés",
+        "Pratique autonome supervisée",
+        "Débriefing"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "calme",
+      "weather": ["sun"],
+      "groupType": "moyen",
+      "tags": ["tir à l'arc", "précision", "concentration", "sécurité", "cible"]
+    },
+    {
+      "id": 47,
+      "title": "Cirque et jonglage",
+      "category": "initiation",
+      "age": "6-12 ans",
+      "duration": "60 min",
+      "difficulty": "Moyen",
+      "participants": "10-16",
+      "description": "Initiation aux arts du cirque : jonglage, assiettes chinoises, diabolo.",
+      "materials": ["Balles de jonglage", "Assiettes chinoises", "Diabolos", "Foulards"],
+      "objectives": [
+        "Découvrir les arts du cirque",
+        "Développer la coordination",
+        "Apprendre à jongler"
+      ],
+      "steps": [
+        "Échauffement ludique",
+        "Initiation au jonglage",
+        "Rotation sur les ateliers",
+        "Pratique libre",
+        "Mini spectacle"
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["cirque", "jonglage", "coordination", "diabolo", "arts"]
+    },
+    {
+      "id": 48,
+      "title": "Atelier cuisine",
+      "category": "manuelles",
+      "age": "6-12 ans",
+      "duration": "75 min",
+      "difficulty": "Moyen",
+      "participants": "8-12",
+      "description": "Préparation d'une recette simple (cookies, gâteau, pizza). Partage et dégustation.",
+      "materials": ["Ingrédients", "Ustensiles", "Four", "Tabliers", "Recettes"],
+      "objectives": [
+        "Découvrir la cuisine",
+        "Suivre une recette",
+        "Partager un moment convivial"
+      ],
+      "steps": [
+        "Lavage des mains et organisation",
+        "Lecture de la recette",
+        "Préparation collective",
+        "Cuisson surveillée",
+        "Dégustation et rangement"
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["cuisine", "recette", "partage", "goût", "convivialité"]
+    },
+    {
+      "id": 49,
+      "title": "Scrapbooking",
+      "category": "manuelles",
+      "age": "8-12 ans",
+      "duration": "60 min",
+      "difficulty": "Moyen",
+      "participants": "8-12",
+      "description": "Création d'un album photo personnalisé. Mémoire et créativité.",
+      "materials": ["Albums", "Photos", "Papiers colorés", "Stickers", "Colle", "Feutres"],
+      "objectives": [
+        "Créer un souvenir personnalisé",
+        "Développer la créativité",
+        "Raconter une histoire en images"
+      ],
+      "steps": [
+        "Sélection des photos",
+        "Choix du thème",
+        "Mise en page",
+        "Décoration et légendes",
+        "Présentation des albums"
+      ],
+      "environment": "indoor",
+      "energyLevel": "calme",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["scrapbooking", "photos", "souvenirs", "créativité", "album"]
+    },
+    {
+      "id": 50,
+      "title": "Land art",
+      "category": "manuelles",
+      "age": "5-12 ans",
+      "duration": "60 min",
+      "difficulty": "Facile",
+      "participants": "8-15",
+      "description": "Création artistique avec éléments naturels. Art éphémère en extérieur.",
+      "materials": ["Éléments naturels", "Appareil photo", "Espace naturel"],
+      "objectives": [
+        "Créer avec la nature",
+        "Développer l'observation",
+        "Réaliser une œuvre éphémère"
+      ],
+      "steps": [
+        "Collecte d'éléments naturels",
+        "Choix de l'emplacement",
+        "Création collective ou individuelle",
+        "Photos des œuvres",
+        "Discussion sur l'art éphémère"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "modere",
+      "weather": ["sun"],
+      "groupType": "moyen",
+      "tags": ["land art", "nature", "art", "éphémère", "créativité"]
+    },
+    {
+      "id": 51,
+      "title": "Chamboule-tout",
+      "category": "sportifs",
+      "age": "5-10 ans",
+      "duration": "25 min",
+      "difficulty": "Facile",
+      "participants": "8-20",
+      "description": "Jeu de lancer de balles sur pyramide de boîtes. Précision et adresse.",
+      "materials": ["Boîtes ou conserves", "Balles molles", "Table", "Points à comptabiliser"],
+      "objectives": [
+        "Développer la précision",
+        "Travailler le lancer",
+        "S'amuser en compétition amicale"
+      ],
+      "steps": [
+        "Installation de la pyramide",
+        "Explication des règles",
+        "Tours de lancer",
+        "Comptage des points",
+        "Classement final"
+      ],
+      "environment": "both",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "moyen",
+      "tags": ["lancer", "précision", "boîtes", "adresse", "kermesse"]
+    },
+    {
+      "id": 52,
+      "title": "Cache-cache géant",
+      "category": "sportifs",
+      "age": "5-10 ans",
+      "duration": "30 min",
+      "difficulty": "Facile",
+      "participants": "10-20",
+      "description": "Cache-cache dans un espace sécurisé délimité. Discrétion et recherche.",
+      "materials": ["Espace sécurisé", "Sifflet", "Chronomètre"],
+      "objectives": [
+        "Développer la discrétion",
+        "Améliorer l'observation",
+        "Respecter l'espace de jeu"
+      ],
+      "steps": [
+        "Délimitation de l'aire de jeu",
+        "Explication des règles de sécurité",
+        "Désignation du chercheur",
+        "Plusieurs manches",
+        "Rotation des rôles"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "modere",
+      "weather": ["sun"],
+      "groupType": "grand",
+      "tags": ["cache-cache", "recherche", "discrétion", "observation", "traditionnel"]
+    },
+    {
+      "id": 53,
+      "title": "Molky",
+      "category": "sportifs",
+      "age": "7-12 ans",
+      "duration": "40 min",
+      "difficulty": "Facile",
+      "participants": "8-16",
+      "description": "Jeu finlandais de lancer de bâton. Stratégie et précision.",
+      "materials": ["Jeu de Molky complet", "Espace dégagé"],
+      "objectives": [
+        "Découvrir un jeu traditionnel",
+        "Développer la stratégie",
+        "Travailler la précision"
+      ],
+      "steps": [
+        "Explication des règles",
+        "Démonstration",
+        "Formation des équipes",
+        "Partie chronométrée",
+        "Proclamation du vainqueur"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "calme",
+      "weather": ["sun"],
+      "groupType": "moyen",
+      "tags": ["molky", "finlande", "lancer", "stratégie", "précision"]
+    },
+    {
+      "id": 54,
+      "title": "Parachute coopératif",
+      "category": "sportifs",
+      "age": "4-10 ans",
+      "duration": "30 min",
+      "difficulty": "Facile",
+      "participants": "10-20",
+      "description": "Jeux collectifs avec grand parachute coloré. Coopération et rythme.",
+      "materials": ["Parachute de jeu", "Balles légères", "Musique optionnelle"],
+      "objectives": [
+        "Favoriser la coopération",
+        "Développer le rythme collectif",
+        "S'amuser ensemble"
+      ],
+      "steps": [
+        "Présentation du parachute",
+        "Jeux de vagues",
+        "Jeux avec balles",
+        "Rotation sous le parachute",
+        "Jeu libre créatif"
+      ],
+      "environment": "outdoor",
+      "energyLevel": "modere",
+      "weather": ["sun"],
+      "groupType": "grand",
+      "tags": ["parachute", "coopération", "collectif", "rythme", "couleurs"]
+    },
+    {
+      "id": 55,
+      "title": "Percussion corporelle",
+      "category": "expression",
+      "age": "6-12 ans",
+      "duration": "40 min",
+      "difficulty": "Moyen",
+      "participants": "10-20",
+      "description": "Création de rythmes avec le corps : mains, pieds, voix. Musique corporelle.",
+      "materials": ["Espace libre", "Musique de fond optionnelle"],
+      "objectives": [
+        "Découvrir la percussion corporelle",
+        "Développer le sens du rythme",
+        "Créer une composition collective"
+      ],
+      "steps": [
+        "Échauffement rythmique",
+        "Apprentissage de patterns",
+        "Création par petits groupes",
+        "Assemblage collectif",
+        "Performance finale"
+      ],
+      "environment": "indoor",
+      "energyLevel": "modere",
+      "weather": ["any"],
+      "groupType": "grand",
+      "tags": ["percussion", "rythme", "corps", "musique", "collectif"]
     }
   ],
   "categories": [
