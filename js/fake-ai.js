@@ -1,7 +1,7 @@
 /**
- * ANIM'TOOLS - FAUSSE IA INTELLIGENTE V2.1
- * Assistant virtuel enrichi avec compréhension contextuelle avancée
- * Exploite les nouveaux champs: environment, energyLevel, weather, groupType, tags
+ * ANIM'TOOLS - FAUSSE IA V3 - ASSISTANT AUTONOME
+ * Assistant virtuel ultra-intelligent avec analyse multi-critères
+ * Propose 3 niveaux de suggestions + conseils terrain professionnels
  */
 
 class FakeAI {
@@ -11,14 +11,33 @@ class FakeAI {
         this.isOpen = false;
         this.conversationHistory = [];
         
-        // Conseils d'animateur prédéfinis
-        this.animatorTips = [
-            "Pense à prévoir une variante plus simple si l'activité semble trop difficile.",
-            "N'oublie pas de préparer le matériel la veille pour être serein le jour J.",
-            "Adapte toujours la durée selon l'attention du groupe.",
-            "Garde quelques activités de secours pour les transitions.",
-            "Anticipe les besoins en encadrement selon le nombre d'enfants."
-        ];
+        // Conseils d'animateur terrain (catégorisés)
+        this.animatorTips = {
+            security: [
+                "Vérifie toujours l'espace de jeu avant de commencer.",
+                "Compte régulièrement les enfants, surtout en extérieur.",
+                "Prépare une trousse de premiers secours accessible.",
+                "Identifie les allergies et restrictions avant l'activité."
+            ],
+            pedagogy: [
+                "Adapte la durée selon l'attention du groupe.",
+                "Prévois toujours une variante plus simple.",
+                "Valorise les efforts, pas seulement le résultat.",
+                "Laisse de la place à l'improvisation des enfants."
+            ],
+            organization: [
+                "Prépare le matériel la veille pour être serein.",
+                "Garde des activités de secours pour les transitions.",
+                "Anticipe les besoins en encadrement.",
+                "Note ce qui fonctionne bien pour la prochaine fois."
+            ],
+            group: [
+                "Mixe les âges pour favoriser l'entraide.",
+                "Identifie les leaders positifs et négatifs.",
+                "Prévois des rôles pour chacun dans les activités collectives.",
+                "Adapte ton langage à l'âge du groupe."
+            ]
+        };
         
         this.init();
     }
@@ -34,7 +53,7 @@ class FakeAI {
     }
     
     /**
-     * Charger les activités depuis JSON
+     * Charger les activités
      */
     async loadActivities() {
         try {
@@ -52,7 +71,6 @@ class FakeAI {
      * Créer l'interface du chat
      */
     createChatInterface() {
-        // Bouton mascotte flottant
         const mascotteBtn = document.createElement('div');
         mascotteBtn.id = 'mascotte-btn';
         mascotteBtn.className = 'mascotte-floating';
@@ -61,7 +79,6 @@ class FakeAI {
             <div class="mascotte-pulse"></div>
         `;
         
-        // Interface de chat
         const chatInterface = document.createElement('div');
         chatInterface.id = 'ai-chat';
         chatInterface.className = 'ai-chat-container';
@@ -70,8 +87,8 @@ class FakeAI {
                 <div class="ai-chat-title">
                     <img src="assets/mascotte/anim-mascotte.svg" alt="Anim'" width="32" height="32" />
                     <div>
-                        <strong>Anim' le renard</strong>
-                        <span>Assistant virtuel</span>
+                        <strong>Anim' l'assistant</strong>
+                        <span>Expert animation périscolaire</span>
                     </div>
                 </div>
                 <button class="ai-chat-close" id="closeChat">
@@ -82,7 +99,7 @@ class FakeAI {
             </div>
             <div class="ai-chat-messages" id="chatMessages"></div>
             <div class="ai-chat-input">
-                <input type="text" id="chatInput" placeholder="Posez-moi une question sur les activités..." />
+                <input type="text" id="chatInput" placeholder="Décris ta situation (âge, météo, énergie...)" />
                 <button id="sendMessage">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" stroke-width="2"/>
@@ -94,7 +111,6 @@ class FakeAI {
         
         document.body.appendChild(mascotteBtn);
         document.body.appendChild(chatInterface);
-        
         this.addStyles();
     }
     
@@ -102,9 +118,11 @@ class FakeAI {
      * Ajouter les styles CSS
      */
     addStyles() {
+        if (document.getElementById('fake-ai-styles')) return;
+        
         const style = document.createElement('style');
+        style.id = 'fake-ai-styles';
         style.textContent = `
-            /* Mascotte flottante */
             .mascotte-floating {
                 position: fixed;
                 bottom: 30px;
@@ -115,17 +133,12 @@ class FakeAI {
                 z-index: 999;
                 transition: transform 0.3s ease;
             }
-            
-            .mascotte-floating:hover {
-                transform: scale(1.1) rotate(5deg);
-            }
-            
+            .mascotte-floating:hover { transform: scale(1.1) rotate(5deg); }
             .mascotte-floating img {
                 width: 100%;
                 height: 100%;
                 filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
             }
-            
             .mascotte-pulse {
                 position: absolute;
                 top: -5px;
@@ -136,19 +149,16 @@ class FakeAI {
                 border-radius: 50%;
                 animation: pulse 2s infinite;
             }
-            
             @keyframes pulse {
                 0%, 100% { transform: scale(1); opacity: 1; }
                 50% { transform: scale(1.2); opacity: 0.7; }
             }
-            
-            /* Chat container */
             .ai-chat-container {
                 position: fixed;
                 bottom: 30px;
                 right: 30px;
-                width: 380px;
-                height: 550px;
+                width: 420px;
+                height: 600px;
                 background: white;
                 border-radius: 16px;
                 box-shadow: 0 10px 40px rgba(0,0,0,0.2);
@@ -160,13 +170,11 @@ class FakeAI {
                 transform: translateY(20px) scale(0.95);
                 transition: all 0.3s ease;
             }
-            
             .ai-chat-container.active {
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(0) scale(1);
             }
-            
             .ai-chat-header {
                 padding: 16px;
                 border-bottom: 1px solid #e5e5e7;
@@ -177,24 +185,20 @@ class FakeAI {
                 border-radius: 16px 16px 0 0;
                 color: white;
             }
-            
             .ai-chat-title {
                 display: flex;
                 gap: 12px;
                 align-items: center;
             }
-            
             .ai-chat-title strong {
                 display: block;
                 font-size: 16px;
             }
-            
             .ai-chat-title span {
                 display: block;
                 font-size: 12px;
                 opacity: 0.9;
             }
-            
             .ai-chat-close {
                 background: rgba(255,255,255,0.2);
                 border: none;
@@ -208,11 +212,7 @@ class FakeAI {
                 color: white;
                 transition: background 0.2s;
             }
-            
-            .ai-chat-close:hover {
-                background: rgba(255,255,255,0.3);
-            }
-            
+            .ai-chat-close:hover { background: rgba(255,255,255,0.3); }
             .ai-chat-messages {
                 flex: 1;
                 overflow-y: auto;
@@ -221,33 +221,28 @@ class FakeAI {
                 flex-direction: column;
                 gap: 12px;
             }
-            
             .chat-message {
-                max-width: 80%;
+                max-width: 85%;
                 padding: 12px 16px;
                 border-radius: 12px;
                 font-size: 14px;
                 line-height: 1.5;
                 animation: messageIn 0.3s ease;
             }
-            
             @keyframes messageIn {
                 from { opacity: 0; transform: translateY(10px); }
                 to { opacity: 1; transform: translateY(0); }
             }
-            
             .chat-message.ai {
                 align-self: flex-start;
                 background: #f5f5f7;
                 color: #1d1d1f;
             }
-            
             .chat-message.user {
                 align-self: flex-end;
                 background: #0071e3;
                 color: white;
             }
-            
             .activity-suggestion {
                 background: white;
                 border: 1px solid #e5e5e7;
@@ -257,30 +252,55 @@ class FakeAI {
                 cursor: pointer;
                 transition: all 0.2s;
             }
-            
             .activity-suggestion:hover {
                 border-color: #0071e3;
                 box-shadow: 0 2px 8px rgba(0,113,227,0.1);
             }
-            
             .activity-suggestion strong {
                 display: block;
                 margin-bottom: 4px;
                 color: #1d1d1f;
             }
-            
             .activity-suggestion small {
                 color: #6e6e73;
                 font-size: 12px;
             }
-            
+            .activity-suggestion .badge {
+                display: inline-block;
+                padding: 2px 8px;
+                background: #0071e3;
+                color: white;
+                border-radius: 4px;
+                font-size: 10px;
+                margin-left: 8px;
+                font-weight: 600;
+            }
+            .activity-suggestion .badge.alternative {
+                background: #FF9500;
+            }
+            .activity-suggestion .badge.backup {
+                background: #34C759;
+            }
+            .ai-tip {
+                background: #fff3cd;
+                border-left: 3px solid #ffc107;
+                padding: 10px 12px;
+                margin-top: 12px;
+                border-radius: 4px;
+                font-size: 13px;
+                line-height: 1.4;
+            }
+            .ai-tip strong {
+                color: #856404;
+                display: block;
+                margin-bottom: 4px;
+            }
             .ai-chat-input {
                 padding: 16px;
                 border-top: 1px solid #e5e5e7;
                 display: flex;
                 gap: 8px;
             }
-            
             .ai-chat-input input {
                 flex: 1;
                 padding: 10px 14px;
@@ -290,11 +310,7 @@ class FakeAI {
                 outline: none;
                 transition: border-color 0.2s;
             }
-            
-            .ai-chat-input input:focus {
-                border-color: #0071e3;
-            }
-            
+            .ai-chat-input input:focus { border-color: #0071e3; }
             .ai-chat-input button {
                 width: 40px;
                 height: 40px;
@@ -308,23 +324,17 @@ class FakeAI {
                 justify-content: center;
                 transition: background 0.2s;
             }
-            
-            .ai-chat-input button:hover {
-                background: #0077ed;
-            }
-            
+            .ai-chat-input button:hover { background: #0077ed; }
             .ai-chat-input button:disabled {
                 background: #d2d2d7;
                 cursor: not-allowed;
             }
-            
             .ai-chat-suggestions {
                 padding: 0 16px 16px;
                 display: flex;
                 flex-wrap: wrap;
                 gap: 8px;
             }
-            
             .suggestion-chip {
                 padding: 6px 12px;
                 background: #f5f5f7;
@@ -334,12 +344,10 @@ class FakeAI {
                 cursor: pointer;
                 transition: all 0.2s;
             }
-            
             .suggestion-chip:hover {
                 background: #e5e5e7;
                 border-color: #d2d2d7;
             }
-            
             @media (max-width: 480px) {
                 .ai-chat-container {
                     width: calc(100vw - 32px);
@@ -347,7 +355,6 @@ class FakeAI {
                     bottom: 16px;
                     right: 16px;
                 }
-                
                 .mascotte-floating {
                     bottom: 16px;
                     right: 16px;
@@ -361,15 +368,10 @@ class FakeAI {
      * Attacher les événements
      */
     attachEventListeners() {
-        const mascotteBtn = document.getElementById('mascotte-btn');
-        const closeBtn = document.getElementById('closeChat');
-        const sendBtn = document.getElementById('sendMessage');
-        const input = document.getElementById('chatInput');
-        
-        mascotteBtn.addEventListener('click', () => this.toggleChat());
-        closeBtn.addEventListener('click', () => this.closeChat());
-        sendBtn.addEventListener('click', () => this.sendMessage());
-        input.addEventListener('keypress', (e) => {
+        document.getElementById('mascotte-btn').addEventListener('click', () => this.toggleChat());
+        document.getElementById('closeChat').addEventListener('click', () => this.closeChat());
+        document.getElementById('sendMessage').addEventListener('click', () => this.sendMessage());
+        document.getElementById('chatInput').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.sendMessage();
         });
     }
@@ -378,10 +380,9 @@ class FakeAI {
      * Ouvrir/fermer le chat
      */
     toggleChat() {
+        this.isOpen = !this.isOpen;
         const chat = document.getElementById('ai-chat');
         const mascotte = document.getElementById('mascotte-btn');
-        
-        this.isOpen = !this.isOpen;
         
         if (this.isOpen) {
             chat.classList.add('active');
@@ -397,12 +398,9 @@ class FakeAI {
      * Fermer le chat
      */
     closeChat() {
-        const chat = document.getElementById('ai-chat');
-        const mascotte = document.getElementById('mascotte-btn');
-        
         this.isOpen = false;
-        chat.classList.remove('active');
-        mascotte.style.display = 'block';
+        document.getElementById('ai-chat').classList.remove('active');
+        document.getElementById('mascotte-btn').style.display = 'block';
     }
     
     /**
@@ -411,7 +409,12 @@ class FakeAI {
     addWelcomeMessage() {
         setTimeout(() => {
             this.addAIMessage(
-                "Bonjour ! 👋 Je suis Anim', ton assistant pour trouver l'activité parfaite. Décris-moi ta situation et je te proposerai des activités adaptées."
+                "👋 Bonjour ! Je suis Anim', ton assistant expert en animation périscolaire.<br><br>" +
+                "Décris-moi ta situation (âge des enfants, météo, niveau d'énergie souhaité, taille du groupe) et je te proposerai :<br>" +
+                "• Une activité principale<br>" +
+                "• Une alternative<br>" +
+                "• Un plan B<br>" +
+                "• Des conseils terrain"
             );
             this.showSuggestions();
         }, 500);
@@ -423,15 +426,15 @@ class FakeAI {
     showSuggestions() {
         const container = document.getElementById('chatSuggestions');
         const suggestions = [
-            "Activité calme 6-8 ans",
-            "Il pleut dehors",
-            "Peu de matériel",
-            "Grand groupe",
-            "Activité rapide"
+            "10 enfants 6-8 ans, calme, intérieur",
+            "Il pleut, groupe de 15",
+            "Activité rapide avant la sortie",
+            "Extérieur, beaucoup d'énergie",
+            "Peu de matériel, 20 enfants"
         ];
         
         container.innerHTML = suggestions.map(s => 
-            `<span class="suggestion-chip" onclick="fakeAI.askQuestion('${s}')">${s}</span>`
+            `<span class="suggestion-chip" onclick="window.fakeAI.askQuestion('${s}')">${s}</span>`
         ).join('');
     }
     
@@ -441,13 +444,11 @@ class FakeAI {
     sendMessage() {
         const input = document.getElementById('chatInput');
         const message = input.value.trim();
-        
         if (!message) return;
         
         this.addUserMessage(message);
         input.value = '';
         
-        // Simuler un délai de réponse
         setTimeout(() => {
             this.processQuery(message);
         }, 600);
@@ -457,8 +458,7 @@ class FakeAI {
      * Poser une question (depuis suggestion)
      */
     askQuestion(question) {
-        const input = document.getElementById('chatInput');
-        input.value = question;
+        document.getElementById('chatInput').value = question;
         this.sendMessage();
     }
     
@@ -477,29 +477,58 @@ class FakeAI {
     /**
      * Ajouter un message IA
      */
-    addAIMessage(text, activities = []) {
+    addAIMessage(text, suggestions = null, tip = null) {
         const container = document.getElementById('chatMessages');
         const msg = document.createElement('div');
         msg.className = 'chat-message ai';
         msg.innerHTML = text;
         
-        if (activities.length > 0) {
-            activities.forEach(activity => {
-                const suggestion = document.createElement('div');
-                suggestion.className = 'activity-suggestion';
-                suggestion.innerHTML = `
-                    <strong>${activity.title}</strong>
-                    <small>${activity.age} • ${activity.duration} • ${activity.category}</small>
-                `;
-                suggestion.onclick = () => {
-                    window.location.href = `inventaire.html?activity=${activity.id}`;
-                };
-                msg.appendChild(suggestion);
-            });
+        if (suggestions) {
+            // Activité principale
+            if (suggestions.main) {
+                const card = this.createActivityCard(suggestions.main, 'PRINCIPALE');
+                msg.appendChild(card);
+            }
+            
+            // Alternative
+            if (suggestions.alternative) {
+                const card = this.createActivityCard(suggestions.alternative, 'ALTERNATIVE', 'alternative');
+                msg.appendChild(card);
+            }
+            
+            // Plan B
+            if (suggestions.backup) {
+                const card = this.createActivityCard(suggestions.backup, 'PLAN B', 'backup');
+                msg.appendChild(card);
+            }
+        }
+        
+        // Conseil terrain
+        if (tip) {
+            const tipDiv = document.createElement('div');
+            tipDiv.className = 'ai-tip';
+            tipDiv.innerHTML = `<strong>💡 Conseil terrain</strong>${tip}`;
+            msg.appendChild(tipDiv);
         }
         
         container.appendChild(msg);
         this.scrollToBottom();
+    }
+    
+    /**
+     * Créer une carte d'activité
+     */
+    createActivityCard(activity, badgeText, badgeClass = '') {
+        const card = document.createElement('div');
+        card.className = 'activity-suggestion';
+        card.innerHTML = `
+            <strong>${activity.title} <span class="badge ${badgeClass}">${badgeText}</span></strong>
+            <small>${activity.age} • ${activity.duration} • ${activity.energyLevel}</small>
+        `;
+        card.onclick = () => {
+            window.location.href = `inventaire.html?activity=${activity.id}`;
+        };
+        return card;
     }
     
     /**
@@ -511,279 +540,261 @@ class FakeAI {
     }
     
     /**
-     * NOUVELLE FONCTION - Analyser le message utilisateur
-     * Extrait les critères de recherche du langage naturel
+     * V3 - Analyser le message utilisateur (multi-critères)
      */
     analyzeUserMessage(query) {
         const lowerQuery = query.toLowerCase();
         const criteria = {};
         
-        // Analyse de l'âge
-        const agePatterns = [
-            { pattern: /(\d+)\s*(?:-|à|a)\s*(\d+)\s*ans/, extract: (m) => ({ min: parseInt(m[1]), max: parseInt(m[2]) }) },
-            { pattern: /(\d+)\s*ans/, extract: (m) => ({ target: parseInt(m[1]) }) },
-            { pattern: /petits?|maternelle|3-5/, extract: () => ({ min: 3, max: 5 }) },
-            { pattern: /moyens?|6-8/, extract: () => ({ min: 6, max: 8 }) },
-            { pattern: /grands?|ados?|9-12/, extract: () => ({ min: 9, max: 12 }) }
-        ];
-        
-        for (const { pattern, extract } of agePatterns) {
-            const match = lowerQuery.match(pattern);
-            if (match) {
-                criteria.age = extract(match);
-                break;
-            }
+        // Âge
+        const ageMatch = lowerQuery.match(/(\d+)\s*(?:-|à)\s*(\d+)\s*ans/) || lowerQuery.match(/(\d+)\s*ans/);
+        if (ageMatch) {
+            criteria.age = ageMatch[2] ? 
+                { min: parseInt(ageMatch[1]), max: parseInt(ageMatch[2]) } :
+                { target: parseInt(ageMatch[1]) };
+        } else if (lowerQuery.match(/petits?|maternelle/)) {
+            criteria.age = { min: 3, max: 5 };
+        } else if (lowerQuery.match(/moyens?/)) {
+            criteria.age = { min: 6, max: 8 };
+        } else if (lowerQuery.match(/grands?|ados?/)) {
+            criteria.age = { min: 9, max: 12 };
         }
         
-        // Analyse du niveau d'énergie
-        if (lowerQuery.match(/calme|tranquille|pos[eé]|relax|repos|silence/)) {
+        // Énergie
+        if (lowerQuery.match(/calme|tranquille|pos[eé]|relax|repos/)) {
             criteria.energyLevel = 'calme';
-        } else if (lowerQuery.match(/dynamique|[eé]nergie|bouger|sport|actif|courir/)) {
+        } else if (lowerQuery.match(/dynamique|[eé]nergie|bouger|sport|actif/)) {
             criteria.energyLevel = 'dynamique';
-        } else if (lowerQuery.match(/mod[eé]r[eé]|moyen|normal/)) {
+        } else if (lowerQuery.match(/mod[eé]r[eé]|moyen/)) {
             criteria.energyLevel = 'modere';
         }
         
-        // Analyse de la météo
-        if (lowerQuery.match(/pluie|pluvieux|mouill[eé]|mauvais temps/)) {
+        // Météo/Environnement
+        if (lowerQuery.match(/pluie|pluvieux|mauvais temps/)) {
             criteria.weather = 'rain';
-        } else if (lowerQuery.match(/soleil|beau temps|dehors possible/)) {
-            criteria.weather = 'sun';
-        }
-        
-        // Analyse de l'environnement
-        if (lowerQuery.match(/int[eé]rieur|dedans|salle|classe/)) {
             criteria.environment = 'indoor';
-        } else if (lowerQuery.match(/ext[eé]rieur|dehors|plein air|jardin|cour/)) {
+        } else if (lowerQuery.match(/int[eé]rieur|dedans|salle/)) {
+            criteria.environment = 'indoor';
+        } else if (lowerQuery.match(/ext[eé]rieur|dehors|plein air/)) {
             criteria.environment = 'outdoor';
         }
         
-        // Analyse de la durée
-        const durationMatch = lowerQuery.match(/(\d+)\s*(?:min|minutes?)/);
+        // Durée
+        const durationMatch = lowerQuery.match(/(\d+)\s*min/);
         if (durationMatch) {
             criteria.duration = parseInt(durationMatch[1]);
         } else if (lowerQuery.match(/rapide|court|vite/)) {
-            criteria.duration = 30;
-        } else if (lowerQuery.match(/long|longue|[eé]tendu/)) {
+            criteria.duration = 25;
+        } else if (lowerQuery.match(/long|longue/)) {
             criteria.duration = 60;
         }
         
-        // Analyse de la taille du groupe
-        if (lowerQuery.match(/petit groupe|peu d'enfants|4-8/)) {
+        // Groupe
+        const groupMatch = lowerQuery.match(/(\d+)\s*enfants?/);
+        if (groupMatch) {
+            const nb = parseInt(groupMatch[1]);
+            criteria.groupType = nb <= 8 ? 'petit' : nb >= 16 ? 'grand' : 'moyen';
+        } else if (lowerQuery.match(/petit groupe/)) {
             criteria.groupType = 'petit';
-        } else if (lowerQuery.match(/grand groupe|beaucoup|nombreux|20/)) {
+        } else if (lowerQuery.match(/grand groupe|nombreux|beaucoup/)) {
             criteria.groupType = 'grand';
-        } else if (lowerQuery.match(/moyen groupe|10-15/)) {
-            criteria.groupType = 'moyen';
         }
         
-        // Analyse du matériel
-        if (lowerQuery.match(/sans mat[eé]riel|pas de mat[eé]riel|rien|sans rien/)) {
+        // Matériel
+        if (lowerQuery.match(/sans mat[eé]riel|rien/)) {
             criteria.noMaterial = true;
-        } else if (lowerQuery.match(/peu de mat[eé]riel|simple/)) {
+        } else if (lowerQuery.match(/peu de mat[eé]riel/)) {
             criteria.littleMaterial = true;
-        }
-        
-        // Analyse de catégorie spécifique
-        if (lowerQuery.match(/manuel|cr[eé]atif|bricolage|art/)) {
-            criteria.category = 'manuelles';
-        } else if (lowerQuery.match(/sport|physique|bouger/)) {
-            criteria.category = 'sportifs';
-        } else if (lowerQuery.match(/expression|th[eé][aâ]tre|danse|musique/)) {
-            criteria.category = 'expression';
-        } else if (lowerQuery.match(/jeux? de soci[eé]t[eé]|plateau/)) {
-            criteria.category = 'societe';
-        } else if (lowerQuery.match(/sortie|visite|dehors/)) {
-            criteria.category = 'sorties';
-        } else if (lowerQuery.match(/initiation|d[eé]couverte|nouveau sport/)) {
-            criteria.category = 'initiation';
         }
         
         return criteria;
     }
     
     /**
-     * NOUVELLE FONCTION - Filtrer intelligemment les activités
-     * Utilise les nouveaux champs enrichis
+     * V3 - Filtrer et scorer les activités (algorithme avancé)
      */
     findMatchingActivities(criteria) {
-        let filtered = [...this.activities];
-        let score = new Map();
-        
-        filtered.forEach(activity => {
-            let points = 0;
+        const scored = this.activities.map(activity => {
+            let score = 0;
             
-            // Score basé sur l'âge
+            // Âge (poids 10)
             if (criteria.age) {
-                const activityAge = activity.age.match(/(\d+)-(\d+)/);
-                if (activityAge) {
-                    const actMin = parseInt(activityAge[1]);
-                    const actMax = parseInt(activityAge[2]);
-                    
+                const actAge = activity.age.match(/(\d+)-(\d+)/);
+                if (actAge) {
+                    const [, actMin, actMax] = actAge.map(Number);
                     if (criteria.age.min && criteria.age.max) {
-                        // Chevauchement des plages
-                        if (actMin <= criteria.age.max && actMax >= criteria.age.min) {
-                            points += 10;
-                        }
+                        if (actMin <= criteria.age.max && actMax >= criteria.age.min) score += 10;
                     } else if (criteria.age.target) {
-                        // Âge cible dans la plage
-                        if (criteria.age.target >= actMin && criteria.age.target <= actMax) {
-                            points += 10;
-                        }
+                        if (criteria.age.target >= actMin && criteria.age.target <= actMax) score += 10;
                     }
                 }
             }
             
-            // Score basé sur le niveau d'énergie
+            // Énergie (poids 9)
             if (criteria.energyLevel && activity.energyLevel === criteria.energyLevel) {
-                points += 8;
+                score += 9;
             }
             
-            // Score basé sur l'environnement
+            // Environnement (poids 8)
             if (criteria.environment) {
                 if (activity.environment === criteria.environment || activity.environment === 'both') {
-                    points += 7;
+                    score += 8;
                 }
             }
             
-            // Score basé sur la météo
-            if (criteria.weather) {
+            // Météo (poids 7)
+            if (criteria.weather && activity.weather) {
                 if (activity.weather.includes(criteria.weather) || activity.weather.includes('any')) {
-                    points += 6;
+                    score += 7;
                 }
             }
             
-            // Score basé sur la durée
+            // Durée (poids 6)
             if (criteria.duration) {
-                const activityDuration = parseInt(activity.duration);
-                const diff = Math.abs(activityDuration - criteria.duration);
-                if (diff <= 15) {
-                    points += 5;
-                } else if (diff <= 30) {
-                    points += 3;
-                }
+                const actDuration = parseInt(activity.duration);
+                const diff = Math.abs(actDuration - criteria.duration);
+                if (diff <= 10) score += 6;
+                else if (diff <= 20) score += 4;
+                else if (diff <= 30) score += 2;
             }
             
-            // Score basé sur la taille du groupe
+            // Groupe (poids 5)
             if (criteria.groupType && activity.groupType === criteria.groupType) {
-                points += 5;
+                score += 5;
             }
             
-            // Score basé sur le matériel
+            // Matériel (poids 4)
             if (criteria.noMaterial && activity.materials.length <= 1) {
-                points += 7;
+                score += 4;
             } else if (criteria.littleMaterial && activity.materials.length <= 3) {
-                points += 5;
+                score += 3;
             }
             
-            // Score basé sur la catégorie
-            if (criteria.category && activity.category === criteria.category) {
-                points += 6;
-            }
-            
-            score.set(activity.id, points);
+            return { activity, score };
         });
         
-        // Trier par score décroissant
-        filtered.sort((a, b) => score.get(b.id) - score.get(a.id));
+        // Trier par score
+        scored.sort((a, b) => b.score - a.score);
         
-        // Ne garder que les activités avec un score > 0
-        filtered = filtered.filter(a => score.get(a.id) > 0);
-        
-        return filtered.slice(0, 3);
+        // Retourner les 3 meilleures avec score > 5
+        return scored.filter(s => s.score > 5).slice(0, 10);
     }
     
     /**
-     * NOUVELLE FONCTION - Générer une réponse contextualisée
-     * Explique pourquoi ces activités sont proposées
+     * V3 - Générer 3 suggestions (principale, alternative, plan B)
      */
-    generateMascotResponse(activities, criteria) {
-        if (activities.length === 0) {
-            return "Je n'ai pas trouvé d'activité qui correspond exactement à ta demande. Peux-tu me donner plus de détails ou reformuler ?";
+    generateSuggestions(matchedActivities, criteria) {
+        if (matchedActivities.length === 0) return null;
+        
+        const suggestions = {};
+        
+        // Principale : meilleur score
+        suggestions.main = matchedActivities[0].activity;
+        
+        // Alternative : différente catégorie si possible
+        const mainCategory = suggestions.main.category;
+        const alternative = matchedActivities.find(m => 
+            m.activity.category !== mainCategory && m.score >= matchedActivities[0].score * 0.7
+        );
+        suggestions.alternative = alternative ? alternative.activity : matchedActivities[1]?.activity;
+        
+        // Plan B : totalement différent (énergie opposée ou catégorie différente)
+        const mainEnergy = suggestions.main.energyLevel;
+        const backup = matchedActivities.find(m => 
+            m.activity.energyLevel !== mainEnergy && 
+            m.activity.category !== mainCategory &&
+            m.score >= matchedActivities[0].score * 0.5
+        );
+        suggestions.backup = backup ? backup.activity : matchedActivities[2]?.activity;
+        
+        return suggestions;
+    }
+    
+    /**
+     * V3 - Générer un conseil terrain contextualisé
+     */
+    generateContextualTip(criteria, mainActivity) {
+        let tips = [];
+        
+        // Sécurité si extérieur
+        if (criteria.environment === 'outdoor') {
+            tips.push(...this.animatorTips.security);
         }
         
-        let response = "";
-        const explanations = [];
-        
-        // Construire une explication contextuelle
-        if (criteria.energyLevel === 'calme') {
-            explanations.push("des activités calmes");
-        } else if (criteria.energyLevel === 'dynamique') {
-            explanations.push("des activités dynamiques");
+        // Organisation si grand groupe
+        if (criteria.groupType === 'grand') {
+            tips.push(...this.animatorTips.group);
         }
         
-        if (criteria.environment === 'indoor') {
-            explanations.push("en intérieur");
-        } else if (criteria.environment === 'outdoor') {
-            explanations.push("en extérieur");
+        // Pédagogie si petits
+        if (criteria.age && criteria.age.max <= 6) {
+            tips.push(...this.animatorTips.pedagogy);
         }
         
-        if (criteria.weather === 'rain') {
-            explanations.push("parfaites pour un jour de pluie");
+        // Par défaut
+        if (tips.length === 0) {
+            tips = [...this.animatorTips.organization];
         }
         
+        return tips[Math.floor(Math.random() * tips.length)];
+    }
+    
+    /**
+     * V3 - Générer la réponse complète
+     */
+    generateResponse(criteria, matchedActivities) {
+        if (matchedActivities.length === 0) {
+            return {
+                text: "Je n'ai pas trouvé d'activité correspondant exactement à ta demande. Peux-tu préciser : l'âge, le lieu (intérieur/extérieur), ou le type d'activité recherché ?",
+                suggestions: null,
+                tip: null
+            };
+        }
+        
+        const suggestions = this.generateSuggestions(matchedActivities, criteria);
+        const tip = this.generateContextualTip(criteria, suggestions.main);
+        
+        // Construire l'explication
+        let explanation = [];
+        if (criteria.energyLevel) explanation.push(`activités ${criteria.energyLevel}s`);
+        if (criteria.environment) explanation.push(`en ${criteria.environment === 'indoor' ? 'intérieur' : 'extérieur'}`);
         if (criteria.age) {
             if (criteria.age.min && criteria.age.max) {
-                explanations.push(`pour ${criteria.age.min}-${criteria.age.max} ans`);
+                explanation.push(`pour ${criteria.age.min}-${criteria.age.max} ans`);
             } else if (criteria.age.target) {
-                explanations.push(`pour ${criteria.age.target} ans`);
+                explanation.push(`pour ${criteria.age.target} ans`);
             }
         }
+        if (criteria.groupType) explanation.push(`${criteria.groupType} groupe`);
         
-        if (criteria.groupType === 'petit') {
-            explanations.push("pour un petit groupe");
-        } else if (criteria.groupType === 'grand') {
-            explanations.push("pour un grand groupe");
-        }
+        const text = explanation.length > 0 ?
+            `Voici 3 propositions ${explanation.join(', ')} :` :
+            "Voici 3 activités qui pourraient te convenir :";
         
-        if (criteria.noMaterial || criteria.littleMaterial) {
-            explanations.push("avec peu de matériel");
-        }
-        
-        // Assembler la réponse
-        if (explanations.length > 0) {
-            response = `Je te propose ${explanations.join(', ')} :`;
-        } else {
-            response = "Voici quelques activités qui pourraient t'intéresser :";
-        }
-        
-        // Ajouter un conseil d'animateur aléatoire (1 fois sur 3)
-        if (Math.random() > 0.66) {
-            const tip = this.animatorTips[Math.floor(Math.random() * this.animatorTips.length)];
-            response += `<br><br>💡 <em>${tip}</em>`;
-        }
-        
-        return response;
+        return { text, suggestions, tip };
     }
     
     /**
-     * FONCTION ENRICHIE - Traiter la question avec la nouvelle IA
+     * V3 - Traiter la question (point d'entrée principal)
      */
     processQuery(query) {
-        // Analyser le message
+        // Analyser
         const criteria = this.analyzeUserMessage(query);
         
-        // Trouver les activités correspondantes
-        const matches = this.findMatchingActivities(criteria);
+        // Filtrer et scorer
+        const matchedActivities = this.findMatchingActivities(criteria);
         
         // Générer la réponse
-        const response = this.generateMascotResponse(matches, criteria);
+        const response = this.generateResponse(criteria, matchedActivities);
         
         // Afficher
-        this.addAIMessage(response, matches);
-    }
-    
-    /**
-     * Obtenir des activités aléatoires (fallback)
-     */
-    getRandomActivities(count) {
-        const shuffled = [...this.activities].sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, count);
+        this.addAIMessage(response.text, response.suggestions, response.tip);
     }
 }
 
-// Initialiser au chargement
+// Initialiser
 let fakeAI;
 document.addEventListener('DOMContentLoaded', () => {
     fakeAI = new FakeAI();
+    window.fakeAI = fakeAI; // Exposer globalement pour les suggestions
 });
