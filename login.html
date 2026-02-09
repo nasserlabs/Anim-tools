@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Anim'Tools</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/logos/favicon.svg" alt="Anim'Tools" width="32" height="32">
+                <span>Anim'Tools</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="inventaire.html">Activités</a>
+                <a href="planning.html">Planning</a>
+                <a href="reglementation.html">Réglementation</a>
+                <a href="administratif.html">Administratif</a>
+                <a href="apropos.html">À propos</a>
+                <a href="aide.html">Aide</a>
+                <a href="login.html" class="btn btn-primary btn-sm">Connexion</a>
+            </div>
+            
+            <button class="nav-burger" id="navBurger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-overlay-content">
+            <input type="text" class="search-overlay-input" id="searchOverlayInput" placeholder="Rechercher...">
+            <button class="search-overlay-close" id="searchOverlayClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero hero-compact">
+        <div class="container">
+            <h1 class="hero-title">Connexion</h1>
+            <p class="hero-subtitle">Accède à ton compte Anim'Tools</p>
+        </div>
+    </section>
+
+    <!-- LOGIN FORM -->
+    <section class="section">
+        <div class="container container-narrow">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <img src="assets/mascotte/anim-mascotte.svg" alt="Anim'" width="80" height="80">
+                    <h2>Bienvenue !</h2>
+                    <p>Connecte-toi pour accéder à tes favoris, ton planning et bien plus.</p>
+                </div>
+
+                <div class="auth-notice">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm1 15H9v-2h2v2zm0-4H9V5h2v6z"/>
+                    </svg>
+                    <p><strong>Fonctionnalité en développement</strong><br>
+                    Les comptes utilisateurs seront bientôt disponibles. Cette page te montre à quoi ressemblera l'interface de connexion.</p>
+                </div>
+
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="ton@email.com" 
+                            required
+                            autocomplete="email"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="••••••••" 
+                            required
+                            autocomplete="current-password"
+                        >
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox">
+                            <input type="checkbox" name="remember">
+                            <span>Se souvenir de moi</span>
+                        </label>
+                        <a href="#" class="link-secondary">Mot de passe oublié ?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Se connecter
+                    </button>
+                </form>
+
+                <div class="auth-divider">
+                    <span>ou</span>
+                </div>
+
+                <div class="auth-alternatives">
+                    <button class="btn btn-secondary btn-full">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M19.6 10.23c0-.82-.1-1.42-.25-2.05H10v3.72h5.5c-.15.96-.74 2.31-2.04 3.22v2.45h3.16c1.89-1.73 2.98-4.3 2.98-7.34z" fill="#4285F4"/>
+                            <path d="M13.46 15.13c-.83.59-1.96 1-3.46 1-2.64 0-4.88-1.74-5.68-4.15H1.07v2.52C2.72 17.75 6.09 20 10 20c2.7 0 4.96-.89 6.62-2.42l-3.16-2.45z" fill="#34A853"/>
+                            <path d="M3.99 10c0-.69.12-1.35.32-1.97V5.51H1.07A9.973 9.973 0 000 10c0 1.61.39 3.14 1.07 4.49l3.24-2.52c-.2-.62-.32-1.28-.32-1.97z" fill="#FBBC05"/>
+                            <path d="M10 3.88c1.88 0 3.13.81 3.85 1.48l2.84-2.76C14.96.99 12.7 0 10 0 6.09 0 2.72 2.25 1.07 5.51l3.24 2.52C5.12 5.62 7.36 3.88 10 3.88z" fill="#EA4335"/>
+                        </svg>
+                        Continuer avec Google
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    <p>Pas encore de compte ? <a href="register.html" class="link-primary">Créer un compte</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Anim'Tools</h4>
+                    <p>L'assistant numérique des animateurs périscolaires.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <a href="inventaire.html">Inventaire d'activités</a>
+                    <a href="planning.html">Planning</a>
+                    <a href="reglementation.html">Réglementation</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Ressources</h4>
+                    <a href="aide.html">Aide & FAQ</a>
+                    <a href="apropos.html">À propos</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Anim'Tools - Version 1.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script>
+        // Gestion du formulaire (démo uniquement)
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Fonctionnalité en développement !\n\nLes comptes utilisateurs seront disponibles dans une prochaine version.\n\nPour l\'instant, toutes les fonctionnalités sont accessibles sans compte.');
+        });
+
+        // Empêcher la navigation vers les liens désactivés
+        document.querySelectorAll('a[href="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Fonctionnalité bientôt disponible !');
+            });
+        });
+    </script>
+</body>
+</html>
