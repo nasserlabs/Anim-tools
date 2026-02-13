@@ -2209,46 +2209,103 @@ body {
    ═══════════════════════════════════════════════════════════════════ */
 
 
-/* ═══════════════════════════════════════════════════════════════════
-   1. BOUTON COMPTE – NAVBAR
-   ═══════════════════════════════════════════════════════════════════ */
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+Copier
 
-.btn-account {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-primary, #1d1d1f);
-  text-decoration: none;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.btn-account:hover {
-  background: rgba(102, 126, 234, 0.15);
-  border-color: rgba(102, 126, 234, 0.3);
-  transform: scale(1.08);
-  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
-}
-
-.btn-account svg {
-  flex-shrink: 0;
-}
-
-/* Assure l'ordre visuel : compte → recherche */
-.btn-account { order: -1; }
-.search-trigger { order: 0; }
+1/* ═══════════════════════════════════════════════════════════════
+2   CORRECTION ÉTAPE 3.1 — À AJOUTER à la fin de style.css
+3   (remplace le bloc "1. BOUTON COMPTE – NAVBAR" du fichier
+4   style-additions.css livré à l'étape 3)
+5   ═══════════════════════════════════════════════════════════════ */
+6
+7/* ── Conteneur des actions navbar ──────────────────────────────
+8   POURQUOI : La navbar originale place le .search-trigger
+9   directement dans .nav-content sans wrapper.
+10   On crée .nav-actions pour regrouper compte + recherche
+11   dans un flex-row aligné à droite.
+12   ─────────────────────────────────────────────────────────────── */
+13.nav-content {
+14  /* S'assure que les enfants directs sont en flex row,
+15     le logo à gauche, les liens au centre, les actions à droite */
+16  display: flex;
+17  align-items: center;
+18  justify-content: space-between;
+19  /* NE PAS redéfinir gap ou padding si déjà présent dans style.css */
+20}
+21
+22.nav-actions {
+23  display: flex;
+24  align-items: center;
+25  gap: 8px;
+26  /* PAS de order, PAS de position absolute */
+27  flex-shrink: 0;
+28  margin-left: auto; /* pousse à droite si flex ne suffit pas */
+29}
+30
+31/* ── Bouton Compte ──────────────────────────────────────────────
+32   CORRECTION : suppression de "order: -1" (cause du déplacement
+33   à gauche). Le bouton est maintenant en position naturelle dans
+34   le flux HTML, AVANT le search-trigger dans le DOM.
+35   ─────────────────────────────────────────────────────────────── */
+36.btn-account {
+37  display: inline-flex;
+38  align-items: center;
+39  justify-content: center;
+40  width: 36px;
+41  height: 36px;
+42  border-radius: 50%;
+43  background: rgba(255, 255, 255, 0.08);
+44  border: 1.5px solid rgba(0, 0, 0, 0.08);
+45  color: var(--text-primary, #1d1d1f);
+46  text-decoration: none;
+47  cursor: pointer;
+48  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+49  flex-shrink: 0;
+50  /* ❌ PAS de order: -1 — c'était la cause du bug */
+51}
+52
+53.btn-account:hover {
+54  background: rgba(102, 126, 234, 0.12);
+55  border-color: rgba(102, 126, 234, 0.35);
+56  transform: scale(1.06);
+57  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.18);
+58}
+59
+60.btn-account:active {
+61  transform: scale(0.97);
+62}
+63
+64.btn-account svg {
+65  display: block;
+66  flex-shrink: 0;
+67  pointer-events: none;
+68}
+69
+70/* ── Responsive mobile ─────────────────────────────────────────── */
+71@media (max-width: 600px) {
+72  .btn-account {
+73    width: 32px;
+74    height: 32px;
+75  }
+76
+77  .btn-account svg {
+78    width: 17px;
+79    height: 17px;
+80  }
+81}
+82
+83/* ── Cas particulier : si .search-trigger est encore seul
+84   dans .nav-content (sans .nav-actions wrapper), on assure
+85   qu'il reste à droite ──────────────────────────────────────── */
+86.nav-content > .search-trigger {
+87  margin-left: auto;
+88}
+89
+90/* Quand .nav-actions existe, annule le margin-left auto
+91   sur le bouton seul */
+92.nav-actions ~ .search-trigger {
+93  margin-left: 0;
+94}
 
 
 /* ═══════════════════════════════════════════════════════════════════
