@@ -1,0 +1,54 @@
+<!-- ═══════════════════════════════════════════════════════════════
+     SNIPPETS HTML – ANIM'TOOLS ÉTAPE 3
+     ═══════════════════════════════════════════════════════════════
+     
+     SNIPPET 1 : Widget Météo (index.html)
+     SNIPPET 2 : Bouton Compte (toutes les pages – navbar)
+     
+     ═══════════════════════════════════════════════════════════════ -->
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     SNIPPET 1 – WIDGET MÉTÉO
+     À insérer dans : index.html
+     Emplacement exact : juste AVANT la section de suggestion
+     du jour (ou tout au début du <main>, avant les cards)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="weather-widget-wrap container">
+  <div class="weather-widget" id="weather-widget" role="complementary" aria-label="Météo du jour">
+    <!-- Contenu rendu dynamiquement par weather.js -->
+  </div>
+</section>
+
+<!-- Import du script (avant la fermeture </body>) :
+     <script src="js/weather.js"></script>
+     À placer APRÈS main.js et search.js dans index.html -->
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     SNIPPET 2 – BOUTON COMPTE
+     À insérer dans : TOUTES les pages HTML
+     Emplacement exact : dans le <div class="nav-actions">
+     JUSTE AVANT le bouton .search-trigger existant
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </svg>
+</a>
+
+<!-- AVANT → APRÈS dans chaque page :
+     
+     AVANT (existant) :
+     <div class="nav-actions">
+       <button class="search-trigger" id="searchTrigger" ...>
+     
+     APRÈS (avec bouton compte) :
+     <div class="nav-actions">
+       <a href="login.html" class="btn-account" ...>[SVG]</a>
+       <button class="search-trigger" id="searchTrigger" ...>
+     
+     ⚠️ Si nav-actions n'existe pas, chercher le bouton
+     search-trigger et ajouter ce bloc juste avant lui.
+-->

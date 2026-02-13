@@ -3,277 +3,534 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mon profil Anim'Tools - Votre assistant périscolaire">
     <title>Mon Profil - Anim'Tools</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+    <style>
+        .profile-hero {
+            padding: calc(var(--nav-height) + var(--space-4xl)) 0 var(--space-3xl);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
+        }
+        .profile-hero-title {
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-sm);
+        }
+        .profile-hero-sub {
+            font-size: var(--text-lg);
+            color: var(--color-tertiary);
+        }
+        .auth-notice {
+            background: var(--color-surface);
+            border-left: 3px solid var(--color-accent);
+            border-radius: var(--radius-sm);
+            padding: var(--space-md) var(--space-lg);
+            margin-bottom: var(--space-2xl);
+            font-size: var(--text-sm);
+            color: var(--color-secondary);
+            line-height: 1.5;
+        }
+
+        /* Grille profil */
+        .profile-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        /* Sidebar */
+        .profile-sidebar-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+        .profile-avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: var(--radius-full);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto var(--space-md);
+        }
+        .profile-name {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+        .profile-role-tag {
+            font-size: var(--text-sm);
+            color: var(--color-tertiary);
+            margin-bottom: var(--space-xl);
+        }
+        .profile-stats {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .profile-stat {
+            text-align: center;
+        }
+        .profile-stat strong {
+            display: block;
+            font-size: var(--text-2xl);
+            font-weight: 700;
+        }
+        .profile-stat span {
+            font-size: var(--text-xs);
+            color: var(--color-tertiary);
+        }
+        .profile-nav-list {
+            list-style: none;
+            text-align: left;
+        }
+        .profile-nav-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            font-size: var(--text-sm);
+            color: var(--color-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            margin-bottom: var(--space-xs);
+        }
+        .profile-nav-item:hover {
+            background: var(--color-surface);
+            color: var(--color-primary);
+        }
+        .profile-nav-item.active {
+            background: var(--color-surface);
+            color: var(--color-accent);
+            font-weight: 500;
+        }
+        .profile-nav-item svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+        .btn-logout {
+            width: 100%;
+            margin-top: var(--space-lg);
+            justify-content: center;
+            color: var(--color-error);
+            border-color: var(--color-error);
+        }
+        .btn-logout:hover {
+            background: var(--color-error);
+            color: white;
+        }
+
+        /* Contenu principal */
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+        .profile-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-sm);
+        }
+        .profile-card-title {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+        .profile-card-sub {
+            font-size: var(--text-sm);
+            color: var(--color-tertiary);
+            margin-bottom: var(--space-xl);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+        .form-label {
+            display: block;
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 0.75rem var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-size: var(--text-base);
+            font-family: var(--font-system);
+            color: var(--color-primary);
+            background: var(--color-surface);
+            box-sizing: border-box;
+        }
+
+        /* Favoris */
+        .favorites-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+        .favorite-row {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-md);
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+        }
+        .favorite-emoji {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .favorite-info strong {
+            display: block;
+            font-size: var(--text-base);
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        .favorite-info span {
+            font-size: var(--text-xs);
+            color: var(--color-tertiary);
+        }
+
+        /* Statistiques */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+        }
+        .stat-box {
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            text-align: center;
+        }
+        .stat-box-value {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+            color: var(--color-accent);
+        }
+        .stat-box-label {
+            font-size: var(--text-xs);
+            color: var(--color-tertiary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .profile-layout {
+                grid-template-columns: 1fr;
+            }
+            .profile-sidebar-card {
+                max-width: 480px;
+                margin: 0 auto;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
 </head>
 <body>
-    <!-- NAVIGATION -->
+
+    <!-- NAVIGATION — structure identique à index.html -->
     <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/logos/favicon.svg" alt="Anim'Tools" width="32" height="32">
-                <span>Anim'Tools</span>
-            </a>
-            
-            <div class="nav-links">
-                <a href="inventaire.html">Activités</a>
-                <a href="planning.html">Planning</a>
-                <a href="reglementation.html">Réglementation</a>
-                <a href="administratif.html">Administratif</a>
-                <a href="apropos.html">À propos</a>
-                <a href="aide.html">Aide</a>
-                <a href="profile.html" class="btn btn-primary btn-sm">Mon Profil</a>
-            </div>
-            
-            <button class="nav-burger" id="navBurger">
-                <span></span>
-                <span></span>
-                <span></span>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Anim'Tools</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
+                <li><a href="planning.html" class="nav-link">Planning</a></li>
+                <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
+                <li><a href="administratif.html" class="nav-link">Administratif</a></li>
+                <li><a href="login.html" class="nav-link">Connexion</a></li>
+            </ul>
+            <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
             </button>
         </div>
     </nav>
 
     <!-- SEARCH OVERLAY -->
     <div class="search-overlay" id="searchOverlay">
-        <div class="search-overlay-content">
-            <input type="text" class="search-overlay-input" id="searchOverlayInput" placeholder="Rechercher...">
-            <button class="search-overlay-close" id="searchOverlayClose">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"/>
+        <div class="search-container">
+            <div class="search-header">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
                 </svg>
-            </button>
+                <input type="text" class="search-input" id="searchInput" placeholder="Rechercher une activité..." autocomplete="off">
+                <button class="search-close" id="searchClose" aria-label="Fermer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
         </div>
     </div>
 
     <!-- HERO -->
-    <section class="hero hero-compact">
+    <section class="profile-hero">
         <div class="container">
-            <h1 class="hero-title">Mon Profil</h1>
-            <p class="hero-subtitle">Gère tes informations et préférences</p>
+            <h1 class="profile-hero-title">Mon Profil</h1>
+            <p class="profile-hero-sub">Gère tes informations et préférences</p>
         </div>
     </section>
 
-    <!-- PROFILE CONTENT -->
+    <!-- CONTENU PRINCIPAL -->
     <section class="section">
         <div class="container">
-            <div class="auth-notice" style="max-width: 800px; margin: 0 auto 2rem;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm1 15H9v-2h2v2zm0-4H9V5h2v6z"/>
-                </svg>
-                <p><strong>Aperçu de fonctionnalité</strong><br>
-                Cette page montre à quoi ressemblera ton espace personnel une fois les comptes utilisateurs activés. Les données affichées sont des exemples.</p>
+
+            <div class="auth-notice">
+                <strong>⏳ Aperçu de fonctionnalité</strong><br>
+                Cette page illustre l'espace personnel à venir. Les données sont des exemples — rien n'est sauvegardé.
             </div>
 
-            <div class="profile-grid">
-                <!-- Sidebar -->
-                <div class="profile-sidebar">
-                    <div class="profile-card">
-                        <div class="profile-avatar">
-                            <img src="assets/mascotte/anim-mascotte.svg" alt="Avatar" width="120" height="120">
-                            <button class="avatar-edit">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                    <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/>
-                                </svg>
-                            </button>
-                        </div>
+            <div class="profile-layout">
+
+                <!-- SIDEBAR -->
+                <aside>
+                    <div class="profile-sidebar-card">
+                        <div class="profile-avatar">🦊</div>
                         <h2 class="profile-name">Jean Dupont</h2>
-                        <p class="profile-role">Animateur périscolaire</p>
+                        <p class="profile-role-tag">Animateur périscolaire</p>
+
                         <div class="profile-stats">
                             <div class="profile-stat">
                                 <strong>12</strong>
-                                <span>Activités favorites</span>
+                                <span>Favoris</span>
                             </div>
                             <div class="profile-stat">
                                 <strong>3</strong>
-                                <span>Plannings sauvegardés</span>
+                                <span>Plannings</span>
                             </div>
                         </div>
+
+                        <ul class="profile-nav-list">
+                            <li class="profile-nav-item active">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                Informations
+                            </li>
+                            <li class="profile-nav-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                Mes favoris
+                            </li>
+                            <li class="profile-nav-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                Plannings sauvegardés
+                            </li>
+                            <li class="profile-nav-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"></path>
+                                </svg>
+                                Préférences
+                            </li>
+                        </ul>
+
+                        <button class="btn btn-secondary btn-logout">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            Déconnexion
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- CONTENU -->
+                <div class="profile-section">
+
+                    <!-- Informations personnelles -->
+                    <div class="profile-card">
+                        <h3 class="profile-card-title">Informations personnelles</h3>
+                        <p class="profile-card-sub">Tes coordonnées et ton profil professionnel</p>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Prénom</label>
+                                <input type="text" class="form-input" value="Jean" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Nom</label>
+                                <input type="text" class="form-input" value="Dupont" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" value="jean.dupont@exemple.com" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Fonction</label>
+                            <select class="form-select" disabled>
+                                <option selected>Animateur périscolaire</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Structure</label>
+                            <input type="text" class="form-input" value="Centre de loisirs Les Petits Explorateurs" readonly>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" onclick="alert('Fonctionnalité bientôt disponible !')">
+                            Modifier mes informations
+                        </button>
                     </div>
 
-                    <nav class="profile-nav">
-                        <a href="#" class="profile-nav-item active">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
-                            </svg>
-                            Informations personnelles
-                        </a>
-                        <a href="#" class="profile-nav-item">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
-                            </svg>
-                            Structure & équipe
-                        </a>
-                        <a href="#" class="profile-nav-item">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-                            </svg>
-                            Préférences
-                        </a>
-                        <a href="#" class="profile-nav-item">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                                <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd"/>
-                            </svg>
-                            Paramètres
-                        </a>
-                    </nav>
+                    <!-- Favoris -->
+                    <div class="profile-card">
+                        <h3 class="profile-card-title">Mes activités favorites</h3>
+                        <p class="profile-card-sub">Retrouve rapidement tes activités préférées</p>
 
-                    <button class="btn btn-ghost btn-full" style="margin-top: 1rem;">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clipRule="evenodd"/>
-                        </svg>
-                        Déconnexion
-                    </button>
-                </div>
-
-                <!-- Main Content -->
-                <div class="profile-main">
-                    <div class="card">
-                        <h3 class="card-title">Informations personnelles</h3>
-                        
-                        <form class="profile-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="firstName">Prénom</label>
-                                    <input type="text" id="firstName" value="Jean" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastName">Nom</label>
-                                    <input type="text" id="lastName" value="Dupont" readonly>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" value="jean.dupont@example.com" readonly>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone">Téléphone</label>
-                                <input type="tel" id="phone" value="+33 6 12 34 56 78" readonly>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="role">Fonction</label>
-                                <select id="role" disabled>
-                                    <option value="animator" selected>Animateur périscolaire</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="structure">Structure</label>
-                                <input type="text" id="structure" value="Centre de loisirs Les Petits Explorateurs" readonly>
-                            </div>
-
-                            <button type="button" class="btn btn-primary" onclick="alert('Fonctionnalité disponible prochainement !')">
-                                Modifier mes informations
-                            </button>
-                        </form>
-                    </div>
-
-                    <div class="card">
-                        <h3 class="card-title">Mes activités favorites</h3>
-                        <p class="card-subtitle">Retrouve rapidement tes activités préférées</p>
-                        
-                        <div class="favorites-preview">
-                            <div class="favorite-item">
-                                <div class="favorite-icon">🎨</div>
+                        <div class="favorites-list">
+                            <div class="favorite-row">
+                                <div class="favorite-emoji">🎨</div>
                                 <div class="favorite-info">
                                     <strong>Atelier peinture sur galets</strong>
-                                    <span>6-10 ans • 45 min • Facile</span>
+                                    <span>6–10 ans · 45 min · Facile</span>
                                 </div>
                             </div>
-                            <div class="favorite-item">
-                                <div class="favorite-icon">⚽</div>
+                            <div class="favorite-row">
+                                <div class="favorite-emoji">⚽</div>
                                 <div class="favorite-info">
                                     <strong>Parcours d'obstacles</strong>
-                                    <span>5-12 ans • 30 min • Facile</span>
+                                    <span>5–12 ans · 30 min · Facile</span>
                                 </div>
                             </div>
-                            <div class="favorite-item">
-                                <div class="favorite-icon">🎭</div>
+                            <div class="favorite-row">
+                                <div class="favorite-emoji">🎭</div>
                                 <div class="favorite-info">
                                     <strong>Théâtre d'improvisation</strong>
-                                    <span>8-12 ans • 60 min • Moyen</span>
+                                    <span>8–12 ans · 60 min · Moyen</span>
                                 </div>
                             </div>
                         </div>
 
-                        <a href="inventaire.html" class="btn btn-secondary btn-full">
-                            Voir toutes mes activités favorites
-                        </a>
+                        <a href="inventaire.html" class="btn btn-secondary">Voir toutes mes activités</a>
                     </div>
 
-                    <div class="card">
-                        <h3 class="card-title">Statistiques d'utilisation</h3>
+                    <!-- Statistiques -->
+                    <div class="profile-card">
+                        <h3 class="profile-card-title">Statistiques d'utilisation</h3>
+                        <p class="profile-card-sub">Ton activité sur Anim'Tools</p>
                         <div class="stats-grid">
-                            <div class="stat-card">
-                                <div class="stat-value">47</div>
-                                <div class="stat-label">Activités consultées</div>
+                            <div class="stat-box">
+                                <div class="stat-box-value">47</div>
+                                <div class="stat-box-label">Activités consultées</div>
                             </div>
-                            <div class="stat-card">
-                                <div class="stat-value">12</div>
-                                <div class="stat-label">Favoris</div>
+                            <div class="stat-box">
+                                <div class="stat-box-value">12</div>
+                                <div class="stat-box-label">Favoris</div>
                             </div>
-                            <div class="stat-card">
-                                <div class="stat-value">3</div>
-                                <div class="stat-label">Plannings créés</div>
+                            <div class="stat-box">
+                                <div class="stat-box-value">3</div>
+                                <div class="stat-box-label">Plannings créés</div>
                             </div>
-                            <div class="stat-card">
-                                <div class="stat-value">8</div>
-                                <div class="stat-label">PDF exportés</div>
+                            <div class="stat-box">
+                                <div class="stat-box-value">8</div>
+                                <div class="stat-box-label">PDF exportés</div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER — structure identique à index.html -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
+            <div class="footer-content">
+                <div class="footer-section">
                     <h4>Anim'Tools</h4>
-                    <p>L'assistant numérique des animateurs périscolaires.</p>
+                    <p>Votre assistant personnel pour l'animation périscolaire. Conçu par des animateurs, pour des animateurs.</p>
                 </div>
-                <div class="footer-col">
+                <div class="footer-section">
                     <h4>Navigation</h4>
-                    <a href="inventaire.html">Inventaire d'activités</a>
-                    <a href="planning.html">Planning</a>
-                    <a href="reglementation.html">Réglementation</a>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="inventaire.html">Inventaire</a></li>
+                        <li><a href="planning.html">Planning</a></li>
+                        <li><a href="reglementation.html">Réglementation</a></li>
+                        <li><a href="administratif.html">Administratif</a></li>
+                    </ul>
                 </div>
-                <div class="footer-col">
+                <div class="footer-section">
                     <h4>Ressources</h4>
-                    <a href="aide.html">Aide & FAQ</a>
-                    <a href="apropos.html">À propos</a>
-                    <a href="contact.html">Contact</a>
+                    <ul>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#aide">Aide</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Anim'Tools - Version 1.0</p>
+                <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/fake-ia.js"></script>
     <script>
-        // Empêcher la navigation vers les liens désactivés
-        document.querySelectorAll('a[href="#"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                alert('Fonctionnalité bientôt disponible !');
-            });
-        });
-
-        // Message déconnexion
-        document.querySelector('.btn-ghost').addEventListener('click', function() {
-            if (confirm('Cette démo ne nécessite pas de connexion.\n\nSouhaitez-vous retourner à l\'accueil ?')) {
+        document.querySelector('.btn-logout').addEventListener('click', function() {
+            if (confirm('Cette démo ne nécessite pas de connexion.\nRetourner à l\'accueil ?')) {
                 window.location.href = 'index.html';
             }
+        });
+        document.querySelectorAll('.profile-nav-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.profile-nav-item').forEach(function(i) { i.classList.remove('active'); });
+                this.classList.add('active');
+            });
         });
     </script>
 </body>

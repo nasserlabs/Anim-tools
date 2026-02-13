@@ -1,331 +1,385 @@
 /**
- * ANIM'TOOLS - MODULE RÉGLEMENTATION
- * Gestion des accordéons, checklists et quiz BAFA
+ * Anim'Tools – Module Réglementation
+ * Gère : onglets, accordéon, checklist, quiz interactif
  */
 
-class RegulationModule {
-    constructor() {
-        this.quizScore = 0;
-        this.quizAnswers = {};
-        this.init();
-    }
-    
-    /**
-     * Initialisation
-     */
-    init() {
-        this.initAccordions();
-        this.initChecklists();
-        this.initQuiz();
-        console.log('📋 Module Réglementation initialisé');
-    }
-    
-    /**
-     * Initialiser les accordéons
-     */
-    initAccordions() {
-        const accordions = document.querySelectorAll('.regulation-accordion');
-        
-        accordions.forEach(accordion => {
-            const header = accordion.querySelector('.accordion-header');
-            const content = accordion.querySelector('.accordion-content');
-            
-            header.addEventListener('click', () => {
-                const isOpen = accordion.classList.contains('active');
-                
-                // Fermer tous les autres (comportement exclusif)
-                document.querySelectorAll('.regulation-accordion.active').forEach(item => {
-                    if (item !== accordion) {
-                        item.classList.remove('active');
-                        item.querySelector('.accordion-content').style.maxHeight = null;
-                    }
-                });
-                
-                // Toggle l'accordéon cliqué
-                if (isOpen) {
-                    accordion.classList.remove('active');
-                    content.style.maxHeight = null;
-                } else {
-                    accordion.classList.add('active');
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                }
-            });
-        });
-    }
-    
-    /**
-     * Initialiser les checklists
-     */
-    initChecklists() {
-        const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-        
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', (e) => {
-                this.updateChecklistProgress(e.target);
-            });
-        });
-        
-        // Initialiser les barres de progression
-        this.updateAllChecklistProgress();
-    }
-    
-    /**
-     * Mettre à jour la progression d'une checklist
-     */
-    updateChecklistProgress(checkbox) {
-        const checklist = checkbox.closest('.regulation-checklist');
-        if (!checklist) return;
-        
-        const progressBar = checklist.querySelector('.checklist-progress-fill');
-        const progressText = checklist.querySelector('.checklist-progress-text');
-        
-        if (!progressBar || !progressText) return;
-        
-        const checkboxes = checklist.querySelectorAll('.checklist-item input[type="checkbox"]');
-        const checked = checklist.querySelectorAll('.checklist-item input[type="checkbox"]:checked').length;
-        const total = checkboxes.length;
-        const percentage = Math.round((checked / total) * 100);
-        
-        progressBar.style.width = percentage + '%';
-        progressText.textContent = `${checked}/${total} étapes complétées`;
-        
-        // Animation de célébration si tout est coché
-        if (checked === total) {
-            this.showCompletionMessage(checklist);
-        }
-    }
-    
-    /**
-     * Mettre à jour toutes les barres de progression
-     */
-    updateAllChecklistProgress() {
-        const checklists = document.querySelectorAll('.regulation-checklist');
-        checklists.forEach(checklist => {
-            const firstCheckbox = checklist.querySelector('.checklist-item input[type="checkbox"]');
-            if (firstCheckbox) {
-                this.updateChecklistProgress(firstCheckbox);
-            }
-        });
-    }
-    
-    /**
-     * Afficher un message de félicitations
-     */
-    showCompletionMessage(checklist) {
-        const title = checklist.querySelector('.checklist-title');
-        if (!title) return;
-        
-        const message = document.createElement('div');
-        message.className = 'completion-message';
-        message.innerHTML = '🎉 Checklist complète !';
-        
-        title.appendChild(message);
-        
-        setTimeout(() => {
-            message.remove();
-        }, 3000);
-    }
-    
-    /**
-     * Initialiser le quiz BAFA
-     */
-    initQuiz() {
-        const quizForm = document.getElementById('quizForm');
-        if (!quizForm) return;
-        
-        quizForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.checkQuizAnswers();
-        });
-        
-        // Réinitialiser le quiz
-        const resetBtn = document.getElementById('resetQuiz');
-        if (resetBtn) {
-            resetBtn.addEventListener('click', () => {
-                this.resetQuiz();
-            });
-        }
-    }
-    
-    /**
-     * Vérifier les réponses du quiz
-     */
-    checkQuizAnswers() {
-        const questions = document.querySelectorAll('.quiz-question');
-        let score = 0;
-        const totalQuestions = questions.length;
-        
-        // Réponses correctes (à adapter selon les vraies questions)
-        const correctAnswers = {
-            q1: 'b', // Taux d'encadrement: 1 pour 12
-            q2: 'a', // Trousse de secours: obligatoire
-            q3: 'b', // Autorisation sortie: écrite
-            q4: 'c', // Distance de surveillance: visuelle
-            q5: 'a', // Protocole sanitaire: lavage mains
-            q6: 'b', // Allergy: liste à jour
-            q7: 'c', // Document: projet pédagogique
-            q8: 'a'  // Responsabilité: civile
-        };
-        
-        questions.forEach((question, index) => {
-            const questionId = `q${index + 1}`;
-            const selectedAnswer = question.querySelector('input[type="radio"]:checked');
-            const feedbackDiv = question.querySelector('.quiz-feedback');
-            
-            if (!feedbackDiv) return;
-            
-            if (!selectedAnswer) {
-                feedbackDiv.className = 'quiz-feedback quiz-warning';
-                feedbackDiv.innerHTML = '⚠️ Pas de réponse sélectionnée';
-                feedbackDiv.style.display = 'block';
-                return;
-            }
-            
-            const userAnswer = selectedAnswer.value;
-            const isCorrect = userAnswer === correctAnswers[questionId];
-            
-            if (isCorrect) {
-                score++;
-                feedbackDiv.className = 'quiz-feedback quiz-correct';
-                feedbackDiv.innerHTML = '✅ Bonne réponse !';
-            } else {
-                feedbackDiv.className = 'quiz-feedback quiz-incorrect';
-                feedbackDiv.innerHTML = `❌ Réponse incorrecte. La bonne réponse est ${correctAnswers[questionId].toUpperCase()}.`;
-            }
-            
-            feedbackDiv.style.display = 'block';
-        });
-        
-        this.showQuizResults(score, totalQuestions);
-    }
-    
-    /**
-     * Afficher les résultats du quiz
-     */
-    showQuizResults(score, total) {
-        const resultsDiv = document.getElementById('quizResults');
-        if (!resultsDiv) return;
-        
-        const percentage = Math.round((score / total) * 100);
-        let message = '';
-        let messageClass = '';
-        
-        if (percentage >= 80) {
-            message = '🎉 Excellent ! Tu maîtrises bien la réglementation !';
-            messageClass = 'quiz-result-excellent';
-        } else if (percentage >= 60) {
-            message = '👍 Bien joué ! Quelques points à réviser.';
-            messageClass = 'quiz-result-good';
-        } else {
-            message = '📚 Continue à réviser ! La réglementation est importante.';
-            messageClass = 'quiz-result-needs-work';
-        }
-        
-        resultsDiv.innerHTML = `
-            <div class="quiz-result ${messageClass}">
-                <h3>Résultat : ${score}/${total} (${percentage}%)</h3>
-                <p>${message}</p>
-                <button id="resetQuiz" class="btn btn-secondary">Recommencer le quiz</button>
-            </div>
-        `;
-        
-        resultsDiv.style.display = 'block';
-        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        
-        // Réattacher l'événement reset
-        document.getElementById('resetQuiz').addEventListener('click', () => {
-            this.resetQuiz();
-        });
-    }
-    
-    /**
-     * Réinitialiser le quiz
-     */
-    resetQuiz() {
-        // Décocher toutes les réponses
-        document.querySelectorAll('.quiz-question input[type="radio"]').forEach(radio => {
-            radio.checked = false;
-        });
-        
-        // Masquer tous les feedbacks
-        document.querySelectorAll('.quiz-feedback').forEach(feedback => {
-            feedback.style.display = 'none';
-        });
-        
-        // Masquer les résultats
-        const resultsDiv = document.getElementById('quizResults');
-        if (resultsDiv) {
-            resultsDiv.style.display = 'none';
-        }
-        
-        // Scroll vers le haut du quiz
-        const quizForm = document.getElementById('quizForm');
-        if (quizForm) {
-            quizForm.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
-    
-    /**
-     * Sauvegarder l'état de la checklist (localStorage)
-     */
-    saveChecklistState() {
-        const checklists = document.querySelectorAll('.regulation-checklist');
-        const state = {};
-        
-        checklists.forEach((checklist, index) => {
-            const checkboxes = checklist.querySelectorAll('.checklist-item input[type="checkbox"]');
-            state[`checklist-${index}`] = Array.from(checkboxes).map(cb => cb.checked);
-        });
-        
-        try {
-            localStorage.setItem('animtools_checklists', JSON.stringify(state));
-        } catch (error) {
-            console.error('Erreur sauvegarde checklists:', error);
-        }
-    }
-    
-    /**
-     * Charger l'état de la checklist (localStorage)
-     */
-    loadChecklistState() {
-        try {
-            const saved = localStorage.getItem('animtools_checklists');
-            if (!saved) return;
-            
-            const state = JSON.parse(saved);
-            const checklists = document.querySelectorAll('.regulation-checklist');
-            
-            checklists.forEach((checklist, index) => {
-                const checkboxes = checklist.querySelectorAll('.checklist-item input[type="checkbox"]');
-                const savedState = state[`checklist-${index}`];
-                
-                if (savedState) {
-                    checkboxes.forEach((cb, cbIndex) => {
-                        cb.checked = savedState[cbIndex] || false;
-                    });
-                }
-            });
-            
-            this.updateAllChecklistProgress();
-        } catch (error) {
-            console.error('Erreur chargement checklists:', error);
-        }
-    }
-}
+const RegulationModule = (function () {
 
-// Initialiser au chargement
-document.addEventListener('DOMContentLoaded', () => {
-    if (document.querySelector('.regulation-content')) {
-        const regulationModule = new RegulationModule();
-        
-        // Charger l'état sauvegardé
-        regulationModule.loadChecklistState();
-        
-        // Sauvegarder à chaque changement
-        document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                regulationModule.saveChecklistState();
-            });
-        });
+  /* ─────────────────────────────────────────────────────────────────
+   * QUIZ DATA
+   * ───────────────────────────────────────────────────────────────── */
+  const QUIZ_QUESTIONS = [
+    {
+      q: "Quel est le taux d'encadrement pour les moins de 6 ans en accueil périscolaire ?",
+      options: ['1 animateur pour 6 enfants', '1 animateur pour 8 enfants', '1 animateur pour 12 enfants', '1 animateur pour 14 enfants'],
+      correct: 0,
+      explanation: "En périscolaire, pour les moins de 6 ans, le ratio légal est de 1 animateur pour 6 enfants (Article R227-16 du CASF)."
+    },
+    {
+      q: "En centre de loisirs extrascolaire, quel ratio s'applique pour les 6 ans et plus ?",
+      options: ['1 pour 6', '1 pour 8', '1 pour 12', '1 pour 14'],
+      correct: 2,
+      explanation: "En extrascolaire (vacances, mercredis), le taux est de 1 animateur pour 12 enfants de 6 ans et plus."
+    },
+    {
+      q: "Qu'est-ce qu'un PAI dans le contexte d'un ACM ?",
+      options: ["Plan d'Animation Innovant", "Projet d'Accueil Individualisé", "Programme Annuel d'Intervention", "Protocole d'Aide Immédiate"],
+      correct: 1,
+      explanation: "Le PAI (Projet d'Accueil Individualisé) est un document établi avec la famille pour gérer les traitements médicaux ou allergies d'un enfant."
+    },
+    {
+      q: "Quel numéro appeler en cas d'urgence médicale en France ?",
+      options: ['17', '18', '15', '112'],
+      correct: 2,
+      explanation: "Le 15 est le SAMU, spécialisé pour les urgences médicales. Le 18 (pompiers) et le 112 (urgences Europe) peuvent aussi être appelés."
+    },
+    {
+      q: "Quelle est la durée minimale du stage pratique du BAFA ?",
+      options: ['8 jours', '10 jours', '14 jours', '21 jours'],
+      correct: 2,
+      explanation: "Le stage pratique du BAFA doit durer au minimum 14 jours, consécutifs ou non, dans une structure agréée."
+    },
+    {
+      q: "Un animateur peut-il administrer un médicament sans ordonnance à un enfant ?",
+      options: ["Oui, en cas d'urgence", 'Non, jamais sans ordonnance et autorisation parentale', "Oui si les parents ont appelé", 'Oui pour les médicaments courants'],
+      correct: 1,
+      explanation: "Aucun médicament ne peut être administré sans ordonnance médicale ET autorisation parentale écrite. C'est une obligation légale."
+    },
+    {
+      q: "Que signifie l'acronyme ACM ?",
+      options: ["Association des Centres de Musique", "Accueil Collectif de Mineurs", "Animation et Culture des Mineurs", "Agrément Centre Municipal"],
+      correct: 1,
+      explanation: "ACM signifie Accueil Collectif de Mineurs. C'est le terme officiel pour désigner les centres de loisirs, colonies, accueils périscolaires."
+    },
+    {
+      q: "À partir de quel âge peut-on s'inscrire en BAFA ?",
+      options: ['16 ans', '17 ans', '18 ans', '15 ans avec accord parental'],
+      correct: 1,
+      explanation: "Il faut avoir au moins 17 ans révolus pour s'inscrire et commencer le parcours BAFA."
+    },
+    {
+      q: "Un exercice d'évacuation incendie est obligatoire…",
+      options: ["Une fois par an", "Dans les 3 premiers mois de chaque session", "Tous les 6 mois", "À chaque nouveau groupe d'enfants"],
+      correct: 1,
+      explanation: "La réglementation impose un exercice d'évacuation dans les 3 premiers mois de chaque nouvelle session ou rentrée."
+    },
+    {
+      q: "Quel document doit obligatoirement être remis avant une sortie extérieure ?",
+      options: ["Contrat de sortie", "Autorisation parentale", "Certificat médical", "Attestation d'assurance"],
+      correct: 1,
+      explanation: "Une autorisation parentale signée est obligatoire pour toute sortie hors du lieu d'accueil. Sans elle, l'enfant ne peut participer à la sortie."
     }
-});
+  ];
+
+  /* ─────────────────────────────────────────────────────────────────
+   * ÉTAT QUIZ
+   * ───────────────────────────────────────────────────────────────── */
+  let quizState = {
+    currentQ: 0,
+    score: 0,
+    answered: false,
+    finished: false,
+    responses: []
+  };
+
+  /* ─────────────────────────────────────────────────────────────────
+   * ONGLETS PRINCIPAUX
+   * ───────────────────────────────────────────────────────────────── */
+  function initTabs() {
+    const tabs = document.querySelectorAll('.reglem-tab');
+    const panels = document.querySelectorAll('.reglem-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        panels.forEach(p => p.classList.remove('active'));
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        const target = document.getElementById('tab-' + tab.dataset.tab);
+        if (target) {
+          target.classList.add('active');
+          // Lancer le quiz si onglet quiz
+          if (tab.dataset.tab === 'quiz' && !quizState.finished) {
+            renderQuiz();
+          }
+        }
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+   * FICHES CLIQUABLES (encadrement)
+   * ───────────────────────────────────────────────────────────────── */
+  function initFiches() {
+    document.querySelectorAll('.reglem-fiche').forEach(fiche => {
+      fiche.addEventListener('click', () => {
+        const id = fiche.dataset.fiche;
+        const detail = document.getElementById('detail-' + id);
+        const isOpen = fiche.classList.contains('open');
+
+        // Fermer toutes les fiches
+        document.querySelectorAll('.reglem-fiche').forEach(f => {
+          f.classList.remove('open');
+          const d = document.getElementById('detail-' + f.dataset.fiche);
+          if (d) d.style.maxHeight = '0';
+        });
+
+        if (!isOpen && detail) {
+          fiche.classList.add('open');
+          detail.style.maxHeight = detail.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+   * ACCORDÉON (sorties)
+   * ───────────────────────────────────────────────────────────────── */
+  function initAccordion() {
+    document.querySelectorAll('.reglem-accordion-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        // Fermer tous
+        document.querySelectorAll('.reglem-accordion-btn').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.style.maxHeight = '0';
+        });
+        if (!expanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.nextElementSibling.style.maxHeight = btn.nextElementSibling.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+   * CHECKLIST (sorties)
+   * ───────────────────────────────────────────────────────────────── */
+  const CHECKLIST_STORAGE = 'animtools_sortie_checklist';
+
+  function loadChecklist() {
+    try {
+      return JSON.parse(localStorage.getItem(CHECKLIST_STORAGE)) || {};
+    } catch { return {}; }
+  }
+
+  function saveChecklist(state) {
+    try {
+      localStorage.setItem(CHECKLIST_STORAGE, JSON.stringify(state));
+    } catch { }
+  }
+
+  function initChecklist() {
+    const checkboxes = document.querySelectorAll('.reglem-checklist input[type="checkbox"]');
+    if (!checkboxes.length) return;
+
+    const stored = loadChecklist();
+
+    checkboxes.forEach(cb => {
+      if (stored[cb.dataset.key]) cb.checked = true;
+      cb.addEventListener('change', () => {
+        const state = loadChecklist();
+        state[cb.dataset.key] = cb.checked;
+        saveChecklist(state);
+        updateChecklistProgress();
+      });
+    });
+
+    updateChecklistProgress();
+
+    const resetBtn = document.getElementById('resetChecklist');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        checkboxes.forEach(cb => { cb.checked = false; });
+        saveChecklist({});
+        updateChecklistProgress();
+      });
+    }
+  }
+
+  function updateChecklistProgress() {
+    const checkboxes = document.querySelectorAll('.reglem-checklist input[type="checkbox"]');
+    const total = checkboxes.length;
+    const done = Array.from(checkboxes).filter(cb => cb.checked).length;
+    const pct = total > 0 ? (done / total * 100) : 0;
+
+    const bar = document.getElementById('checkProgress');
+    const label = document.getElementById('checkLabel');
+    if (bar) bar.style.width = pct + '%';
+    if (label) label.textContent = `${done} / ${total} éléments`;
+
+    // Couleur dynamique
+    if (bar) {
+      if (pct === 100) bar.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+      else if (pct >= 60) bar.style.background = 'linear-gradient(90deg, #f59e0b, #d97706)';
+      else bar.style.background = 'linear-gradient(90deg, #667eea, #764ba2)';
+    }
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+   * QUIZ
+   * ───────────────────────────────────────────────────────────────── */
+  function renderQuiz() {
+    const container = document.getElementById('quizContainer');
+    if (!container) return;
+
+    if (quizState.finished) {
+      renderQuizResults(container);
+      return;
+    }
+
+    const q = QUIZ_QUESTIONS[quizState.currentQ];
+    const progress = ((quizState.currentQ) / QUIZ_QUESTIONS.length * 100).toFixed(0);
+
+    container.innerHTML = `
+      <div class="quiz-progress">
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" style="width: ${progress}%"></div>
+        </div>
+        <span class="quiz-progress-label">Question ${quizState.currentQ + 1} / ${QUIZ_QUESTIONS.length}</span>
+      </div>
+
+      <div class="quiz-question-card">
+        <div class="quiz-question-num">Question ${quizState.currentQ + 1}</div>
+        <h3 class="quiz-question-text">${q.q}</h3>
+
+        <div class="quiz-options" id="quizOptions">
+          ${q.options.map((opt, i) => `
+            <button class="quiz-option" data-index="${i}">
+              <span class="quiz-opt-letter">${String.fromCharCode(65 + i)}</span>
+              <span>${opt}</span>
+            </button>
+          `).join('')}
+        </div>
+
+        <div class="quiz-feedback" id="quizFeedback" style="display:none;"></div>
+
+        <div class="quiz-nav" style="display:none;" id="quizNav">
+          <button class="btn-quiz-next" id="quizNext">
+            ${quizState.currentQ + 1 < QUIZ_QUESTIONS.length ? 'Question suivante →' : 'Voir mes résultats 🎯'}
+          </button>
+        </div>
+      </div>
+    `;
+
+    // Gestion des réponses
+    container.querySelectorAll('.quiz-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (quizState.answered) return;
+        quizState.answered = true;
+
+        const chosen = parseInt(btn.dataset.index);
+        const isCorrect = chosen === q.correct;
+
+        if (isCorrect) quizState.score++;
+        quizState.responses.push({ correct: isCorrect });
+
+        // Afficher bonne/mauvaise réponse
+        container.querySelectorAll('.quiz-option').forEach((b, i) => {
+          if (i === q.correct) b.classList.add('correct');
+          else if (i === chosen) b.classList.add('wrong');
+          b.disabled = true;
+        });
+
+        // Feedback
+        const feedback = document.getElementById('quizFeedback');
+        if (feedback) {
+          feedback.style.display = 'block';
+          feedback.className = 'quiz-feedback ' + (isCorrect ? 'feedback-correct' : 'feedback-wrong');
+          feedback.innerHTML = `
+            <span>${isCorrect ? '✅ Bonne réponse !' : '❌ Mauvaise réponse.'}</span>
+            <p>${q.explanation}</p>
+          `;
+        }
+
+        document.getElementById('quizNav').style.display = 'block';
+      });
+    });
+
+    // Bouton suivant
+    document.getElementById('quizNext')?.addEventListener('click', () => {
+      quizState.currentQ++;
+      quizState.answered = false;
+      if (quizState.currentQ >= QUIZ_QUESTIONS.length) {
+        quizState.finished = true;
+      }
+      renderQuiz();
+    });
+  }
+
+  function renderQuizResults(container) {
+    const total = QUIZ_QUESTIONS.length;
+    const score = quizState.score;
+    const pct = Math.round(score / total * 100);
+
+    let grade, gradeClass;
+    if (pct >= 80) { grade = '🏆 Expert !'; gradeClass = 'grade-expert'; }
+    else if (pct >= 60) { grade = '✅ Bon niveau'; gradeClass = 'grade-good'; }
+    else if (pct >= 40) { grade = '📚 À revoir'; gradeClass = 'grade-medium'; }
+    else { grade = '🔄 À améliorer'; gradeClass = 'grade-low'; }
+
+    container.innerHTML = `
+      <div class="quiz-results">
+        <div class="quiz-results-header">
+          <div class="quiz-results-score-ring">
+            <svg viewBox="0 0 120 120" width="120" height="120">
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#e2e8f0" stroke-width="10"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="url(#scoreGrad)" stroke-width="10"
+                stroke-dasharray="${2 * Math.PI * 50}"
+                stroke-dashoffset="${2 * Math.PI * 50 * (1 - pct / 100)}"
+                stroke-linecap="round"
+                transform="rotate(-90 60 60)"/>
+              <defs>
+                <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#667EEA"/>
+                  <stop offset="100%" stop-color="#764BA2"/>
+                </linearGradient>
+              </defs>
+              <text x="60" y="60" text-anchor="middle" dominant-baseline="central" class="score-ring-text">${pct}%</text>
+            </svg>
+          </div>
+          <div class="quiz-results-info">
+            <div class="quiz-results-grade ${gradeClass}">${grade}</div>
+            <p class="quiz-results-score">${score} bonne${score > 1 ? 's' : ''} réponse${score > 1 ? 's' : ''} sur ${total}</p>
+            <p class="quiz-results-sub">Score : ${pct}%</p>
+          </div>
+        </div>
+
+        <div class="quiz-results-breakdown">
+          <h4>Récapitulatif</h4>
+          ${quizState.responses.map((r, i) => `
+            <div class="quiz-recap-item ${r.correct ? 'recap-ok' : 'recap-ko'}">
+              <span>${r.correct ? '✅' : '❌'}</span>
+              <span>Question ${i + 1} : ${QUIZ_QUESTIONS[i].q.substring(0, 50)}…</span>
+            </div>
+          `).join('')}
+        </div>
+
+        <button class="btn-quiz-restart" id="quizRestart">🔄 Recommencer le quiz</button>
+      </div>
+    `;
+
+    document.getElementById('quizRestart')?.addEventListener('click', () => {
+      quizState = { currentQ: 0, score: 0, answered: false, finished: false, responses: [] };
+      renderQuiz();
+    });
+  }
+
+  /* ─────────────────────────────────────────────────────────────────
+   * INIT
+   * ───────────────────────────────────────────────────────────────── */
+  function init() {
+    initTabs();
+    initFiches();
+    initAccordion();
+    initChecklist();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();

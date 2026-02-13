@@ -1,133 +1,555 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Réglementation pour l'animation périscolaire">
-    <title>Réglementation - Anim'Tools</title>
-    
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réglementation – Anim'Tools</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!-- NAVIGATION -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">Anim'Tools</a>
-            
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Accueil</a></li>
-                <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
-                <li><a href="planning.html" class="nav-link">Planning</a></li>
-                <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
-                <li><a href="administratif.html" class="nav-link">Administratif</a></li>
-            </ul>
-            
-            <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
-                </svg>
-            </button>
-        </div>
-    </nav>
-    
-    <!-- SEARCH OVERLAY -->
-    <div class="search-overlay" id="searchOverlay">
-        <div class="search-container">
-            <div class="search-header">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
-                </svg>
-                <input type="text" class="search-input" id="searchInput" placeholder="Rechercher une activité..." autocomplete="off">
-                <button class="search-close" id="searchClose" aria-label="Fermer">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-            <div class="search-results" id="searchResults"></div>
-        </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVBAR (identique aux autres pages)
+  ═══════════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-content">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logos/logo.svg" alt="Anim'Tools" class="nav-logo-img" onerror="this.style.display='none'"/>
+        <span class="nav-logo-text">Anim'<strong>Tools</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="inventaire.html">Inventaire</a></li>
+        <li><a href="planning.html">Planning</a></li>
+        <li><a href="reglementation.html" class="active">Réglementation</a></li>
+        <li><a href="administratif.html">Administratif</a></li>
+        <li><a href="bafa-roadmap.html">BAFA</a></li>
+      </ul>
+      <div class="nav-actions">
+        <!-- Bouton Compte -->
+        <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+        <!-- Bouton Recherche -->
+        <button class="search-trigger" id="searchTrigger" aria-label="Rechercher">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </div>
     </div>
-    
-    <!-- PAGE HEADER -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">Réglementation</h1>
-            <p class="hero-subtitle">Fiches synthétiques pour respecter les normes</p>
-            <p class="hero-description">
-                Tout ce qu'il faut savoir sur la sécurité, les taux d'encadrement, 
-                les sorties et l'hygiène en accueil périscolaire.
-            </p>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════════════ -->
+  <header class="reglem-hero">
+    <div class="reglem-hero-content">
+      <div class="reglem-hero-badge">⚖️ Réglementation</div>
+      <h1>Cadre réglementaire<br><span>des ACM</span></h1>
+      <p>Tout ce qu'un animateur doit connaître : taux d'encadrement, règles de sortie, protocoles de sécurité. Mis à jour 2024.</p>
+      <div class="reglem-hero-stats">
+        <div class="stat-pill">
+          <span class="stat-num">4</span>
+          <span class="stat-label">thèmes couverts</span>
         </div>
+        <div class="stat-pill">
+          <span class="stat-num">12</span>
+          <span class="stat-label">fiches pratiques</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">1</span>
+          <span class="stat-label">quiz interactif</span>
+        </div>
+      </div>
+    </div>
+    <div class="reglem-hero-visual">
+      <div class="reglem-doc-stack">
+        <div class="reglem-doc-card reglem-doc-1">📋 Taux d'encadrement</div>
+        <div class="reglem-doc-card reglem-doc-2">🚌 Règles de sortie</div>
+        <div class="reglem-doc-card reglem-doc-3">🦺 Sécurité</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVIGATION THÈMES
+  ═══════════════════════════════════════════════════════════════════ -->
+  <section class="reglem-tabs-section">
+    <div class="container">
+      <div class="reglem-tabs" role="tablist" aria-label="Thèmes réglementation">
+        <button class="reglem-tab active" data-tab="encadrement" role="tab" aria-selected="true">
+          <span class="tab-icon">👥</span>
+          <span>Encadrement</span>
+        </button>
+        <button class="reglem-tab" data-tab="sorties" role="tab" aria-selected="false">
+          <span class="tab-icon">🚌</span>
+          <span>Sorties</span>
+        </button>
+        <button class="reglem-tab" data-tab="securite" role="tab" aria-selected="false">
+          <span class="tab-icon">🦺</span>
+          <span>Sécurité</span>
+        </button>
+        <button class="reglem-tab" data-tab="quiz" role="tab" aria-selected="false">
+          <span class="tab-icon">🧠</span>
+          <span>Quiz</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CONTENU PRINCIPAL
+  ═══════════════════════════════════════════════════════════════════ -->
+  <main class="reglem-main container">
+
+    <!-- ── TAB 1 : TAUX D'ENCADREMENT ── -->
+    <section class="reglem-panel active" id="tab-encadrement" role="tabpanel">
+      <div class="reglem-intro">
+        <h2>Taux d'encadrement</h2>
+        <p>Le taux d'encadrement définit le nombre minimum d'animateurs requis par rapport au nombre d'enfants. Ces ratios sont fixés par le Code de l'action sociale et des familles (CASF) et varient selon l'âge des participants.</p>
+      </div>
+
+      <!-- Fiches cliquables -->
+      <div class="reglem-cards-grid">
+
+        <div class="reglem-fiche" data-fiche="periscolaire-moins6">
+          <div class="reglem-fiche-header" style="background: linear-gradient(135deg, #667EEA, #764BA2);">
+            <span class="reglem-fiche-emoji">👶</span>
+            <div>
+              <h3>Périscolaire – Moins de 6 ans</h3>
+              <span class="reglem-fiche-tag">ACM périscolaire</span>
+            </div>
+          </div>
+          <div class="reglem-fiche-body">
+            <div class="ratio-display">
+              <div class="ratio-box ratio-highlight">
+                <span class="ratio-num">1</span>
+                <span class="ratio-label">animateur</span>
+              </div>
+              <div class="ratio-sep">pour</div>
+              <div class="ratio-box">
+                <span class="ratio-num">6</span>
+                <span class="ratio-label">enfants</span>
+              </div>
+            </div>
+            <p>Règle stricte applicable lors des activités périscolaires pour les enfants de moins de 6 ans.</p>
+          </div>
+          <div class="reglem-fiche-detail" id="detail-periscolaire-moins6">
+            <ul>
+              <li>Ce ratio s'applique en accueil périscolaire (matin, midi, soir).</li>
+              <li>Un directeur peut être inclus dans le ratio s'il est présent auprès des enfants.</li>
+              <li>En cas d'activité aquatique : surveiller 1 enfant pour 1 animateur (recommandation).</li>
+              <li>Référence : Article R227-16 du CASF.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reglem-fiche" data-fiche="periscolaire-plus6">
+          <div class="reglem-fiche-header" style="background: linear-gradient(135deg, #F093FB, #F5576C);">
+            <span class="reglem-fiche-emoji">🧒</span>
+            <div>
+              <h3>Périscolaire – 6 ans et plus</h3>
+              <span class="reglem-fiche-tag">ACM périscolaire</span>
+            </div>
+          </div>
+          <div class="reglem-fiche-body">
+            <div class="ratio-display">
+              <div class="ratio-box ratio-highlight">
+                <span class="ratio-num">1</span>
+                <span class="ratio-label">animateur</span>
+              </div>
+              <div class="ratio-sep">pour</div>
+              <div class="ratio-box">
+                <span class="ratio-num">14</span>
+                <span class="ratio-label">enfants</span>
+              </div>
+            </div>
+            <p>Taux appliqué pour les enfants de 6 ans et plus en accueil périscolaire.</p>
+          </div>
+          <div class="reglem-fiche-detail" id="detail-periscolaire-plus6">
+            <ul>
+              <li>Applicable pour le temps méridien (pause déjeuner) et les accueils du matin/soir.</li>
+              <li>Le ratio peut être relevé à 1/18 dans le cadre du projet éducatif de territoire (PEDT).</li>
+              <li>Référence : Article R227-16 du CASF.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reglem-fiche" data-fiche="extrascolaire-moins6">
+          <div class="reglem-fiche-header" style="background: linear-gradient(135deg, #4FACFE, #00F2FE);">
+            <span class="reglem-fiche-emoji">☀️</span>
+            <div>
+              <h3>Extrascolaire – Moins de 6 ans</h3>
+              <span class="reglem-fiche-tag">Centre de loisirs</span>
+            </div>
+          </div>
+          <div class="reglem-fiche-body">
+            <div class="ratio-display">
+              <div class="ratio-box ratio-highlight">
+                <span class="ratio-num">1</span>
+                <span class="ratio-label">animateur</span>
+              </div>
+              <div class="ratio-sep">pour</div>
+              <div class="ratio-box">
+                <span class="ratio-num">8</span>
+                <span class="ratio-label">enfants</span>
+              </div>
+            </div>
+            <p>En centre de loisirs extrascolaire pour les moins de 6 ans.</p>
+          </div>
+          <div class="reglem-fiche-detail" id="detail-extrascolaire-moins6">
+            <ul>
+              <li>S'applique pendant les vacances scolaires et mercredis.</li>
+              <li>Le directeur est comptabilisé dans le ratio uniquement s'il participe directement aux activités.</li>
+              <li>Référence : Article R227-16 du CASF.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reglem-fiche" data-fiche="extrascolaire-plus6">
+          <div class="reglem-fiche-header" style="background: linear-gradient(135deg, #43E97B, #38F9D7);">
+            <span class="reglem-fiche-emoji">🏕️</span>
+            <div>
+              <h3>Extrascolaire – 6 ans et plus</h3>
+              <span class="reglem-fiche-tag">Centre de loisirs</span>
+            </div>
+          </div>
+          <div class="reglem-fiche-body">
+            <div class="ratio-display">
+              <div class="ratio-box ratio-highlight">
+                <span class="ratio-num">1</span>
+                <span class="ratio-label">animateur</span>
+              </div>
+              <div class="ratio-sep">pour</div>
+              <div class="ratio-box">
+                <span class="ratio-num">12</span>
+                <span class="ratio-label">enfants</span>
+              </div>
+            </div>
+            <p>Taux applicable en extrascolaire pour les 6 ans et plus.</p>
+          </div>
+          <div class="reglem-fiche-detail" id="detail-extrascolaire-plus6">
+            <ul>
+              <li>Valable pour les séjours, centres de vacances, colonies.</li>
+              <li>Lors de séjours avec hébergement, prévoir au moins 2 animateurs même pour de petits groupes.</li>
+              <li>Référence : Article R227-16 du CASF.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tableau récapitulatif -->
+      <div class="reglem-table-block">
+        <h3>📊 Tableau récapitulatif</h3>
+        <div class="reglem-table-wrapper">
+          <table class="reglem-table">
+            <thead>
+              <tr>
+                <th>Type d'accueil</th>
+                <th>Moins de 6 ans</th>
+                <th>6 ans et plus</th>
+                <th>Avec PEDT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Périscolaire</strong></td>
+                <td><span class="ratio-badge">1 / 6</span></td>
+                <td><span class="ratio-badge">1 / 14</span></td>
+                <td><span class="ratio-badge ratio-pedt">1 / 18</span></td>
+              </tr>
+              <tr>
+                <td><strong>Extrascolaire</strong></td>
+                <td><span class="ratio-badge">1 / 8</span></td>
+                <td><span class="ratio-badge">1 / 12</span></td>
+                <td><span class="ratio-badge ratio-na">—</span></td>
+              </tr>
+              <tr>
+                <td><strong>Séjour de vacances</strong></td>
+                <td><span class="ratio-badge">1 / 8</span></td>
+                <td><span class="ratio-badge">1 / 12</span></td>
+                <td><span class="ratio-badge ratio-na">—</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="reglem-source">Source : Code de l'action sociale et des familles (CASF) – Articles R227-14 à R227-26</p>
+      </div>
     </section>
-    
-    <!-- COMING SOON -->
-    <section class="section">
-        <div class="container">
-            <div class="card text-center" style="max-width: 600px; margin: 0 auto;">
-                <h2 class="card-title" style="font-size: 2rem; margin-bottom: 1rem;">
-                    🚧 Fonctionnalité en développement
-                </h2>
-                <p class="card-subtitle" style="font-size: 1.125rem; line-height: 1.8;">
-                    Le module de réglementation est en cours de développement. 
-                    Bientôt disponible :
-                </p>
-                <ul style="text-align: left; margin: 2rem 0; line-height: 2;">
-                    <li>📋 Fiches synthétiques sur la sécurité</li>
-                    <li>👥 Taux d'encadrement par âge</li>
-                    <li>🚌 Règles pour les sorties</li>
-                    <li>💉 Protocoles sanitaires</li>
-                    <li>✅ Checklists interactives</li>
-                    <li>🎓 Quiz BAFA</li>
-                </ul>
-                <a href="inventaire.html" class="btn btn-primary">
-                    Découvrir les activités
-                </a>
-            </div>
+
+    <!-- ── TAB 2 : RÈGLES DE SORTIES ── -->
+    <section class="reglem-panel" id="tab-sorties" role="tabpanel">
+      <div class="reglem-intro">
+        <h2>Règles de sorties</h2>
+        <p>Les sorties hors du lieu d'accueil sont encadrées par des obligations légales strictes. Voici les règles essentielles à respecter.</p>
+      </div>
+
+      <!-- Accordéon -->
+      <div class="reglem-accordion">
+
+        <div class="reglem-accordion-item">
+          <button class="reglem-accordion-btn" aria-expanded="false">
+            <span><span class="accordion-icon">🚌</span> Transport et sorties organisées</span>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="reglem-accordion-body">
+            <ul class="reglem-list">
+              <li>Toute sortie doit être inscrite dans le projet pédagogique de la structure.</li>
+              <li>Un <strong>document d'autorisation parentale</strong> est obligatoire pour toute sortie extérieure.</li>
+              <li>Le véhicule utilisé doit être homologué pour le transport de mineurs.</li>
+              <li>Un adulte titulaire d'un diplôme de premier secours (PSC1 minimum) doit être présent.</li>
+              <li>La liste nominative des enfants transportés doit être conservée dans le véhicule.</li>
+            </ul>
+          </div>
         </div>
+
+        <div class="reglem-accordion-item">
+          <button class="reglem-accordion-btn" aria-expanded="false">
+            <span><span class="accordion-icon">🏊</span> Sorties aquatiques</span>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="reglem-accordion-body">
+            <ul class="reglem-list">
+              <li>La baignade en milieu naturel requiert la présence d'un <strong>maître-nageur sauveteur (MNS)</strong> ou d'un BNSSA.</li>
+              <li>La baignade en piscine publique est soumise aux règles de l'établissement.</li>
+              <li>Un test de natation est requis avant toute activité nautique (canoë, voile…).</li>
+              <li>Gilets de sauvetage obligatoires pour toute activité nautique chez les non-nageurs.</li>
+              <li>Ratio spécial baignade : <strong>1 animateur pour 5 enfants</strong> (recommandation DDCS).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reglem-accordion-item">
+          <button class="reglem-accordion-btn" aria-expanded="false">
+            <span><span class="accordion-icon">🏔️</span> Sorties nature et randonnée</span>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="reglem-accordion-body">
+            <ul class="reglem-list">
+              <li>Une carte détaillée de l'itinéraire doit être déposée auprès du directeur.</li>
+              <li>Un téléphone chargé et des trousses de premiers secours sont obligatoires.</li>
+              <li>Les conditions météo doivent être vérifiées la veille et le matin de la sortie.</li>
+              <li>Pour les sorties en altitude (>2000m) ou activités à risque, un encadrant qualifié est requis.</li>
+              <li>Prévenir la mairie ou le gestionnaire du site en cas de randonnée isolée.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="reglem-accordion-item">
+          <button class="reglem-accordion-btn" aria-expanded="false">
+            <span><span class="accordion-icon">🌙</span> Sorties nocturnes et hébergements</span>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="reglem-accordion-body">
+            <ul class="reglem-list">
+              <li>Toute nuitée avec des mineurs impose une déclaration préalable auprès de la DDCS locale.</li>
+              <li>Un registre de présence nominatif doit être tenu à jour chaque nuit.</li>
+              <li>La surveillance nocturne doit être assurée : un animateur doit rester éveillé ou en astreinte.</li>
+              <li>Les locaux doivent satisfaire aux normes ERP (Établissement Recevant du Public).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Checklist de sortie -->
+      <div class="reglem-checklist-block">
+        <h3>✅ Checklist avant sortie</h3>
+        <p class="checklist-intro">Cochez chaque élément avant de partir. Votre avancement est sauvegardé.</p>
+        <div class="reglem-checklist" id="sortie-checklist">
+          <label class="check-item"><input type="checkbox" data-key="aut_parentale"> <span>Autorisations parentales collectées</span></label>
+          <label class="check-item"><input type="checkbox" data-key="liste_enfants"> <span>Liste nominative des enfants</span></label>
+          <label class="check-item"><input type="checkbox" data-key="trousse_secours"> <span>Trousse de premiers secours</span></label>
+          <label class="check-item"><input type="checkbox" data-key="telephone"> <span>Téléphone chargé + numéros d'urgence</span></label>
+          <label class="check-item"><input type="checkbox" data-key="psc1"> <span>Animateur avec diplôme PSC1 présent</span></label>
+          <label class="check-item"><input type="checkbox" data-key="meteo"> <span>Météo vérifiée</span></label>
+          <label class="check-item"><input type="checkbox" data-key="itineraire"> <span>Itinéraire déposé au directeur</span></label>
+          <label class="check-item"><input type="checkbox" data-key="urgences"> <span>Fiche sanitaire des enfants</span></label>
+          <label class="check-item"><input type="checkbox" data-key="assurance"> <span>Attestation d'assurance</span></label>
+          <label class="check-item"><input type="checkbox" data-key="encadrement_ok"> <span>Taux d'encadrement conforme</span></label>
+        </div>
+        <div class="checklist-progress-wrap">
+          <div class="checklist-progress-bar"><div class="checklist-progress-fill" id="checkProgress"></div></div>
+          <span class="checklist-progress-label" id="checkLabel">0 / 10 éléments</span>
+        </div>
+        <button class="btn-reset-checklist" id="resetChecklist">🔄 Réinitialiser</button>
+      </div>
     </section>
-    
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Anim'Tools</h4>
-                    <p>Votre assistant personnel pour l'animation périscolaire.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="inventaire.html">Inventaire</a></li>
-                        <li><a href="planning.html">Planning</a></li>
-                        <li><a href="reglementation.html">Réglementation</a></li>
-                        <li><a href="administratif.html">Administratif</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Ressources</h4>
-                    <ul>
-                        <li><a href="apropos.html">À propos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="aide.html">Aide</a></li>
-                    </ul>
-                </div>
+
+    <!-- ── TAB 3 : SÉCURITÉ ── -->
+    <section class="reglem-panel" id="tab-securite" role="tabpanel">
+      <div class="reglem-intro">
+        <h2>Protocoles de sécurité</h2>
+        <p>La sécurité des enfants est la priorité absolue. Voici les protocoles essentiels que tout animateur doit maîtriser.</p>
+      </div>
+
+      <div class="reglem-protocols">
+
+        <div class="protocol-card protocol-urgence">
+          <div class="protocol-card-header">
+            <span class="protocol-icon">🚨</span>
+            <h3>Numéros d'urgence</h3>
+          </div>
+          <div class="protocol-card-body">
+            <div class="urgence-grid">
+              <div class="urgence-num">
+                <span class="urgence-n">15</span>
+                <span class="urgence-l">SAMU</span>
+              </div>
+              <div class="urgence-num">
+                <span class="urgence-n">17</span>
+                <span class="urgence-l">Police</span>
+              </div>
+              <div class="urgence-num">
+                <span class="urgence-n">18</span>
+                <span class="urgence-l">Pompiers</span>
+              </div>
+              <div class="urgence-num">
+                <span class="urgence-n">112</span>
+                <span class="urgence-l">Urgences Europe</span>
+              </div>
+              <div class="urgence-num">
+                <span class="urgence-n">119</span>
+                <span class="urgence-l">Enfance en danger</span>
+              </div>
+              <div class="urgence-num">
+                <span class="urgence-n">3114</span>
+                <span class="urgence-l">Prévention suicide</span>
+              </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
-            </div>
+          </div>
         </div>
-    </footer>
-    
-    <script src="js/main.js"></script>
-    <script src="js/search.js"></script>
+
+        <div class="protocol-card">
+          <div class="protocol-card-header">
+            <span class="protocol-icon">🤕</span>
+            <h3>Gestion d'un accident</h3>
+          </div>
+          <div class="protocol-card-body">
+            <ol class="protocol-steps">
+              <li><strong>Protéger</strong> – Sécuriser la zone, éloigner les autres enfants.</li>
+              <li><strong>Alerter</strong> – Appeler le 15 (SAMU) ou le 18 (pompiers).</li>
+              <li><strong>Secourir</strong> – Appliquer les gestes de premier secours (si formé).</li>
+              <li><strong>Informer</strong> – Prévenir le directeur et les parents.</li>
+              <li><strong>Documenter</strong> – Remplir le registre d'accident obligatoire.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="protocol-card">
+          <div class="protocol-card-header">
+            <span class="protocol-icon">💊</span>
+            <h3>Gestion des médicaments</h3>
+          </div>
+          <div class="protocol-card-body">
+            <ul class="reglem-list">
+              <li>Aucun médicament ne peut être administré sans <strong>ordonnance médicale</strong> et autorisation parentale.</li>
+              <li>Les médicaments sont conservés sous clé, hors de portée des enfants.</li>
+              <li>Un protocole d'administration doit être établi avec la famille et signé.</li>
+              <li>Les traitements de fond (asthme, allergie…) nécessitent un <strong>PAI</strong> (Projet d'Accueil Individualisé).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="protocol-card">
+          <div class="protocol-card-header">
+            <span class="protocol-icon">🔥</span>
+            <h3>Incendie et évacuation</h3>
+          </div>
+          <div class="protocol-card-body">
+            <ul class="reglem-list">
+              <li>Un plan d'évacuation doit être affiché dans chaque salle.</li>
+              <li>Un exercice d'évacuation est obligatoire <strong>dans les 3 premiers mois</strong> de chaque session.</li>
+              <li>L'emplacement des extincteurs et issues de secours doit être connu de tous.</li>
+              <li>Le point de rassemblement doit être clairement défini et communiqué aux enfants.</li>
+              <li>Un appel nominal est effectué après évacuation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="protocol-card">
+          <div class="protocol-card-header">
+            <span class="protocol-icon">🌡️</span>
+            <h3>Plan Canicule</h3>
+          </div>
+          <div class="protocol-card-body">
+            <ul class="reglem-list">
+              <li>Hydratation obligatoire toutes les 30 minutes lors des pics de chaleur.</li>
+              <li>Réduire ou déplacer les activités physiques aux heures fraîches (avant 11h, après 16h).</li>
+              <li>Identifier une <strong>salle fraîche</strong> ou climatisée comme refuge.</li>
+              <li>Surveiller les signes de coup de chaleur : rougeur, peau sèche, confusion.</li>
+              <li>Activité plan ORSEC Canicule si alerte préfectorale niveau 3 ou 4.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="protocol-card">
+          <div class="protocol-card-header">
+            <span class="protocol-icon">🛡️</span>
+            <h3>Protection de l'enfance</h3>
+          </div>
+          <div class="protocol-card-body">
+            <ul class="reglem-list">
+              <li>Tout animateur est <strong>tenu de signaler</strong> toute situation de maltraitance (obligation légale).</li>
+              <li>Signalement au directeur, puis à la DDCS ou au Procureur de la République.</li>
+              <li>Le numéro 119 (Allo Enfance en Danger) est disponible 24h/24.</li>
+              <li>Aucun contact physique inapproprié, aucun isolement d'un enfant seul avec un adulte.</li>
+              <li>Le code de déontologie de l'animation doit être connu et respecté.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── TAB 4 : QUIZ ── -->
+    <section class="reglem-panel" id="tab-quiz" role="tabpanel">
+      <div class="reglem-intro">
+        <h2>Quiz Réglementation</h2>
+        <p>Testez vos connaissances sur la réglementation des ACM. 10 questions, résultats immédiats.</p>
+      </div>
+
+      <div class="quiz-container" id="quizContainer">
+        <!-- Rendu par JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <span class="footer-logo">Anim'<strong>Tools</strong></span>
+      <span>© 2024 – Outil pour animateurs périscolaires</span>
+      <div class="footer-links">
+        <a href="aide.html">Aide</a>
+        <a href="contact.html">Contact</a>
+        <a href="apropos.html">À propos</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-overlay-inner">
+      <input type="text" id="searchInput" placeholder="Rechercher une activité…" autocomplete="off" />
+      <button class="search-close" id="searchClose">✕</button>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/regulation.js"></script>
 </body>
 </html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcours BAFA – Anim'Tools</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-content">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logos/logo.svg" alt="Anim'Tools" class="nav-logo-img" onerror="this.style.display='none'"/>
+        <span class="nav-logo-text">Anim'<strong>Tools</strong></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="inventaire.html">Inventaire</a></li>
+        <li><a href="planning.html">Planning</a></li>
+        <li><a href="reglementation.html">Réglementation</a></li>
+        <li><a href="administratif.html">Administratif</a></li>
+        <li><a href="bafa-roadmap.html" class="active">BAFA</a></li>
+      </ul>
+      <div class="nav-actions">
+        <!-- Bouton Compte -->
+        <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+        <!-- Bouton Recherche -->
+        <button class="search-trigger" id="searchTrigger" aria-label="Rechercher">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════════════════════════ -->
+  <header class="bafa-hero">
+    <div class="bafa-hero-bg">
+      <div class="bafa-hero-blob bafa-blob-1"></div>
+      <div class="bafa-hero-blob bafa-blob-2"></div>
+      <div class="bafa-hero-blob bafa-blob-3"></div>
+    </div>
+    <div class="bafa-hero-content">
+      <div class="bafa-hero-badge">🎓 Formation</div>
+      <h1>Mon parcours<br><span class="bafa-hero-accent">BAFA</span></h1>
+      <p>Suivez votre progression étape par étape. Cliquez sur chaque stage pour découvrir les détails, les documents et les conseils pratiques.</p>
+
+      <!-- Barre de progression globale -->
+      <div class="bafa-global-progress">
+        <div class="bafa-progress-track">
+          <div class="bafa-progress-fill" id="bafa-progress-fill"></div>
+        </div>
+        <span class="bafa-progress-label" id="bafa-progress-label">0 / 3 étapes validées</span>
+      </div>
+    </div>
+    <div class="bafa-hero-diplome">
+      <div class="bafa-diplome-card">
+        <div class="bafa-diplome-icon">🏅</div>
+        <div class="bafa-diplome-text">
+          <strong>BAFA</strong>
+          <span>Brevet d'Aptitude<br>aux Fonctions<br>d'Animateur</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       ROADMAP
+  ═══════════════════════════════════════════════════════════════════ -->
+  <main class="bafa-main">
+    <div class="container">
+
+      <!-- Roadmap Steps -->
+      <section class="bafa-roadmap-section">
+        <h2 class="section-title">Les 3 étapes du BAFA</h2>
+        <p class="section-subtitle">Cliquez sur une étape pour voir tous les détails. Marquez-les comme validées au fur et à mesure !</p>
+
+        <div class="bafa-roadmap-wrapper">
+          <div class="bafa-roadmap-steps" id="bafa-roadmap-steps">
+            <!-- Rendu par bafa.js -->
+            <div class="bafa-loading">
+              <div class="bafa-loading-spinner"></div>
+              <p>Chargement du parcours…</p>
+            </div>
+          </div>
+
+          <!-- Panel de détail -->
+          <div class="bafa-detail-panel" id="bafa-detail-panel">
+            <!-- Rendu par bafa.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Après le BAFA ─── -->
+      <section class="bafa-apres-section">
+        <h2 class="section-title">Et après le BAFA ?</h2>
+        <p class="section-subtitle">Le BAFA est un tremplin vers de nombreuses évolutions professionnelles dans l'animation.</p>
+        <div class="bafa-apres-grid" id="bafa-apres">
+          <!-- Rendu par bafa.js -->
+        </div>
+      </section>
+
+      <!-- ─── FAQ ─── -->
+      <section class="bafa-faq-section">
+        <h2 class="section-title">Questions fréquentes</h2>
+        <div class="bafa-faq" id="bafa-faq">
+          <!-- Rendu par bafa.js -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <span class="footer-logo">Anim'<strong>Tools</strong></span>
+      <span>© 2024 – Outil pour animateurs périscolaires</span>
+      <div class="footer-links">
+        <a href="aide.html">Aide</a>
+        <a href="contact.html">Contact</a>
+        <a href="apropos.html">À propos</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-overlay-inner">
+      <input type="text" id="searchInput" placeholder="Rechercher une activité…" autocomplete="off" />
+      <button class="search-close" id="searchClose">✕</button>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/bafa.js"></script>
+</body>
+</html>

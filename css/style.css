@@ -1629,3 +1629,570 @@ body {
     transform: rotate(5deg) scale(1.1);
     transition: transform var(--transition-fast);
 }
+
+/* ==========================================================================
+   RÉGLEMENTATION
+   Composants spécifiques à la page réglementation.html
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   REG-CARD — carte de fiche réglementaire
+   -------------------------------------------------------------------------- */
+
+.reg-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    transition: box-shadow var(--transition-base);
+}
+
+.reg-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.reg-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.reg-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.reg-card-title {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-primary);
+}
+
+.reg-card-subtitle {
+    font-size: var(--text-sm);
+    color: var(--color-tertiary);
+    margin-top: var(--space-xs);
+}
+
+.reg-card-body {
+    font-size: var(--text-base);
+    color: var(--color-secondary);
+    line-height: 1.7;
+}
+
+.reg-card-body ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0;
+}
+
+.reg-card-body ul li {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-surface);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+}
+
+.reg-card-body ul li:last-child {
+    border-bottom: none;
+}
+
+.reg-card-body ul li::before {
+    content: '→';
+    color: var(--color-accent);
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   REG-GRID — grille responsive pour cartes réglementation
+   -------------------------------------------------------------------------- */
+
+.reg-grid {
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.reg-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.reg-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .reg-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .reg-grid,
+    .reg-grid-2,
+    .reg-grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   REG-BADGE — badges de niveau / type / statut
+   -------------------------------------------------------------------------- */
+
+.reg-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.reg-badge-info {
+    background: rgba(0, 113, 227, 0.1);
+    color: var(--color-accent);
+}
+
+.reg-badge-warning {
+    background: rgba(255, 149, 0, 0.12);
+    color: #b36200;
+}
+
+.reg-badge-danger {
+    background: rgba(255, 59, 48, 0.1);
+    color: var(--color-error);
+}
+
+.reg-badge-success {
+    background: rgba(52, 199, 89, 0.12);
+    color: #1a7a32;
+}
+
+.reg-badge-neutral {
+    background: var(--color-surface);
+    color: var(--color-tertiary);
+}
+
+/* --------------------------------------------------------------------------
+   REG-ALERT — bandeau d'alerte / information
+   -------------------------------------------------------------------------- */
+
+.reg-alert {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    margin: var(--space-lg) 0;
+}
+
+.reg-alert-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.reg-alert-body strong {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+}
+
+.reg-alert-info {
+    background: rgba(0, 113, 227, 0.06);
+    border: 1px solid rgba(0, 113, 227, 0.2);
+    color: #003d80;
+}
+
+.reg-alert-warning {
+    background: rgba(255, 149, 0, 0.08);
+    border: 1px solid rgba(255, 149, 0, 0.3);
+    color: #7a4400;
+}
+
+.reg-alert-danger {
+    background: rgba(255, 59, 48, 0.06);
+    border: 1px solid rgba(255, 59, 48, 0.25);
+    color: #8c0e09;
+}
+
+.reg-alert-success {
+    background: rgba(52, 199, 89, 0.07);
+    border: 1px solid rgba(52, 199, 89, 0.25);
+    color: #0e4d1c;
+}
+
+/* --------------------------------------------------------------------------
+   REG-TABLE — tableau réglementaire
+   -------------------------------------------------------------------------- */
+
+.reg-table-wrapper {
+    overflow-x: auto;
+    margin: var(--space-lg) 0;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.reg-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+
+.reg-table thead {
+    background: var(--color-surface);
+}
+
+.reg-table th {
+    padding: var(--space-md) var(--space-lg);
+    text-align: left;
+    font-weight: 600;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.reg-table td {
+    padding: var(--space-md) var(--space-lg);
+    color: var(--color-secondary);
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+.reg-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.reg-table tbody tr:hover {
+    background: var(--color-surface);
+}
+
+.reg-table td strong {
+    color: var(--color-primary);
+}
+
+/* Colonne de mise en valeur */
+.reg-table .reg-table-highlight {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   ACCORDÉONS RÉGLEMENTATION
+   -------------------------------------------------------------------------- */
+
+.reg-accordion {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-sm);
+    overflow: hidden;
+    transition: box-shadow var(--transition-base);
+}
+
+.reg-accordion:hover {
+    box-shadow: var(--shadow-sm);
+}
+
+.reg-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg) var(--space-xl);
+    cursor: pointer;
+    background: white;
+    transition: background-color var(--transition-fast);
+    user-select: none;
+    gap: var(--space-md);
+}
+
+.reg-accordion-header:hover {
+    background: var(--color-surface);
+}
+
+.reg-accordion-title {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.reg-accordion-chevron {
+    width: 20px;
+    height: 20px;
+    stroke: var(--color-tertiary);
+    flex-shrink: 0;
+    transition: transform var(--transition-base);
+}
+
+.reg-accordion.active .reg-accordion-chevron {
+    transform: rotate(180deg);
+}
+
+.reg-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.reg-accordion.active .reg-accordion-body {
+    max-height: 1000px;
+}
+
+.reg-accordion-content {
+    padding: var(--space-lg) var(--space-xl) var(--space-xl);
+    background: white;
+    border-top: 1px solid var(--color-surface);
+}
+
+/* --------------------------------------------------------------------------
+   CHECKLISTS RÉGLEMENTATION
+   -------------------------------------------------------------------------- */
+
+.reg-checklist {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+}
+
+.reg-checklist-title {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+}
+
+.reg-progress-bar {
+    height: 6px;
+    background: var(--color-surface);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-bottom: var(--space-sm);
+}
+
+.reg-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-success), #30d158);
+    border-radius: var(--radius-full);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.reg-progress-text {
+    font-size: var(--text-xs);
+    color: var(--color-tertiary);
+    margin-bottom: var(--space-lg);
+}
+
+.reg-checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-sm);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+}
+
+.reg-checklist-item:hover {
+    background: var(--color-surface);
+}
+
+.reg-checklist-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    accent-color: var(--color-success);
+    cursor: pointer;
+}
+
+.reg-checklist-item label {
+    font-size: var(--text-base);
+    color: var(--color-secondary);
+    cursor: pointer;
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* --------------------------------------------------------------------------
+   QUIZ BAFA
+   -------------------------------------------------------------------------- */
+
+.reg-quiz {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+}
+
+.reg-quiz-intro {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+.reg-quiz-intro h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+}
+
+.reg-question {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border: 1px solid var(--color-border);
+}
+
+.reg-question h4 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+    line-height: 1.5;
+}
+
+.reg-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    margin-bottom: var(--space-xs);
+}
+
+.reg-option:hover {
+    background: rgba(0, 113, 227, 0.05);
+}
+
+.reg-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: var(--color-accent);
+    cursor: pointer;
+}
+
+.reg-option label {
+    cursor: pointer;
+    font-size: var(--text-base);
+    color: var(--color-secondary);
+    flex: 1;
+    line-height: 1.4;
+}
+
+.reg-feedback {
+    margin-top: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    display: none;
+}
+
+.reg-feedback.correct {
+    background: rgba(52, 199, 89, 0.12);
+    color: #1a7a32;
+    display: block;
+}
+
+.reg-feedback.incorrect {
+    background: rgba(255, 59, 48, 0.1);
+    color: #8c0e09;
+    display: block;
+}
+
+.reg-feedback.warning {
+    background: rgba(255, 149, 0, 0.1);
+    color: #7a4400;
+    display: block;
+}
+
+.reg-quiz-result {
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    text-align: center;
+    margin-top: var(--space-xl);
+}
+
+.reg-quiz-result h3 {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+}
+
+.reg-quiz-result p {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-xl);
+    opacity: 0.9;
+}
+
+.reg-result-excellent {
+    background: linear-gradient(135deg, var(--color-success), #30d158);
+    color: white;
+}
+
+.reg-result-good {
+    background: linear-gradient(135deg, var(--color-warning), #ffcc00);
+    color: white;
+}
+
+.reg-result-needs-work {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE RÉGLEMENTATION
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .reg-accordion-header {
+        padding: var(--space-md) var(--space-lg);
+    }
+
+    .reg-accordion-content {
+        padding: var(--space-md) var(--space-lg) var(--space-lg);
+    }
+
+    .reg-table th,
+    .reg-table td {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .reg-card {
+        padding: var(--space-lg);
+    }
+
+    .reg-quiz,
+    .reg-checklist {
+        padding: var(--space-lg);
+    }
+}

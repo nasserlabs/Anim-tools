@@ -1,0 +1,171 @@
+{
+  "stages": [
+    {
+      "id": "bafa1",
+      "numero": 1,
+      "titre": "Stage de Formation Générale",
+      "soustitre": "BAFA 1",
+      "emoji": "🌱",
+      "duree": "8 jours minimum",
+      "cout_moyen": "400–600 €",
+      "statut_initial": "locked",
+      "couleur": "#667EEA",
+      "couleur2": "#764BA2",
+      "description": "Le stage de formation générale est la première étape du BAFA. Il permet d'acquérir les bases théoriques et pratiques de l'animation.",
+      "objectifs": [
+        "Comprendre le rôle et les responsabilités d'un animateur",
+        "Découvrir la pédagogie active et les techniques d'animation",
+        "Apprendre à élaborer un projet pédagogique",
+        "Connaître le cadre réglementaire des ACM",
+        "Pratiquer des activités variées encadrées par des formateurs"
+      ],
+      "competences": [
+        { "nom": "Pédagogie", "niveau": 60 },
+        { "nom": "Animation", "niveau": 50 },
+        { "nom": "Sécurité", "niveau": 70 },
+        { "nom": "Gestion de groupe", "niveau": 45 }
+      ],
+      "docs_requis": [
+        "Carte d'identité ou passeport",
+        "Certificat médical (moins de 3 mois)",
+        "Photo d'identité",
+        "Dossier d'inscription complet"
+      ],
+      "conseils": [
+        "Choisissez un organisme agréé par le Ministère chargé de la Jeunesse.",
+        "Ce stage dure minimum 8 jours consécutifs ou non.",
+        "Des bourses régionales sont disponibles (Région, CAF, MSA…).",
+        "À la fin du stage, vous recevez une attestation de suivi (non le diplôme)."
+      ],
+      "organisme_exemple": "UCPA, CEMEA, Scouts, UFCV, Fédérations sportives…",
+      "financement": [
+        { "source": "CAF", "montant": "jusqu'à 200 €" },
+        { "source": "MSA", "montant": "jusqu'à 200 €" },
+        { "source": "Région", "montant": "variable selon région" },
+        { "source": "Employeur / CPAM", "montant": "possible si salarié" }
+      ]
+    },
+    {
+      "id": "bafa2",
+      "numero": 2,
+      "titre": "Stage Pratique",
+      "soustitre": "BAFA 2",
+      "emoji": "🔥",
+      "duree": "14 jours minimum",
+      "cout_moyen": "Rémunéré ou bénévole",
+      "statut_initial": "locked",
+      "couleur": "#F093FB",
+      "couleur2": "#F5576C",
+      "description": "Le stage pratique se déroule en situation réelle d'animation auprès d'enfants ou de jeunes. C'est la mise en pratique concrète de vos acquis.",
+      "objectifs": [
+        "Animer des groupes d'enfants ou de jeunes en autonomie",
+        "Concevoir et conduire des projets d'animation",
+        "Gérer la vie quotidienne d'un groupe",
+        "Travailler en équipe avec les autres animateurs",
+        "Recevoir une évaluation de votre tuteur"
+      ],
+      "competences": [
+        { "nom": "Pédagogie", "niveau": 75 },
+        { "nom": "Animation", "niveau": 80 },
+        { "nom": "Sécurité", "niveau": 75 },
+        { "nom": "Gestion de groupe", "niveau": 70 }
+      ],
+      "docs_requis": [
+        "Attestation de suivi du BAFA 1",
+        "Formulaire de stage pratique (signé par la structure)",
+        "Contrat de stage ou lettre de mission",
+        "Extrait de casier judiciaire B3"
+      ],
+      "conseils": [
+        "Durée minimale : 14 jours, consécutifs ou non, sur moins d'un an.",
+        "La structure d'accueil doit être agréée ACM par la DDCS.",
+        "Soyez proactif : proposez des activités, participez aux réunions d'équipe.",
+        "Votre tuteur remplira une fiche d'évaluation transmise à l'organisme de formation."
+      ],
+      "organisme_exemple": "Centres de loisirs, colonies, ALSH, MJC, associations sportives…",
+      "financement": [
+        { "source": "Rémunération", "montant": "Possible si contrat d'engagement éducatif" },
+        { "source": "Bénévolat", "montant": "Avantages en nature (repas, hébergement)" }
+      ]
+    },
+    {
+      "id": "bafa3",
+      "numero": 3,
+      "titre": "Stage d'Approfondissement",
+      "soustitre": "BAFA 3",
+      "emoji": "⭐",
+      "duree": "8 jours minimum",
+      "cout_moyen": "300–500 €",
+      "statut_initial": "locked",
+      "couleur": "#43E97B",
+      "couleur2": "#38F9D7",
+      "description": "Dernière étape du BAFA, ce stage permet d'approfondir une thématique spécifique ou d'acquérir une qualification complémentaire. C'est l'accès au diplôme définitif.",
+      "objectifs": [
+        "Approfondir une spécialité (activités nautiques, théâtre, multimédia…)",
+        "Consolider les compétences acquises lors du stage pratique",
+        "Préparer son dossier de certification BAFA",
+        "Développer une posture professionnelle d'animateur",
+        "Obtenir le BAFA définitif !"
+      ],
+      "competences": [
+        { "nom": "Pédagogie", "niveau": 90 },
+        { "nom": "Animation", "niveau": 88 },
+        { "nom": "Sécurité", "niveau": 85 },
+        { "nom": "Gestion de groupe", "niveau": 82 }
+      ],
+      "docs_requis": [
+        "Attestation de suivi du BAFA 1",
+        "Attestation de stage pratique validée",
+        "Dossier de certification BAFA",
+        "Bilan de stage pratique rédigé"
+      ],
+      "conseils": [
+        "Choisissez un thème d'approfondissement en lien avec vos centres d'intérêt.",
+        "Les sessions thématiques (cirque, numérique, nature…) sont très enrichissantes.",
+        "À l'issue, vous obtenez le BAFA définitif si tout est validé.",
+        "Le BAFA est valable à vie mais une formation continue est recommandée tous les 5 ans."
+      ],
+      "organisme_exemple": "UCPA (sport), CEMEA (pédagogie active), Scouts (nature), UFCV…",
+      "financement": [
+        { "source": "CAF", "montant": "jusqu'à 200 €" },
+        { "source": "MSA", "montant": "jusqu'à 200 €" },
+        { "source": "Région", "montant": "variable selon région" }
+      ]
+    }
+  ],
+  "apres_bafa": [
+    {
+      "titre": "Bafd",
+      "description": "Brevet d'Aptitude aux Fonctions de Directeur. L'étape suivante pour diriger un ACM.",
+      "icon": "🎯"
+    },
+    {
+      "titre": "BPJEPS",
+      "description": "Brevet Professionnel de la Jeunesse, de l'Éducation Populaire et du Sport. Professionnalisation de l'animation.",
+      "icon": "🎓"
+    },
+    {
+      "titre": "DEJEPS / DESJEPS",
+      "description": "Diplômes d'État de niveau licence et master pour les cadres de l'animation.",
+      "icon": "🏆"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Quelle est la durée totale du BAFA ?",
+      "r": "Le BAFA comporte 3 stages représentant au minimum 8 + 14 + 8 = 30 jours de formation, à réaliser sur une période maximale de 3 ans."
+    },
+    {
+      "q": "À quel âge peut-on passer le BAFA ?",
+      "r": "Vous devez avoir au moins 17 ans pour démarrer la formation BAFA."
+    },
+    {
+      "q": "Le BAFA est-il reconnu comme diplôme professionnel ?",
+      "r": "Non, le BAFA est un brevet non professionnel qui permet d'animer à titre occasionnel. Pour l'animation professionnelle, il faut le BPJEPS ou le DEJEPS."
+    },
+    {
+      "q": "Peut-on travailler pendant le BAFA ?",
+      "r": "Dès le BAFA 1 terminé, vous pouvez commencer à animer (stage pratique ou missions rémunérées), sous la responsabilité d'un directeur diplômé."
+    }
+  ]
+}
