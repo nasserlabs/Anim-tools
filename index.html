@@ -26,7 +26,13 @@
                 <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
                 <li><a href="administratif.html" class="nav-link">Administratif</a></li>
             </ul>
-            
+
+            <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </svg>
+</a>
             <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
@@ -72,7 +78,12 @@
             </div>
         </div>
     </section>
-    
+    <!-- Ajout du module météo --> 
+    <section class="weather-widget-wrap container">
+  <div class="weather-widget" id="weather-widget" role="complementary" aria-label="Météo du jour">
+    <!-- Contenu rendu dynamiquement par weather.js -->
+  </div>
+</section>
     <!-- SUGGESTION DU JOUR -->
     <section class="section">
         <div class="container container-narrow">
@@ -251,6 +262,7 @@
     <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/weather.js"></script>
     <script src="js/fake-ai.js"></script>
     <script src="js/suggestions.js"></script>
     <script src="js/favorites.js"></script>
