@@ -4232,12 +4232,3 @@ Copier
   .bafa-global-progress { max-width: 100%; }
   .bafa-panel-meta-row { flex-direction: column; gap: 6px; }
 }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
