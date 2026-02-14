@@ -2232,7 +2232,7 @@ body {
 22.nav-actions {
 23  display: flex;
 24  align-items: center;
-25  gap: 8px;
+25  gap: 12px;
 26  /* PAS de order, PAS de position absolute */
 27  flex-shrink: 0;
 28  margin-left: auto; /* pousse à droite si flex ne suffit pas */
