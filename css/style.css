@@ -4228,3 +4228,17 @@ body {
   .bafa-global-progress { max-width: 100%; }
   .bafa-panel-meta-row { flex-direction: column; gap: 6px; }
 }
+
+.nav-actions {
+  display: flex ;
+  flex-direction: row ;
+  align-items: center ;
+}
+
+.nav-search-btn {
+  display: inline-flex ;
+  align-items: center ;
+  justify-content: center ;
+  width: 36px ;
+  height: 36px ;
+}
