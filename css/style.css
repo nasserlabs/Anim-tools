@@ -2208,10 +2208,6 @@ body {
    4. Page BAFA Roadmap
    ═══════════════════════════════════════════════════════════════════ */
 
-
-
-Copier
-
 1/* ═══════════════════════════════════════════════════════════════
 2   CORRECTION ÉTAPE 3.1 — À AJOUTER à la fin de style.css
 3   (remplace le bloc "1. BOUTON COMPTE – NAVBAR" du fichier
@@ -2229,7 +2225,7 @@ Copier
 15     le logo à gauche, les liens au centre, les actions à droite */
 16  display: flex;
 17  align-items: center;
-18  justify-content: space-between;
+18  /*justify-content: space-between;*/
 19  /* NE PAS redéfinir gap ou padding si déjà présent dans style.css */
 20}
 21
