@@ -1,1587 +1,3401 @@
 {
   "activities": [
     {
-      "id": 1,
-      "title": "Atelier peinture sur galets",
-      "category": "manuelles",
-      "age": "6-10 ans",
-      "duration": "45 min",
-      "difficulty": "Facile",
-      "participants": "8-12",
-      "description": "Découverte de la peinture acrylique sur supports naturels. Développe la créativité et la motricité fine.",
-      "materials": ["Galets", "Peinture acrylique", "Pinceaux", "Vernis", "Tabliers"],
-      "objectives": [
-        "Développer la créativité artistique",
-        "Travailler la motricité fine",
-        "Découvrir différentes techniques de peinture"
+      "id": "sport-001",
+      "name": "Relais course",
+      "category": "sport",
+      "description": "Course de relais par équipes sur un terrain extérieur. Chaque coureur transmet le témoin au suivant.",
+      "duration": 30,
+      "minAge": 6,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 8,
+        "max": 40
+      },
+      "materials": [
+        "témoins de relais",
+        "plots"
       ],
-      "steps": [
-        "Nettoyer et sécher les galets",
-        "Appliquer une sous-couche blanche",
-        "Laisser sécher 10 minutes",
-        "Peindre le motif choisi",
-        "Appliquer le vernis protecteur"
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "high",
+      "groupType": "large",
+      "tags": [
+        "course",
+        "équipe",
+        "compétition",
+        "extérieur"
+      ]
+    },
+    {
+      "id": "sport-002",
+      "name": "Ballon prisonnier",
+      "category": "sport",
+      "description": "Les équipes s'affrontent en essayant d'éliminer les adversaires avec une balle tout en libérant leurs prisonniers.",
+      "duration": 40,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 10,
+        "max": 40
+      },
+      "materials": [
+        "balle mousse",
+        "plots",
+        "terrain délimité"
       ],
       "environment": "both",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["créativité", "peinture", "nature", "motricité fine", "art"]
+      "weather": "any",
+      "energyLevel": "high",
+      "groupType": "large",
+      "tags": [
+        "ballon",
+        "équipe",
+        "coordination",
+        "réflexe"
+      ]
     },
     {
-      "id": 2,
-      "title": "Origami animaux",
-      "category": "manuelles",
-      "age": "7-12 ans",
-      "duration": "30 min",
-      "difficulty": "Moyen",
-      "participants": "6-15",
-      "description": "Initiation à l'art du pliage japonais. Patience, concentration et précision.",
-      "materials": ["Papier origami", "Fiches explicatives", "Règles"],
-      "objectives": [
-        "Développer la concentration",
-        "Améliorer la précision gestuelle",
-        "Découvrir une tradition culturelle"
-      ],
-      "steps": [
-        "Présentation de l'origami et de ses origines",
-        "Démonstration du pliage de base",
-        "Réalisation guidée étape par étape",
-        "Personnalisation des créations"
+      "id": "sport-003",
+      "name": "Yoga enfants",
+      "category": "sport",
+      "description": "Séance de yoga adaptée aux enfants avec des postures animales et des exercices de respiration ludiques.",
+      "duration": 45,
+      "minAge": 4,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 5,
+        "max": 20
+      },
+      "materials": [
+        "tapis de yoga"
       ],
       "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["concentration", "japon", "culture", "précision", "papier"]
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "yoga",
+        "relaxation",
+        "bien-être",
+        "souplesse"
+      ]
     },
     {
-      "id": 3,
-      "title": "Fabrication de masques",
-      "category": "manuelles",
-      "age": "5-10 ans",
-      "duration": "60 min",
-      "difficulty": "Facile",
-      "participants": "8-12",
-      "description": "Création de masques en carton et papier mâché pour spectacles et jeux de rôle.",
-      "materials": ["Carton", "Papier journal", "Colle", "Peinture", "Élastiques", "Ciseaux"],
-      "objectives": [
-        "Stimuler l'imagination",
-        "Développer les compétences manuelles",
-        "Préparer un support pour expression théâtrale"
-      ],
-      "steps": [
-        "Découpe du gabarit en carton",
-        "Application du papier mâché",
-        "Séchage (ou préparation préalable)",
-        "Peinture et décoration",
-        "Fixation des élastiques"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["imagination", "théâtre", "carnaval", "déguisement", "art"]
-    },
-    {
-      "id": 4,
-      "title": "Parcours d'obstacles",
-      "category": "sportifs",
-      "age": "5-12 ans",
-      "duration": "30 min",
-      "difficulty": "Facile",
-      "participants": "10-20",
-      "description": "Circuit motricité avec cerceaux, cônes, cordes à sauter. Développe coordination et agilité.",
-      "materials": ["Cerceaux", "Cônes", "Cordes", "Plots", "Sifflet"],
-      "objectives": [
-        "Développer la motricité globale",
-        "Améliorer la coordination",
-        "Favoriser l'esprit d'équipe"
-      ],
-      "steps": [
-        "Installation du parcours sécurisé",
-        "Démonstration du circuit",
-        "Passage individuel chronométré",
-        "Relais par équipes",
-        "Variantes et défis progressifs"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "dynamique",
-      "weather": ["sun"],
-      "groupType": "grand",
-      "tags": ["motricité", "sport", "équipe", "coordination", "extérieur"]
-    },
-    {
-      "id": 5,
-      "title": "Balle aux prisonniers",
-      "category": "sportifs",
-      "age": "7-12 ans",
-      "duration": "25 min",
-      "difficulty": "Facile",
-      "participants": "12-20",
-      "description": "Grand classique des jeux collectifs. Esprit d'équipe et stratégie.",
-      "materials": ["Ballon en mousse", "Plots pour délimiter le terrain", "Chasubles"],
-      "objectives": [
-        "Développer l'esprit d'équipe",
-        "Améliorer les réflexes",
-        "Apprendre les règles du jeu collectif"
-      ],
-      "steps": [
-        "Délimitation du terrain",
-        "Explication des règles",
-        "Constitution des équipes",
-        "Plusieurs manches de 5 minutes",
-        "Débriefing sur les stratégies"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "dynamique",
-      "weather": ["sun"],
-      "groupType": "grand",
-      "tags": ["équipe", "stratégie", "ballon", "collectif", "réflexes"]
-    },
-    {
-      "id": 6,
-      "title": "Course d'orientation",
-      "category": "sportifs",
-      "age": "8-12 ans",
-      "duration": "45 min",
-      "difficulty": "Moyen",
-      "participants": "10-16",
-      "description": "Parcours avec balises à retrouver à l'aide d'une carte. Orientation et esprit d'équipe.",
-      "materials": ["Cartes", "Balises", "Plots colorés", "Chronomètre", "Sifflet"],
-      "objectives": [
-        "Apprendre à lire une carte",
-        "Développer le sens de l'orientation",
-        "Favoriser la coopération"
-      ],
-      "steps": [
-        "Explication de la lecture de carte",
-        "Présentation du parcours",
-        "Départ par équipes",
-        "Recherche des balises",
-        "Retour et classement"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "dynamique",
-      "weather": ["sun"],
-      "groupType": "moyen",
-      "tags": ["orientation", "carte", "nature", "réflexion", "aventure"]
-    },
-    {
-      "id": 7,
-      "title": "Théâtre d'improvisation",
-      "category": "expression",
-      "age": "8-12 ans",
-      "duration": "60 min",
-      "difficulty": "Moyen",
-      "participants": "8-15",
-      "description": "Jeux d'impro, sketches spontanés. Confiance en soi et expression orale.",
-      "materials": ["Espace dégagé", "Accessoires variés", "Chapeaux", "Foulards"],
-      "objectives": [
-        "Développer la confiance en soi",
-        "Améliorer l'expression orale",
-        "Stimuler la créativité"
-      ],
-      "steps": [
-        "Échauffement vocal et corporel",
-        "Jeux d'impro simples",
-        "Travail par petits groupes",
-        "Présentation des saynètes",
-        "Retour positif collectif"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["théâtre", "improvisation", "confiance", "expression", "créativité"]
-    },
-    {
-      "id": 8,
-      "title": "Danse créative",
-      "category": "expression",
-      "age": "5-10 ans",
-      "duration": "40 min",
-      "difficulty": "Facile",
-      "participants": "10-20",
-      "description": "Expression corporelle libre sur différents styles musicaux. Chorégraphie collective.",
-      "materials": ["Enceinte portable", "Playlists variées", "Espace adapté"],
-      "objectives": [
-        "Développer l'expression corporelle",
-        "Découvrir différents styles musicaux",
-        "Créer une chorégraphie collective"
-      ],
-      "steps": [
-        "Échauffement en musique",
-        "Exploration libre des mouvements",
-        "Création de séquences simples",
-        "Assemblage de la chorégraphie",
-        "Représentation finale"
-      ],
-      "environment": "indoor",
-      "energyLevel": "dynamique",
-      "weather": ["any"],
-      "groupType": "grand",
-      "tags": ["danse", "musique", "expression", "corps", "chorégraphie"]
-    },
-    {
-      "id": 9,
-      "title": "Atelier conte et narration",
-      "category": "expression",
-      "age": "6-10 ans",
-      "duration": "45 min",
-      "difficulty": "Facile",
-      "participants": "8-12",
-      "description": "Création et narration de contes inventés par les enfants.",
-      "materials": ["Cartes à histoires", "Cahiers", "Crayons", "Déguisements optionnels"],
-      "objectives": [
-        "Stimuler l'imagination",
-        "Développer les capacités narratives",
-        "Travailler l'écoute active"
-      ],
-      "steps": [
-        "Introduction aux structures narratives",
-        "Tirage de cartes pour inspirer l'histoire",
-        "Création collective ou par groupes",
-        "Illustration des contes",
-        "Présentation orale"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["conte", "imagination", "narration", "écriture", "oral"]
-    },
-    {
-      "id": 10,
-      "title": "Jeux coopératifs de plateau",
-      "category": "societe",
-      "age": "6-12 ans",
-      "duration": "45 min",
-      "difficulty": "Facile",
-      "participants": "4-16",
-      "description": "Jeux de plateau coopératifs : tous ensemble contre le jeu. Entraide et stratégie collective.",
-      "materials": ["Jeux coopératifs", "Tables", "Chaises"],
-      "objectives": [
-        "Favoriser la coopération",
-        "Développer la réflexion stratégique",
-        "Apprendre à perdre et gagner ensemble"
-      ],
-      "steps": [
-        "Présentation des règles",
-        "Constitution des équipes",
-        "Partie guidée",
-        "Parties autonomes",
-        "Débriefing sur les stratégies"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "petit",
-      "tags": ["jeux", "coopération", "stratégie", "plateau", "réflexion"]
-    },
-    {
-      "id": 11,
-      "title": "Quiz géant",
-      "category": "societe",
-      "age": "8-12 ans",
-      "duration": "35 min",
-      "difficulty": "Facile",
-      "participants": "10-24",
-      "description": "Questions culture générale adaptées. Par équipes. Ambiance ludique garantie.",
-      "materials": ["Fiches questions", "Buzzers ou cloches", "Tableau de score", "Chronomètre"],
-      "objectives": [
-        "Développer la culture générale",
-        "Favoriser l'esprit d'équipe",
-        "Apprendre en s'amusant"
-      ],
-      "steps": [
-        "Formation des équipes",
-        "Explication des règles",
-        "Questions par thèmes",
-        "Comptage des points",
-        "Remise symbolique de récompenses"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "grand",
-      "tags": ["quiz", "culture", "équipe", "questions", "connaissance"]
-    },
-    {
-      "id": 12,
-      "title": "Escape game maison",
-      "category": "societe",
-      "age": "9-12 ans",
-      "duration": "60 min",
-      "difficulty": "Difficile",
-      "participants": "6-12",
-      "description": "Énigmes et défis à résoudre en équipe pour 's'échapper' d'une salle.",
-      "materials": ["Énigmes préparées", "Cadenas", "Indices cachés", "Chronomètre", "Décoration thématique"],
-      "objectives": [
-        "Développer la logique",
-        "Favoriser la collaboration",
-        "Stimuler la réflexion"
-      ],
-      "steps": [
-        "Installation du décor",
-        "Briefing de la mission",
-        "Lancement du chrono",
-        "Résolution des énigmes",
-        "Débriefing et explications"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["énigmes", "logique", "escape", "collaboration", "mystère"]
-    },
-    {
-      "id": 13,
-      "title": "Visite du parc naturel",
-      "category": "sorties",
-      "age": "6-12 ans",
-      "duration": "150 min",
-      "difficulty": "Moyen",
-      "participants": "12-20",
-      "description": "Découverte de la faune et flore locale. Sensibilisation à l'environnement.",
-      "materials": ["Autorisations parentales", "Sacs à dos", "Carnets d'observation", "Jumelles", "Appareil photo"],
-      "objectives": [
-        "Découvrir la biodiversité locale",
-        "Sensibiliser à l'environnement",
-        "Observer la nature"
-      ],
-      "steps": [
-        "Préparation et vérification des autorisations",
-        "Trajet commenté",
-        "Observation guidée",
-        "Activités nature",
-        "Retour et compte-rendu"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "modere",
-      "weather": ["sun"],
-      "groupType": "grand",
-      "tags": ["nature", "sortie", "environnement", "observation", "biodiversité"]
-    },
-    {
-      "id": 14,
-      "title": "Sortie médiathèque",
-      "category": "sorties",
-      "age": "5-10 ans",
-      "duration": "90 min",
-      "difficulty": "Facile",
-      "participants": "10-15",
-      "description": "Découverte de la médiathèque, heure du conte, emprunt de livres.",
-      "materials": ["Autorisations", "Cartes de bibliothèque", "Sacs"],
-      "objectives": [
-        "Découvrir le lieu culturel",
-        "Promouvoir la lecture",
-        "Apprendre le système d'emprunt"
-      ],
-      "steps": [
-        "Trajet et règles de conduite",
-        "Visite guidée",
-        "Heure du conte",
-        "Temps de choix de livres",
-        "Retour et partage"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["lecture", "culture", "livres", "sortie", "calme"]
-    },
-    {
-      "id": 15,
-      "title": "Initiation escalade",
-      "category": "initiation",
-      "age": "8-12 ans",
-      "duration": "90 min",
-      "difficulty": "Difficile",
-      "participants": "8-12",
-      "description": "Découverte de l'escalade sur mur. Sécurité, confiance, dépassement de soi.",
-      "materials": ["Mur d'escalade", "Baudriers", "Casques", "Encadrement qualifié"],
-      "objectives": [
-        "Découvrir l'escalade",
-        "Développer la confiance",
-        "Apprendre les règles de sécurité"
-      ],
-      "steps": [
-        "Briefing sécurité",
-        "Équipement",
-        "Démonstration",
-        "Pratique encadrée",
-        "Débriefing"
-      ],
-      "environment": "indoor",
-      "energyLevel": "dynamique",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["escalade", "sport", "sécurité", "défi", "confiance"]
-    },
-    {
-      "id": 16,
-      "title": "Mini-golf créatif",
-      "category": "initiation",
-      "age": "6-12 ans",
-      "duration": "50 min",
-      "difficulty": "Facile",
-      "participants": "8-16",
-      "description": "Construction et jeu sur parcours de mini-golf fait maison. Créativité et précision.",
-      "materials": ["Carton", "Tubes", "Balles", "Obstacles divers", "Clubs adaptés"],
-      "objectives": [
-        "Créer un parcours ludique",
-        "Développer la précision",
-        "Travailler en équipe"
-      ],
-      "steps": [
-        "Construction du parcours",
-        "Test et ajustements",
-        "Parties par équipes",
-        "Comptage des points",
-        "Rangement collectif"
+      "id": "sport-004",
+      "name": "Badminton coopératif",
+      "category": "sport",
+      "description": "Version coopérative du badminton : les joueurs comptent combien de fois ils peuvent garder le volant en l'air ensemble.",
+      "duration": 35,
+      "minAge": 6,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 16
+      },
+      "materials": [
+        "raquettes de badminton",
+        "volants",
+        "filet optionnel"
       ],
       "environment": "both",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["golf", "précision", "créativité", "construction", "adresse"]
+      "weather": "sunny",
+      "energyLevel": "medium",
+      "groupType": "small",
+      "tags": [
+        "raquette",
+        "coopération",
+        "coordination",
+        "air"
+      ]
     },
     {
-      "id": 17,
-      "title": "Yoga pour enfants",
-      "category": "initiation",
-      "age": "5-10 ans",
-      "duration": "30 min",
-      "difficulty": "Facile",
-      "participants": "8-15",
-      "description": "Postures simples, respiration, relaxation adaptées aux enfants.",
-      "materials": ["Tapis de sol", "Musique douce", "Espace calme"],
-      "objectives": [
-        "Découvrir le yoga",
-        "Apprendre à se détendre",
-        "Améliorer la concentration"
-      ],
-      "steps": [
-        "Installation au calme",
-        "Exercices de respiration",
-        "Postures simples (animaux)",
-        "Relaxation guidée",
-        "Retour progressif"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["yoga", "relaxation", "respiration", "calme", "concentration"]
-    },
-    {
-      "id": 18,
-      "title": "Recyclage créatif",
-      "category": "manuelles",
-      "age": "7-12 ans",
-      "duration": "60 min",
-      "difficulty": "Moyen",
-      "participants": "8-12",
-      "description": "Création d'objets utiles ou décoratifs à partir de matériaux recyclés.",
-      "materials": ["Bouteilles plastique", "Cartons", "Bouchons", "Colle", "Peinture", "Ciseaux"],
-      "objectives": [
-        "Sensibiliser au recyclage",
-        "Stimuler la créativité",
-        "Créer des objets utiles"
-      ],
-      "steps": [
-        "Présentation du recyclage",
-        "Choix du projet",
-        "Découpe et assemblage",
-        "Décoration",
-        "Présentation des créations"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["recyclage", "écologie", "créativité", "upcycling", "environnement"]
-    },
-    {
-      "id": 19,
-      "title": "Atelier perles et bijoux",
-      "category": "manuelles",
-      "age": "6-10 ans",
-      "duration": "40 min",
-      "difficulty": "Facile",
-      "participants": "8-12",
-      "description": "Création de bracelets, colliers et porte-clés en perles. Motricité fine et patience.",
-      "materials": ["Perles variées", "Fils élastiques", "Fermoirs", "Ciseaux", "Boîtes de rangement"],
-      "objectives": [
-        "Développer la motricité fine",
-        "Travailler la patience",
-        "Créer un objet personnalisé"
-      ],
-      "steps": [
-        "Présentation des techniques",
-        "Choix des perles et motifs",
-        "Enfilage des perles",
-        "Fermeture et finitions",
-        "Présentation des créations"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["perles", "bijoux", "motricité", "patience", "créativité"]
-    },
-    {
-      "id": 20,
-      "title": "Marionnettes en chaussettes",
-      "category": "manuelles",
-      "age": "5-9 ans",
-      "duration": "50 min",
-      "difficulty": "Facile",
-      "participants": "8-12",
-      "description": "Fabrication de marionnettes à partir de chaussettes. Support pour spectacle ensuite.",
-      "materials": ["Chaussettes", "Feutrine", "Boutons", "Colle", "Feutres", "Laine"],
-      "objectives": [
-        "Créer une marionnette personnalisée",
-        "Développer l'imagination",
-        "Préparer un spectacle"
-      ],
-      "steps": [
-        "Choix du personnage",
-        "Assemblage des éléments",
-        "Décoration de la marionnette",
-        "Animation et voix",
-        "Mini spectacle improvisé"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["marionnettes", "spectacle", "imagination", "théâtre", "création"]
-    },
-    {
-      "id": 21,
-      "title": "Cartes pop-up",
-      "category": "manuelles",
-      "age": "7-12 ans",
-      "duration": "55 min",
-      "difficulty": "Moyen",
-      "participants": "8-12",
-      "description": "Création de cartes en relief avec mécanismes pop-up. Technique et créativité.",
-      "materials": ["Papier cartonné", "Ciseaux", "Colle", "Feutres", "Règles", "Modèles"],
-      "objectives": [
-        "Découvrir les mécanismes pop-up",
-        "Développer la précision",
-        "Créer une carte unique"
-      ],
-      "steps": [
-        "Explication des mécanismes de base",
-        "Choix du thème de la carte",
-        "Découpage et pliage",
-        "Assemblage des éléments",
-        "Décoration finale"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["papier", "pop-up", "technique", "carte", "précision"]
-    },
-    {
-      "id": 22,
-      "title": "Pâte à sel créations",
-      "category": "manuelles",
-      "age": "4-8 ans",
-      "duration": "70 min",
-      "difficulty": "Facile",
-      "participants": "8-12",
-      "description": "Modelage avec pâte à sel maison. Cuisson et peinture des créations.",
-      "materials": ["Farine", "Sel", "Eau", "Peinture", "Pinceaux", "Four ou séchage"],
-      "objectives": [
-        "Découvrir le modelage",
-        "Développer la créativité 3D",
-        "Créer un objet durable"
-      ],
-      "steps": [
-        "Fabrication de la pâte à sel",
-        "Modelage libre ou guidé",
-        "Cuisson ou séchage",
-        "Peinture des créations",
-        "Vernissage optionnel"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["modelage", "pâte à sel", "sculpture", "peinture", "3D"]
-    },
-    {
-      "id": 23,
-      "title": "Collages artistiques",
-      "category": "manuelles",
-      "age": "5-10 ans",
-      "duration": "45 min",
-      "difficulty": "Facile",
-      "participants": "8-15",
-      "description": "Création de tableaux par collage de matériaux variés. Texture et composition.",
-      "materials": ["Magazines", "Papiers colorés", "Tissus", "Colle", "Ciseaux", "Supports carton"],
-      "objectives": [
-        "Développer le sens artistique",
-        "Explorer les textures",
-        "Composer une œuvre"
-      ],
-      "steps": [
-        "Présentation d'œuvres de collage",
-        "Choix du thème",
-        "Découpage des éléments",
-        "Composition et collage",
-        "Exposition des œuvres"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["collage", "art", "texture", "composition", "créativité"]
-    },
-    {
-      "id": 24,
-      "title": "Tissage sur carton",
-      "category": "manuelles",
-      "age": "6-11 ans",
-      "duration": "50 min",
-      "difficulty": "Moyen",
-      "participants": "8-12",
-      "description": "Initiation au tissage sur métier en carton. Motifs et couleurs.",
-      "materials": ["Carton", "Laine de couleurs", "Ciseaux", "Aiguilles plastique"],
-      "objectives": [
-        "Découvrir le tissage",
-        "Développer la patience",
-        "Créer un objet textile"
-      ],
-      "steps": [
-        "Fabrication du métier en carton",
-        "Installation de la chaîne",
-        "Tissage guidé",
-        "Création de motifs",
-        "Finitions et retrait du carton"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["tissage", "laine", "patience", "textile", "motifs"]
-    },
-    {
-      "id": 25,
-      "title": "Épervier",
-      "category": "sportifs",
-      "age": "6-12 ans",
-      "duration": "20 min",
-      "difficulty": "Facile",
-      "participants": "10-25",
-      "description": "Jeu de course traditionnel. Un épervier attrape les joueurs qui traversent.",
-      "materials": ["Plots ou cônes", "Sifflet", "Espace dégagé"],
-      "objectives": [
-        "Développer la vitesse et l'agilité",
-        "Apprendre les règles collectives",
-        "Se dépenser physiquement"
-      ],
-      "steps": [
-        "Délimitation de l'aire de jeu",
-        "Explication des règles",
-        "Désignation de l'épervier",
-        "Plusieurs manches",
-        "Rotation des rôles"
+      "id": "sport-005",
+      "name": "Jeux de parachute",
+      "category": "sport",
+      "description": "Activités collectives avec un grand parachute coloré : vagues, champignon, échanges de place sous le parachute.",
+      "duration": 30,
+      "minAge": 3,
+      "maxAge": 10,
+      "groupSize": {
+        "min": 8,
+        "max": 25
+      },
+      "materials": [
+        "parachute pédagogique"
       ],
       "environment": "outdoor",
-      "energyLevel": "dynamique",
-      "weather": ["sun"],
-      "groupType": "grand",
-      "tags": ["course", "rapidité", "traditionnel", "agilité", "groupe"]
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "large",
+      "tags": [
+        "parachute",
+        "collectif",
+        "maternelle",
+        "couleurs"
+      ]
     },
     {
-      "id": 26,
-      "title": "Relais athlétisme",
-      "category": "sportifs",
-      "age": "7-12 ans",
-      "duration": "30 min",
-      "difficulty": "Facile",
-      "participants": "12-20",
-      "description": "Courses relais avec passage de témoin. Vitesse et coordination d'équipe.",
-      "materials": ["Témoins", "Cônes", "Chronomètre", "Sifflet"],
-      "objectives": [
-        "Développer la vitesse",
-        "Travailler la transmission du témoin",
-        "Favoriser l'esprit d'équipe"
-      ],
-      "steps": [
-        "Échauffement collectif",
-        "Explication de la transmission",
-        "Formation des équipes",
-        "Entraînement",
-        "Courses finales chronométrées"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "dynamique",
-      "weather": ["sun"],
-      "groupType": "grand",
-      "tags": ["course", "relais", "vitesse", "équipe", "athlétisme"]
-    },
-    {
-      "id": 27,
-      "title": "Ultimate frisbee",
-      "category": "sportifs",
-      "age": "8-12 ans",
-      "duration": "40 min",
-      "difficulty": "Moyen",
-      "participants": "10-16",
-      "description": "Sport collectif avec frisbee. Fair-play, stratégie et passes précises.",
-      "materials": ["Frisbees", "Cônes", "Chasubles", "Sifflet"],
-      "objectives": [
-        "Découvrir un sport collectif",
-        "Développer la précision des passes",
-        "Apprendre l'auto-arbitrage"
-      ],
-      "steps": [
-        "Apprentissage du lancer",
-        "Explication des règles",
-        "Exercices de passes",
-        "Match par équipes",
-        "Débriefing fair-play"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "dynamique",
-      "weather": ["sun"],
-      "groupType": "moyen",
-      "tags": ["frisbee", "collectif", "fair-play", "stratégie", "passes"]
-    },
-    {
-      "id": 28,
-      "title": "Béret sportif",
-      "category": "sportifs",
-      "age": "6-11 ans",
-      "duration": "25 min",
-      "difficulty": "Facile",
-      "participants": "10-20",
-      "description": "Jeu de course et de rapidité. Réflexes et vitesse.",
-      "materials": ["Objet (béret)", "Plots", "Sifflet"],
-      "objectives": [
-        "Développer les réflexes",
-        "Améliorer la vitesse de réaction",
-        "Favoriser la concentration"
-      ],
-      "steps": [
-        "Formation de deux équipes",
-        "Attribution des numéros",
-        "Explication des règles",
-        "Plusieurs manches",
-        "Comptage des points"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "dynamique",
-      "weather": ["sun"],
-      "groupType": "grand",
-      "tags": ["béret", "rapidité", "réflexes", "numéros", "course"]
-    },
-    {
-      "id": 29,
-      "title": "Jeux olympiques rigolos",
-      "category": "sportifs",
-      "age": "5-12 ans",
-      "duration": "60 min",
-      "difficulty": "Facile",
-      "participants": "12-24",
-      "description": "Olympiades avec épreuves fun : course en sac, œuf-cuillère, etc.",
-      "materials": ["Sacs", "Cuillères", "Œufs durs", "Ballons", "Cordes", "Médailles"],
-      "objectives": [
-        "Participer à des épreuves ludiques",
-        "Développer l'esprit sportif",
-        "S'amuser en bougeant"
-      ],
-      "steps": [
-        "Présentation des épreuves",
-        "Formation des équipes",
-        "Rotation sur les ateliers",
-        "Comptage des points",
-        "Remise de médailles"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "dynamique",
-      "weather": ["sun"],
-      "groupType": "grand",
-      "tags": ["olympiades", "fun", "épreuves", "médailles", "variété"]
-    },
-    {
-      "id": 30,
-      "title": "Statues musicales",
-      "category": "expression",
-      "age": "4-8 ans",
-      "duration": "20 min",
-      "difficulty": "Facile",
-      "participants": "8-20",
-      "description": "Danse libre puis immobilisation à l'arrêt de la musique. Écoute et contrôle.",
-      "materials": ["Enceinte", "Playlist variée"],
-      "objectives": [
-        "Développer l'écoute musicale",
-        "Travailler le contrôle corporel",
-        "S'amuser en dansant"
-      ],
-      "steps": [
-        "Explication des règles",
-        "Danse libre sur musique",
-        "Arrêts surprises",
-        "Éliminations ou variantes",
-        "Danse finale collective"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["musique", "danse", "écoute", "contrôle", "statue"]
-    },
-    {
-      "id": 31,
-      "title": "Mime et devinettes",
-      "category": "expression",
-      "age": "6-12 ans",
-      "duration": "35 min",
-      "difficulty": "Facile",
-      "participants": "8-16",
-      "description": "Jeu de mimes par équipes. Expression corporelle et communication non-verbale.",
-      "materials": ["Cartes avec mots ou thèmes", "Chronomètre", "Tableau de score"],
-      "objectives": [
-        "Développer l'expression corporelle",
-        "Communiquer sans parole",
-        "Favoriser l'observation"
-      ],
-      "steps": [
-        "Formation des équipes",
-        "Explication des règles du mime",
-        "Tours de mimes alternés",
-        "Comptage des points",
-        "Variantes thématiques"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["mime", "expression", "corporel", "communication", "observation"]
-    },
-    {
-      "id": 32,
-      "title": "Spectacle de marionnettes",
-      "category": "expression",
-      "age": "5-10 ans",
-      "duration": "60 min",
-      "difficulty": "Moyen",
-      "participants": "8-12",
-      "description": "Création et présentation d'un spectacle de marionnettes. Scénario et mise en scène.",
-      "materials": ["Marionnettes", "Castelet", "Décors", "Accessoires"],
-      "objectives": [
-        "Créer une histoire collective",
-        "Manipuler des marionnettes",
-        "Présenter un spectacle"
-      ],
-      "steps": [
-        "Invention de l'histoire",
-        "Répartition des rôles",
-        "Répétitions",
-        "Création des décors",
-        "Représentation finale"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["marionnettes", "spectacle", "histoire", "théâtre", "scénario"]
-    },
-    {
-      "id": 33,
-      "title": "Création musicale",
-      "category": "expression",
-      "age": "6-11 ans",
-      "duration": "50 min",
-      "difficulty": "Moyen",
-      "participants": "8-15",
-      "description": "Création de rythmes et mélodies avec instruments simples ou objets du quotidien.",
-      "materials": ["Instruments de percussion", "Objets divers", "Enregistreur optionnel"],
-      "objectives": [
-        "Découvrir le rythme",
-        "Créer une composition collective",
-        "Explorer les sons"
-      ],
-      "steps": [
-        "Exploration sonore libre",
-        "Création de rythmes simples",
-        "Assemblage des parties",
-        "Répétition collective",
-        "Enregistrement ou concert"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["musique", "rythme", "création", "instruments", "son"]
-    },
-    {
-      "id": 34,
-      "title": "Chant choral",
-      "category": "expression",
-      "age": "6-12 ans",
-      "duration": "40 min",
-      "difficulty": "Facile",
-      "participants": "10-25",
-      "description": "Apprentissage et interprétation de chansons en groupe. Harmonie et écoute.",
-      "materials": ["Paroles imprimées", "Enceinte pour accompagnement", "Pupitre optionnel"],
-      "objectives": [
-        "Développer l'écoute musicale",
-        "Chanter en harmonie",
-        "Gagner en confiance vocale"
-      ],
-      "steps": [
-        "Échauffement vocal",
-        "Apprentissage des paroles",
-        "Travail de la mélodie",
-        "Ajout de gestes",
-        "Interprétation finale"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "grand",
-      "tags": ["chant", "chœur", "musique", "harmonie", "voix"]
-    },
-    {
-      "id": 35,
-      "title": "Jeu de cartes tournoi",
-      "category": "societe",
-      "age": "7-12 ans",
-      "duration": "50 min",
-      "difficulty": "Facile",
-      "participants": "8-16",
-      "description": "Tournoi de jeux de cartes adaptés (Uno, 7 familles, etc.). Stratégie et fair-play.",
-      "materials": ["Jeux de cartes", "Tables", "Tableaux de scores"],
-      "objectives": [
-        "Apprendre les règles de jeux",
-        "Développer la stratégie",
-        "Respecter le fair-play"
-      ],
-      "steps": [
-        "Explication des règles",
-        "Formation des tables",
-        "Plusieurs manches",
-        "Rotation des adversaires",
-        "Classement final"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["cartes", "stratégie", "tournoi", "règles", "fair-play"]
-    },
-    {
-      "id": 36,
-      "title": "Dobble géant",
-      "category": "societe",
-      "age": "5-10 ans",
-      "duration": "30 min",
-      "difficulty": "Facile",
-      "participants": "6-20",
-      "description": "Version géante du jeu Dobble. Rapidité et observation.",
-      "materials": ["Cartes Dobble géantes", "Tapis ou tables"],
-      "objectives": [
-        "Développer la rapidité d'observation",
-        "Améliorer la concentration",
-        "S'amuser en groupe"
-      ],
-      "steps": [
-        "Explication des règles",
-        "Partie de démonstration",
-        "Plusieurs manches",
-        "Variantes de jeu",
-        "Classement final"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["dobble", "observation", "rapidité", "concentration", "visuel"]
-    },
-    {
-      "id": 37,
-      "title": "Construction géante",
-      "category": "societe",
-      "age": "5-12 ans",
-      "duration": "60 min",
-      "difficulty": "Moyen",
-      "participants": "8-16",
-      "description": "Construction collaborative avec Kapla, Lego ou cartons. Créativité et coopération.",
-      "materials": ["Kapla ou Lego", "Cartons", "Scotch", "Espace au sol"],
-      "objectives": [
-        "Favoriser la collaboration",
-        "Développer la créativité 3D",
-        "Construire un projet commun"
-      ],
-      "steps": [
-        "Choix du projet collectif",
-        "Répartition des tâches",
-        "Construction par phases",
-        "Assemblage final",
-        "Présentation et photos"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["construction", "kapla", "lego", "coopération", "créativité"]
-    },
-    {
-      "id": 38,
-      "title": "Jeu de piste intérieur",
-      "category": "societe",
-      "age": "6-11 ans",
-      "duration": "45 min",
-      "difficulty": "Moyen",
-      "participants": "8-16",
-      "description": "Chasse au trésor avec énigmes dans les locaux. Réflexion et recherche.",
-      "materials": ["Énigmes préparées", "Indices cachés", "Trésor final", "Plan optionnel"],
-      "objectives": [
-        "Résoudre des énigmes",
-        "Travailler en équipe",
-        "Explorer les lieux"
-      ],
-      "steps": [
-        "Briefing et équipes",
-        "Distribution de la première énigme",
-        "Recherche et résolution",
-        "Progression d'indice en indice",
-        "Découverte du trésor"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["énigmes", "trésor", "recherche", "intérieur", "équipe"]
-    },
-    {
-      "id": 39,
-      "title": "Memory géant",
-      "category": "societe",
-      "age": "4-9 ans",
-      "duration": "25 min",
-      "difficulty": "Facile",
-      "participants": "6-15",
-      "description": "Jeu de mémoire avec grandes cartes au sol. Concentration et mémorisation.",
-      "materials": ["Cartes memory géantes", "Espace au sol"],
-      "objectives": [
-        "Développer la mémoire",
-        "Améliorer la concentration",
-        "Respecter le tour de jeu"
-      ],
-      "steps": [
-        "Disposition des cartes",
-        "Explication des règles",
-        "Tours de jeu alternés",
-        "Comptage des paires",
-        "Déclaration du gagnant"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["mémoire", "concentration", "cartes", "observation", "tour de jeu"]
-    },
-    {
-      "id": 40,
-      "title": "Sortie au musée",
-      "category": "sorties",
-      "age": "7-12 ans",
-      "duration": "120 min",
-      "difficulty": "Facile",
-      "participants": "10-20",
-      "description": "Visite guidée d'un musée local. Culture et découverte.",
-      "materials": ["Autorisations", "Carnets", "Crayons", "Transport"],
-      "objectives": [
-        "Découvrir un lieu culturel",
-        "Apprendre sur un thème",
-        "Développer la curiosité"
-      ],
-      "steps": [
-        "Préparation et autorisations",
-        "Trajet commenté",
-        "Visite guidée",
-        "Atelier ou jeu au musée",
-        "Retour et partage"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "grand",
-      "tags": ["musée", "culture", "sortie", "découverte", "apprentissage"]
-    },
-    {
-      "id": 41,
-      "title": "Balade nature",
-      "category": "sorties",
-      "age": "5-12 ans",
-      "duration": "90 min",
-      "difficulty": "Facile",
-      "participants": "10-20",
-      "description": "Promenade en forêt ou parc avec observation de la faune et flore.",
-      "materials": ["Guide nature", "Jumelles", "Carnets", "Sacs pour récoltes"],
-      "objectives": [
-        "Observer la nature",
-        "Apprendre sur l'écosystème",
-        "Se dépenser en marchant"
-      ],
-      "steps": [
-        "Consignes de sécurité",
-        "Départ en groupe",
-        "Arrêts observation",
-        "Collecte d'éléments naturels",
-        "Retour et tri des trouvailles"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "modere",
-      "weather": ["sun"],
-      "groupType": "grand",
-      "tags": ["nature", "balade", "observation", "forêt", "écologie"]
-    },
-    {
-      "id": 42,
-      "title": "Visite ferme pédagogique",
-      "category": "sorties",
-      "age": "4-10 ans",
-      "duration": "150 min",
-      "difficulty": "Facile",
-      "participants": "12-20",
-      "description": "Découverte des animaux de la ferme, nourrissage, activités fermières.",
-      "materials": ["Autorisations", "Bottes", "Vêtements adaptés", "Transport"],
-      "objectives": [
-        "Découvrir les animaux de ferme",
-        "Comprendre le métier d'agriculteur",
-        "Participer aux soins"
-      ],
-      "steps": [
-        "Trajet et consignes",
-        "Visite guidée de la ferme",
-        "Nourrissage des animaux",
-        "Atelier fermier",
-        "Retour et discussion"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "modere",
-      "weather": ["sun"],
-      "groupType": "grand",
-      "tags": ["ferme", "animaux", "agriculture", "nature", "découverte"]
-    },
-    {
-      "id": 43,
-      "title": "Piscine municipale",
-      "category": "sorties",
-      "age": "6-12 ans",
-      "duration": "120 min",
-      "difficulty": "Moyen",
-      "participants": "10-20",
-      "description": "Sortie à la piscine. Jeux d'eau, natation, apprentissage.",
-      "materials": ["Maillots", "Serviettes", "Lunettes", "Bouées", "Autorisations"],
-      "objectives": [
-        "Se familiariser avec l'eau",
-        "Apprendre à nager",
-        "S'amuser dans l'eau"
-      ],
-      "steps": [
-        "Préparation et vestiaires",
-        "Douche obligatoire",
-        "Jeux d'eau encadrés",
-        "Temps libre surveillé",
-        "Retour et séchage"
-      ],
-      "environment": "indoor",
-      "energyLevel": "dynamique",
-      "weather": ["any"],
-      "groupType": "grand",
-      "tags": ["piscine", "eau", "natation", "jeux", "sport"]
-    },
-    {
-      "id": 44,
-      "title": "Initiation tennis",
-      "category": "initiation",
-      "age": "7-12 ans",
-      "duration": "60 min",
-      "difficulty": "Moyen",
-      "participants": "8-12",
-      "description": "Découverte du tennis. Maniement de raquette, passes, mini-matchs.",
-      "materials": ["Raquettes adaptées", "Balles molles", "Filet ou corde", "Cônes"],
-      "objectives": [
-        "Découvrir le tennis",
-        "Apprendre les gestes de base",
-        "Jouer des échanges simples"
-      ],
-      "steps": [
-        "Échauffement",
-        "Prise en main de la raquette",
-        "Exercices de frappe",
-        "Échanges par deux",
-        "Mini-matchs"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "dynamique",
-      "weather": ["sun"],
-      "groupType": "moyen",
-      "tags": ["tennis", "raquette", "sport", "initiation", "précision"]
-    },
-    {
-      "id": 45,
-      "title": "Badminton découverte",
-      "category": "initiation",
-      "age": "6-12 ans",
-      "duration": "50 min",
-      "difficulty": "Facile",
-      "participants": "8-16",
-      "description": "Initiation au badminton. Volant, raquette, matchs en double.",
-      "materials": ["Raquettes", "Volants", "Filets", "Terrain délimité"],
-      "objectives": [
-        "Découvrir le badminton",
-        "Développer la coordination œil-main",
-        "Jouer en double"
-      ],
-      "steps": [
-        "Présentation du matériel",
-        "Exercices de service",
-        "Échanges libres",
-        "Matchs en double",
-        "Tournoi amical"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["badminton", "volant", "coordination", "double", "raquette"]
-    },
-    {
-      "id": 46,
-      "title": "Tir à l'arc adapté",
-      "category": "initiation",
-      "age": "8-12 ans",
-      "duration": "60 min",
-      "difficulty": "Moyen",
-      "participants": "8-12",
-      "description": "Initiation au tir à l'arc avec matériel adapté. Concentration et précision.",
-      "materials": ["Arcs adaptés", "Flèches sécurisées", "Cibles", "Protections", "Encadrement"],
-      "objectives": [
-        "Découvrir le tir à l'arc",
-        "Développer la concentration",
-        "Travailler la précision"
-      ],
-      "steps": [
-        "Briefing sécurité strict",
-        "Positionnement et posture",
-        "Premiers tirs guidés",
-        "Pratique autonome supervisée",
-        "Débriefing"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "calme",
-      "weather": ["sun"],
-      "groupType": "moyen",
-      "tags": ["tir à l'arc", "précision", "concentration", "sécurité", "cible"]
-    },
-    {
-      "id": 47,
-      "title": "Cirque et jonglage",
-      "category": "initiation",
-      "age": "6-12 ans",
-      "duration": "60 min",
-      "difficulty": "Moyen",
-      "participants": "10-16",
-      "description": "Initiation aux arts du cirque : jonglage, assiettes chinoises, diabolo.",
-      "materials": ["Balles de jonglage", "Assiettes chinoises", "Diabolos", "Foulards"],
-      "objectives": [
-        "Découvrir les arts du cirque",
-        "Développer la coordination",
-        "Apprendre à jongler"
-      ],
-      "steps": [
-        "Échauffement ludique",
-        "Initiation au jonglage",
-        "Rotation sur les ateliers",
-        "Pratique libre",
-        "Mini spectacle"
-      ],
-      "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["cirque", "jonglage", "coordination", "diabolo", "arts"]
-    },
-    {
-      "id": 48,
-      "title": "Atelier cuisine",
-      "category": "manuelles",
-      "age": "6-12 ans",
-      "duration": "75 min",
-      "difficulty": "Moyen",
-      "participants": "8-12",
-      "description": "Préparation d'une recette simple (cookies, gâteau, pizza). Partage et dégustation.",
-      "materials": ["Ingrédients", "Ustensiles", "Four", "Tabliers", "Recettes"],
-      "objectives": [
-        "Découvrir la cuisine",
-        "Suivre une recette",
-        "Partager un moment convivial"
-      ],
-      "steps": [
-        "Lavage des mains et organisation",
-        "Lecture de la recette",
-        "Préparation collective",
-        "Cuisson surveillée",
-        "Dégustation et rangement"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["cuisine", "recette", "partage", "goût", "convivialité"]
-    },
-    {
-      "id": 49,
-      "title": "Scrapbooking",
-      "category": "manuelles",
-      "age": "8-12 ans",
-      "duration": "60 min",
-      "difficulty": "Moyen",
-      "participants": "8-12",
-      "description": "Création d'un album photo personnalisé. Mémoire et créativité.",
-      "materials": ["Albums", "Photos", "Papiers colorés", "Stickers", "Colle", "Feutres"],
-      "objectives": [
-        "Créer un souvenir personnalisé",
-        "Développer la créativité",
-        "Raconter une histoire en images"
-      ],
-      "steps": [
-        "Sélection des photos",
-        "Choix du thème",
-        "Mise en page",
-        "Décoration et légendes",
-        "Présentation des albums"
-      ],
-      "environment": "indoor",
-      "energyLevel": "calme",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["scrapbooking", "photos", "souvenirs", "créativité", "album"]
-    },
-    {
-      "id": 50,
-      "title": "Land art",
-      "category": "manuelles",
-      "age": "5-12 ans",
-      "duration": "60 min",
-      "difficulty": "Facile",
-      "participants": "8-15",
-      "description": "Création artistique avec éléments naturels. Art éphémère en extérieur.",
-      "materials": ["Éléments naturels", "Appareil photo", "Espace naturel"],
-      "objectives": [
-        "Créer avec la nature",
-        "Développer l'observation",
-        "Réaliser une œuvre éphémère"
-      ],
-      "steps": [
-        "Collecte d'éléments naturels",
-        "Choix de l'emplacement",
-        "Création collective ou individuelle",
-        "Photos des œuvres",
-        "Discussion sur l'art éphémère"
-      ],
-      "environment": "outdoor",
-      "energyLevel": "modere",
-      "weather": ["sun"],
-      "groupType": "moyen",
-      "tags": ["land art", "nature", "art", "éphémère", "créativité"]
-    },
-    {
-      "id": 51,
-      "title": "Chamboule-tout",
-      "category": "sportifs",
-      "age": "5-10 ans",
-      "duration": "25 min",
-      "difficulty": "Facile",
-      "participants": "8-20",
-      "description": "Jeu de lancer de balles sur pyramide de boîtes. Précision et adresse.",
-      "materials": ["Boîtes ou conserves", "Balles molles", "Table", "Points à comptabiliser"],
-      "objectives": [
-        "Développer la précision",
-        "Travailler le lancer",
-        "S'amuser en compétition amicale"
-      ],
-      "steps": [
-        "Installation de la pyramide",
-        "Explication des règles",
-        "Tours de lancer",
-        "Comptage des points",
-        "Classement final"
+      "id": "sport-006",
+      "name": "Parcours d'obstacles",
+      "category": "sport",
+      "description": "Parcours ludique avec cerceaux, plots, bancs, cordes à sauter et tunnels. Chronométré ou libre.",
+      "duration": 45,
+      "minAge": 5,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 6,
+        "max": 20
+      },
+      "materials": [
+        "cerceaux",
+        "plots",
+        "corde",
+        "tunnels de rampade"
       ],
       "environment": "both",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "moyen",
-      "tags": ["lancer", "précision", "boîtes", "adresse", "kermesse"]
+      "weather": "any",
+      "energyLevel": "high",
+      "groupType": "mixed",
+      "tags": [
+        "parcours",
+        "agilité",
+        "motricité",
+        "chrono"
+      ]
     },
     {
-      "id": 52,
-      "title": "Cache-cache géant",
-      "category": "sportifs",
-      "age": "5-10 ans",
-      "duration": "30 min",
-      "difficulty": "Facile",
-      "participants": "10-20",
-      "description": "Cache-cache dans un espace sécurisé délimité. Discrétion et recherche.",
-      "materials": ["Espace sécurisé", "Sifflet", "Chronomètre"],
-      "objectives": [
-        "Développer la discrétion",
-        "Améliorer l'observation",
-        "Respecter l'espace de jeu"
-      ],
-      "steps": [
-        "Délimitation de l'aire de jeu",
-        "Explication des règles de sécurité",
-        "Désignation du chercheur",
-        "Plusieurs manches",
-        "Rotation des rôles"
+      "id": "sport-007",
+      "name": "Bocce pétanque",
+      "category": "sport",
+      "description": "Initiation à la pétanque avec boules légères. Apprendre les règles, pointer, tirer.",
+      "duration": 40,
+      "minAge": 6,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "boules de pétanque",
+        "cochonnet"
       ],
       "environment": "outdoor",
-      "energyLevel": "modere",
-      "weather": ["sun"],
-      "groupType": "grand",
-      "tags": ["cache-cache", "recherche", "discrétion", "observation", "traditionnel"]
+      "weather": "sunny",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "pétanque",
+        "précision",
+        "stratégie",
+        "traditionnel"
+      ]
     },
     {
-      "id": 53,
-      "title": "Molky",
-      "category": "sportifs",
-      "age": "7-12 ans",
-      "duration": "40 min",
-      "difficulty": "Facile",
-      "participants": "8-16",
-      "description": "Jeu finlandais de lancer de bâton. Stratégie et précision.",
-      "materials": ["Jeu de Molky complet", "Espace dégagé"],
-      "objectives": [
-        "Découvrir un jeu traditionnel",
-        "Développer la stratégie",
-        "Travailler la précision"
-      ],
-      "steps": [
-        "Explication des règles",
-        "Démonstration",
-        "Formation des équipes",
-        "Partie chronométrée",
-        "Proclamation du vainqueur"
+      "id": "sport-008",
+      "name": "Saut à la corde collectif",
+      "category": "sport",
+      "description": "Jeux de corde variés : saut individuel, double dutch, sauts synchronisés à plusieurs.",
+      "duration": 30,
+      "minAge": 5,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "cordes à sauter",
+        "grande corde"
       ],
       "environment": "outdoor",
-      "energyLevel": "calme",
-      "weather": ["sun"],
-      "groupType": "moyen",
-      "tags": ["molky", "finlande", "lancer", "stratégie", "précision"]
+      "weather": "sunny",
+      "energyLevel": "high",
+      "groupType": "mixed",
+      "tags": [
+        "corde",
+        "rythme",
+        "coordination",
+        "jeu de cour"
+      ]
     },
     {
-      "id": 54,
-      "title": "Parachute coopératif",
-      "category": "sportifs",
-      "age": "4-10 ans",
-      "duration": "30 min",
-      "difficulty": "Facile",
-      "participants": "10-20",
-      "description": "Jeux collectifs avec grand parachute coloré. Coopération et rythme.",
-      "materials": ["Parachute de jeu", "Balles légères", "Musique optionnelle"],
-      "objectives": [
-        "Favoriser la coopération",
-        "Développer le rythme collectif",
-        "S'amuser ensemble"
-      ],
-      "steps": [
-        "Présentation du parachute",
-        "Jeux de vagues",
-        "Jeux avec balles",
-        "Rotation sous le parachute",
-        "Jeu libre créatif"
+      "id": "sport-009",
+      "name": "Tir à l'arc initiation",
+      "category": "sport",
+      "description": "Initiation encadrée au tir à l'arc avec arcs adaptés à l'âge. Apprentissage des règles de sécurité et des techniques de base.",
+      "duration": 60,
+      "minAge": 8,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 5,
+        "max": 12
+      },
+      "materials": [
+        "arcs adaptés",
+        "flèches",
+        "cibles",
+        "protection bras"
       ],
       "environment": "outdoor",
-      "energyLevel": "modere",
-      "weather": ["sun"],
-      "groupType": "grand",
-      "tags": ["parachute", "coopération", "collectif", "rythme", "couleurs"]
+      "weather": "sunny",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "tir à l'arc",
+        "précision",
+        "concentration",
+        "sécurité"
+      ]
     },
     {
-      "id": 55,
-      "title": "Percussion corporelle",
-      "category": "expression",
-      "age": "6-12 ans",
-      "duration": "40 min",
-      "difficulty": "Moyen",
-      "participants": "10-20",
-      "description": "Création de rythmes avec le corps : mains, pieds, voix. Musique corporelle.",
-      "materials": ["Espace libre", "Musique de fond optionnelle"],
-      "objectives": [
-        "Découvrir la percussion corporelle",
-        "Développer le sens du rythme",
-        "Créer une composition collective"
-      ],
-      "steps": [
-        "Échauffement rythmique",
-        "Apprentissage de patterns",
-        "Création par petits groupes",
-        "Assemblage collectif",
-        "Performance finale"
+      "id": "sport-010",
+      "name": "Équilibre et jonglage",
+      "category": "sport",
+      "description": "Apprentissage des techniques d'équilibre (échasses, monocycle) et de jonglage avec balles, anneaux ou foulards.",
+      "duration": 45,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 5,
+        "max": 15
+      },
+      "materials": [
+        "foulards",
+        "balles de jonglage",
+        "mini-échasses"
       ],
       "environment": "indoor",
-      "energyLevel": "modere",
-      "weather": ["any"],
-      "groupType": "grand",
-      "tags": ["percussion", "rythme", "corps", "musique", "collectif"]
-    }
-  ],
-  "categories": [
-    {
-      "id": "manuelles",
-      "name": "Activités manuelles",
-      "icon": "palette",
-      "color": "#667eea",
-      "description": "Développer la créativité et la motricité fine"
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "small",
+      "tags": [
+        "jonglage",
+        "équilibre",
+        "cirque",
+        "coordination"
+      ]
     },
     {
-      "id": "sportifs",
-      "name": "Jeux sportifs",
-      "icon": "trophy",
-      "color": "#f093fb",
-      "description": "Bouger, se dépenser et s'amuser en équipe"
+      "id": "sport-011",
+      "name": "Volleyball assis",
+      "category": "sport",
+      "description": "Version accessible du volleyball pratiquée assis par terre. Favorise l'inclusion et la coopération.",
+      "duration": 35,
+      "minAge": 6,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 8,
+        "max": 20
+      },
+      "materials": [
+        "ballon de volley allégé",
+        "filet bas ou corde"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "large",
+      "tags": [
+        "volleyball",
+        "inclusion",
+        "assis",
+        "équipe"
+      ]
     },
     {
-      "id": "expression",
-      "name": "Expression",
-      "icon": "theater",
-      "color": "#4facfe",
-      "description": "S'exprimer par le théâtre, la danse et la parole"
+      "id": "sport-012",
+      "name": "Course d'orientation simplifiée",
+      "category": "sport",
+      "description": "Initiation à la course d'orientation avec carte simplifiée et balises à trouver dans un périmètre défini.",
+      "duration": 60,
+      "minAge": 8,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 6,
+        "max": 24
+      },
+      "materials": [
+        "cartes simplifiées",
+        "balises numérotées",
+        "poinçons"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "medium",
+      "groupType": "mixed",
+      "tags": [
+        "orientation",
+        "carte",
+        "autonomie",
+        "nature"
+      ]
     },
     {
-      "id": "societe",
-      "name": "Jeux de société",
-      "icon": "gamepad",
-      "color": "#43e97b",
-      "description": "Réfléchir ensemble et partager des moments ludiques"
+      "id": "sport-013",
+      "name": "Frisbee ultimate",
+      "category": "sport",
+      "description": "Initiation à l'ultimate frisbee : passes, déplacements, esprit de l'auto-arbitrage.",
+      "duration": 45,
+      "minAge": 8,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 8,
+        "max": 22
+      },
+      "materials": [
+        "frisbees"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "high",
+      "groupType": "large",
+      "tags": [
+        "frisbee",
+        "équipe",
+        "fair-play",
+        "lancer"
+      ]
     },
     {
-      "id": "sorties",
-      "name": "Sorties",
-      "icon": "map",
-      "color": "#ff9a9e",
-      "description": "Découvrir le monde extérieur et s'éveiller"
+      "id": "sport-014",
+      "name": "Danses du monde",
+      "category": "sport",
+      "description": "Apprentissage de danses traditionnelles de différentes cultures : salsa, haka, danse africaine, etc.",
+      "duration": 50,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 6,
+        "max": 30
+      },
+      "materials": [
+        "enceinte bluetooth",
+        "playlist"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "large",
+      "tags": [
+        "danse",
+        "monde",
+        "rythme",
+        "culture",
+        "collectif"
+      ]
     },
     {
-      "id": "initiation",
-      "name": "Initiation sportive",
-      "icon": "star",
-      "color": "#a8edea",
-      "description": "Découvrir de nouvelles disciplines sportives"
+      "id": "sport-015",
+      "name": "Football américain tag",
+      "category": "sport",
+      "description": "Version sans contact du football américain avec drapeaux. Règles simplifiées, passes et touchdown.",
+      "duration": 45,
+      "minAge": 8,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 10,
+        "max": 24
+      },
+      "materials": [
+        "ballon ovale",
+        "drapeaux de flag"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "high",
+      "groupType": "large",
+      "tags": [
+        "football",
+        "flag",
+        "stratégie",
+        "équipe"
+      ]
+    },
+    {
+      "id": "sport-016",
+      "name": "Atelier hula hoop",
+      "category": "sport",
+      "description": "Apprentissage et jeux avec cerceaux hula hoop : rotations, sauts, défis collectifs.",
+      "duration": 30,
+      "minAge": 5,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 5,
+        "max": 20
+      },
+      "materials": [
+        "cerceaux hula hoop"
+      ],
+      "environment": "both",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "mixed",
+      "tags": [
+        "hula hoop",
+        "cerceau",
+        "équilibre",
+        "jeu"
+      ]
+    },
+    {
+      "id": "sport-017",
+      "name": "Balle au capitaine",
+      "category": "sport",
+      "description": "Jeu collectif où deux capitaines aux buts reçoivent des passes de leur équipe. Version sécurisée du rugby.",
+      "duration": 40,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 10,
+        "max": 30
+      },
+      "materials": [
+        "ballon",
+        "plots délimiteurs"
+      ],
+      "environment": "outdoor",
+      "weather": "any",
+      "energyLevel": "high",
+      "groupType": "large",
+      "tags": [
+        "balle",
+        "passe",
+        "équipe",
+        "collectif"
+      ]
+    },
+    {
+      "id": "sport-018",
+      "name": "Stretching et relaxation",
+      "category": "sport",
+      "description": "Séance d'étirements guidée avec musique douce. Idéal en fin de journée ou après une activité intense.",
+      "duration": 20,
+      "minAge": 4,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 3,
+        "max": 30
+      },
+      "materials": [
+        "tapis",
+        "musique douce"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "stretching",
+        "relaxation",
+        "fin de journée",
+        "calme"
+      ]
+    },
+    {
+      "id": "sport-019",
+      "name": "Jeu de la ficelle",
+      "category": "sport",
+      "description": "Les enfants sont reliés par une ficelle et doivent coopérer pour accomplir des tâches motrices ensemble.",
+      "duration": 25,
+      "minAge": 5,
+      "maxAge": 10,
+      "groupSize": {
+        "min": 4,
+        "max": 16
+      },
+      "materials": [
+        "ficelles ou cordes souples"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "coopération",
+        "motricité",
+        "lien",
+        "confiance"
+      ]
+    },
+    {
+      "id": "sport-020",
+      "name": "Kinball",
+      "category": "sport",
+      "description": "Sport collectif avec un très grand ballon rose. 3 équipes s'affrontent simultanément sur le même terrain.",
+      "duration": 50,
+      "minAge": 8,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 12,
+        "max": 30
+      },
+      "materials": [
+        "ballon kinball",
+        "terrain délimité"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "high",
+      "groupType": "large",
+      "tags": [
+        "kinball",
+        "trois équipes",
+        "originalité",
+        "sport"
+      ]
+    },
+    {
+      "id": "creatif-001",
+      "name": "Peinture sur galets",
+      "category": "creatif",
+      "description": "Décoration de galets avec peinture acrylique. Mandalas, animaux, motifs géométriques.",
+      "duration": 60,
+      "minAge": 4,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "galets",
+        "peinture acrylique",
+        "pinceaux",
+        "vernis optionnel"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "peinture",
+        "galets",
+        "nature",
+        "décoration"
+      ]
+    },
+    {
+      "id": "creatif-002",
+      "name": "Slam poésie",
+      "category": "creatif",
+      "description": "Initiation au slam : écriture libre, expression orale, partage en groupe. Thèmes choisis par les participants.",
+      "duration": 60,
+      "minAge": 10,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "feuilles",
+        "stylos",
+        "micro optionnel"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "slam",
+        "poésie",
+        "expression",
+        "oral",
+        "écriture"
+      ]
+    },
+    {
+      "id": "creatif-003",
+      "name": "Création de marionnettes",
+      "category": "creatif",
+      "description": "Fabrication de marionnettes à doigt, à main ou à tiges avec matériaux de récupération. Puis mini-spectacle.",
+      "duration": 90,
+      "minAge": 5,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 4,
+        "max": 16
+      },
+      "materials": [
+        "chaussettes",
+        "carton",
+        "colle",
+        "feutres",
+        "tissus",
+        "boutons"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "marionnettes",
+        "théâtre",
+        "récupération",
+        "création"
+      ]
+    },
+    {
+      "id": "creatif-004",
+      "name": "Aquarelle libre",
+      "category": "creatif",
+      "description": "Peinture aquarelle avec techniques : mouillé sur mouillé, soufflage à la paille, effets sel.",
+      "duration": 50,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "aquarelles",
+        "pinceaux",
+        "papier épais",
+        "sel",
+        "pailles"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "aquarelle",
+        "peinture",
+        "technique",
+        "zen"
+      ]
+    },
+    {
+      "id": "creatif-005",
+      "name": "Bande dessinée",
+      "category": "creatif",
+      "description": "Création d'une BD courte : scénario, personnages, cases, dialogues. Découverte des codes de la BD.",
+      "duration": 75,
+      "minAge": 8,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 16
+      },
+      "materials": [
+        "feuilles quadrillées ou BD vierges",
+        "crayons",
+        "feutres"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "BD",
+        "dessin",
+        "narration",
+        "bulle"
+      ]
+    },
+    {
+      "id": "creatif-006",
+      "name": "Fresque murale collective",
+      "category": "creatif",
+      "description": "Création d'une grande fresque sur rouleau de papier ou panneau. Chaque enfant contribue à l'œuvre commune.",
+      "duration": 90,
+      "minAge": 4,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 6,
+        "max": 30
+      },
+      "materials": [
+        "rouleau de papier kraft",
+        "peinture",
+        "pinceaux",
+        "éponges"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "fresque",
+        "collectif",
+        "grand format",
+        "peinture"
+      ]
+    },
+    {
+      "id": "creatif-007",
+      "name": "Modelage argile",
+      "category": "creatif",
+      "description": "Travail de l'argile naturelle : pinçage, colombins, plaques. Réalisation d'un objet ou d'un personnage.",
+      "duration": 60,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 15
+      },
+      "materials": [
+        "argile",
+        "outils à modeler",
+        "bâches protectrices"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "argile",
+        "sculpture",
+        "modelage",
+        "terre"
+      ]
+    },
+    {
+      "id": "creatif-008",
+      "name": "Photographie créative",
+      "category": "creatif",
+      "description": "Initiation à la photo : cadrage, lumière, sujet. Chasse aux photos thématique dans la structure.",
+      "duration": 60,
+      "minAge": 8,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 4,
+        "max": 12
+      },
+      "materials": [
+        "tablettes ou téléphones",
+        "liste de défis photo"
+      ],
+      "environment": "both",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "photo",
+        "cadrage",
+        "numérique",
+        "défi"
+      ]
+    },
+    {
+      "id": "creatif-009",
+      "name": "Street art pochoir",
+      "category": "creatif",
+      "description": "Création de pochoirs découpés puis application sur papier avec bombe de peinture (version jeunes) ou éponge.",
+      "duration": 75,
+      "minAge": 8,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "carton à découper",
+        "cutters (avec supervision)",
+        "peinture",
+        "éponges"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "street art",
+        "pochoir",
+        "graphisme",
+        "découpe"
+      ]
+    },
+    {
+      "id": "creatif-010",
+      "name": "Musique avec objets du quotidien",
+      "category": "creatif",
+      "description": "Fabrication d'instruments de percussion avec boîtes, bouteilles, couvercles. Puis composition d'un morceau.",
+      "duration": 60,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "boîtes vides",
+        "bouteilles",
+        "riz",
+        "élastiques",
+        "scotch"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "mixed",
+      "tags": [
+        "musique",
+        "percussion",
+        "instrument",
+        "création",
+        "bruit"
+      ]
+    },
+    {
+      "id": "creatif-011",
+      "name": "Carnet de voyage imaginaire",
+      "category": "creatif",
+      "description": "Création d'un carnet illustré d'un voyage inventé : dessins, collages, textes, tampons, tickets fictifs.",
+      "duration": 80,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 18
+      },
+      "materials": [
+        "carnets vierges",
+        "feutres",
+        "magazines à découper",
+        "colle",
+        "tampons"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "carnet",
+        "voyage",
+        "collage",
+        "écriture",
+        "imagination"
+      ]
+    },
+    {
+      "id": "creatif-012",
+      "name": "Origami",
+      "category": "creatif",
+      "description": "Art du pliage japonais avec différents niveaux de difficulté : grue, grenouille, bateau, renard.",
+      "duration": 45,
+      "minAge": 6,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "papier origami coloré",
+        "fiches de modèles"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "origami",
+        "pliage",
+        "Japon",
+        "concentration",
+        "papier"
+      ]
+    },
+    {
+      "id": "creatif-013",
+      "name": "Mandala de sable",
+      "category": "creatif",
+      "description": "Création de mandalas éphémères avec du sable coloré ou de la farine teintée. Explore la notion d'impermanence.",
+      "duration": 50,
+      "minAge": 6,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 15
+      },
+      "materials": [
+        "sable coloré ou farine teinté",
+        "plateaux sombres",
+        "modèles imprimés"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "mandala",
+        "sable",
+        "éphémère",
+        "zen",
+        "concentration"
+      ]
+    },
+    {
+      "id": "creatif-014",
+      "name": "Stop motion animation",
+      "category": "creatif",
+      "description": "Création d'un mini-film en stop motion avec pâte à modeler et tablette. Apprentissage des bases de l'animation.",
+      "duration": 90,
+      "minAge": 9,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 3,
+        "max": 10
+      },
+      "materials": [
+        "tablette avec app stop motion",
+        "pâte à modeler",
+        "décors carton"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "stop motion",
+        "animation",
+        "film",
+        "numérique",
+        "pâte à modeler"
+      ]
+    },
+    {
+      "id": "creatif-015",
+      "name": "Teinture végétale",
+      "category": "creatif",
+      "description": "Teinture de tissus ou foulards avec des plantes naturelles (thé, curcuma, betterave). Technique tie-dye naturel.",
+      "duration": 80,
+      "minAge": 6,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "foulards blanc",
+        "plantes tinctoriales",
+        "gants",
+        "casseroles",
+        "ficelles"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "teinture",
+        "végétal",
+        "tie-dye",
+        "nature",
+        "textile"
+      ]
+    },
+    {
+      "id": "creatif-016",
+      "name": "Livre pop-up",
+      "category": "creatif",
+      "description": "Fabrication d'un livre avec pages en relief et mécanismes pop-up. Chaque enfant crée son histoire.",
+      "duration": 75,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 15
+      },
+      "materials": [
+        "carton léger",
+        "ciseaux",
+        "colle",
+        "feutres",
+        "cutter avec supervision"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "pop-up",
+        "livre",
+        "découpe",
+        "narration",
+        "volume"
+      ]
+    },
+    {
+      "id": "creatif-017",
+      "name": "Graffiti lettrage",
+      "category": "creatif",
+      "description": "Apprentissage du lettrage graffiti sur papier : bubble letters, wild style simplifié, couleurs et effets.",
+      "duration": 60,
+      "minAge": 10,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "feuilles A3",
+        "marqueurs",
+        "crayons"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "graffiti",
+        "lettrage",
+        "typographie",
+        "dessin",
+        "street art"
+      ]
+    },
+    {
+      "id": "creatif-018",
+      "name": "Slime et expériences sensorielles",
+      "category": "creatif",
+      "description": "Fabrication de slime, sable cinétique et autres matières sensorielles. Comprendre les réactions chimiques simples.",
+      "duration": 50,
+      "minAge": 5,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "colle PVA",
+        "borax ou lentilles de contact",
+        "colorants",
+        "paillettes"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "slime",
+        "sensoriel",
+        "chimie",
+        "texture",
+        "toucher"
+      ]
+    },
+    {
+      "id": "creatif-019",
+      "name": "Marbrure sur papier",
+      "category": "creatif",
+      "description": "Technique de marbrure Ebru : encres flottantes sur eau gélifiée pour créer des papiers marbrés uniques.",
+      "duration": 55,
+      "minAge": 6,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 15
+      },
+      "materials": [
+        "encres ou peintures",
+        "eau + CMC",
+        "peigne",
+        "papier"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "marbrure",
+        "Ebru",
+        "papier",
+        "eau",
+        "encre"
+      ]
+    },
+    {
+      "id": "creatif-020",
+      "name": "Création de jeu de société",
+      "category": "creatif",
+      "description": "Les enfants inventent et fabriquent leur propre jeu de société : règles, plateau, pions, cartes.",
+      "duration": 120,
+      "minAge": 8,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 12
+      },
+      "materials": [
+        "carton",
+        "dés",
+        "pions",
+        "feutres",
+        "règle"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "jeu",
+        "création",
+        "règles",
+        "invention",
+        "plateau"
+      ]
+    },
+    {
+      "id": "jeux-001",
+      "name": "Chasse au trésor GPS",
+      "category": "jeux",
+      "description": "Chasse au trésor avec indices géolocalisés ou codes QR cachés dans la structure. Chaque équipe suit sa piste.",
+      "duration": 60,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 6,
+        "max": 30
+      },
+      "materials": [
+        "indices imprimés",
+        "boîte trésor",
+        "tablettes optionnel"
+      ],
+      "environment": "both",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "mixed",
+      "tags": [
+        "chasse au trésor",
+        "énigmes",
+        "équipe",
+        "déductions"
+      ]
+    },
+    {
+      "id": "jeux-002",
+      "name": "Escape game pédagogique",
+      "category": "jeux",
+      "description": "Escape room créé par l'animateur avec énigmes logiques, cadenas, codes et coopération d'équipe.",
+      "duration": 45,
+      "minAge": 8,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 3,
+        "max": 8
+      },
+      "materials": [
+        "cadenas",
+        "boîtes",
+        "enveloppes",
+        "énigmes imprimées"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "escape game",
+        "énigme",
+        "logique",
+        "coopération"
+      ]
+    },
+    {
+      "id": "jeux-003",
+      "name": "Loup-garou",
+      "category": "jeux",
+      "description": "Jeu de déduction sociale : villageois contre loups-garous. Vote, bluff, argumentation. Idéal pour grands groupes.",
+      "duration": 45,
+      "minAge": 10,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 8,
+        "max": 25
+      },
+      "materials": [
+        "cartes Loup-Garou"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "loup-garou",
+        "déduction",
+        "bluff",
+        "soirée",
+        "vote"
+      ]
+    },
+    {
+      "id": "jeux-004",
+      "name": "Un pour tous (coopératif)",
+      "category": "jeux",
+      "description": "Jeux de plateau coopératifs (Hanabi, Pandémie Junior, Forbidden Island) où tous gagnent ou perdent ensemble.",
+      "duration": 40,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 8
+      },
+      "materials": [
+        "jeu coopératif adapté à l'âge"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "coopération",
+        "plateau",
+        "stratégie",
+        "ensemble"
+      ]
+    },
+    {
+      "id": "jeux-005",
+      "name": "Bingo des langues",
+      "category": "jeux",
+      "description": "Bingo multilingue : les cases contiennent des mots en différentes langues à reconnaître quand l'animateur les dit.",
+      "duration": 25,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 5,
+        "max": 30
+      },
+      "materials": [
+        "grilles bingo imprimées",
+        "jetons"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "bingo",
+        "langues",
+        "vocabulaire",
+        "concentration"
+      ]
+    },
+    {
+      "id": "jeux-006",
+      "name": "Jeu de piste nocturne",
+      "category": "jeux",
+      "description": "Jeu de piste à la lampe torche avec énigmes, balises lumineuses et défis à accomplir dans le noir (relatif).",
+      "duration": 60,
+      "minAge": 8,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 6,
+        "max": 24
+      },
+      "materials": [
+        "lampes torches",
+        "balises",
+        "indices"
+      ],
+      "environment": "outdoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "mixed",
+      "tags": [
+        "nuit",
+        "lampe torche",
+        "piste",
+        "aventure"
+      ]
+    },
+    {
+      "id": "jeux-007",
+      "name": "Charades corporelles",
+      "category": "jeux",
+      "description": "Mimes et charades en équipes : films, animaux, métiers, situations. Sans parler ni écrire.",
+      "duration": 35,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 30
+      },
+      "materials": [
+        "cartes avec mots ou images"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "mime",
+        "charades",
+        "expression",
+        "devinette"
+      ]
+    },
+    {
+      "id": "jeux-008",
+      "name": "Jeu des statues musicales",
+      "category": "jeux",
+      "description": "Variante des chaises musicales : quand la musique s'arrête, chacun se fige dans une pose imposée par thème.",
+      "duration": 20,
+      "minAge": 4,
+      "maxAge": 10,
+      "groupSize": {
+        "min": 5,
+        "max": 25
+      },
+      "materials": [
+        "enceinte bluetooth"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "mixed",
+      "tags": [
+        "musique",
+        "statue",
+        "écoute",
+        "mouvement"
+      ]
+    },
+    {
+      "id": "jeux-009",
+      "name": "Débat philosophique",
+      "category": "jeux",
+      "description": "Atelier de philosophie pour enfants : une question ouverte, un bâton de parole, des arguments à construire.",
+      "duration": 45,
+      "minAge": 8,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 5,
+        "max": 20
+      },
+      "materials": [
+        "bâton de parole",
+        "questions imprimées"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "philosophie",
+        "débat",
+        "argumentation",
+        "pensée critique"
+      ]
+    },
+    {
+      "id": "jeux-010",
+      "name": "Jeu de Kim",
+      "category": "jeux",
+      "description": "Mémorisation d'objets posés sur un plateau puis retirés. Versions tactile, olfactive, auditive possibles.",
+      "duration": 25,
+      "minAge": 4,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "plateau",
+        "objets variés",
+        "tissu"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "mémoire",
+        "kim",
+        "sens",
+        "observation"
+      ]
+    },
+    {
+      "id": "jeux-011",
+      "name": "Jeu de rôle grandeur nature",
+      "category": "jeux",
+      "description": "JDR en live dans une structure transformée en décor. Chaque enfant joue un personnage dans une histoire.",
+      "duration": 90,
+      "minAge": 8,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 6,
+        "max": 20
+      },
+      "materials": [
+        "costumes simples",
+        "scénario",
+        "accessoires"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "mixed",
+      "tags": [
+        "jeu de rôle",
+        "GN",
+        "théâtre",
+        "immersion",
+        "histoire"
+      ]
+    },
+    {
+      "id": "jeux-012",
+      "name": "Tournoi de 421",
+      "category": "jeux",
+      "description": "Tournoi du jeu de dés 421 : stratégie, hasard, bluff pour garder ou voler des jetons. Variantes thématiques.",
+      "duration": 30,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "dés",
+        "jetons",
+        "timbales"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "dés",
+        "421",
+        "stratégie",
+        "tournoi"
+      ]
+    },
+    {
+      "id": "jeux-013",
+      "name": "Jeu du portrait",
+      "category": "jeux",
+      "description": "Deviner un personnage en posant des questions fermées. Version classique, Qui est-ce, ou questions 20 questions.",
+      "duration": 20,
+      "minAge": 6,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 2,
+        "max": 30
+      },
+      "materials": [
+        "cartes avec personnages ou post-its"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "portrait",
+        "devinette",
+        "logique",
+        "questions"
+      ]
+    },
+    {
+      "id": "jeux-014",
+      "name": "Laser game maison",
+      "category": "jeux",
+      "description": "Couloirs tendus de laine rouge comme un laser game. Passer sans toucher les fils, seul ou en équipe.",
+      "duration": 40,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "pelotes de laine rouge",
+        "scotch",
+        "chronomètre"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "mixed",
+      "tags": [
+        "laser game",
+        "agilité",
+        "défi",
+        "adresse"
+      ]
+    },
+    {
+      "id": "jeux-015",
+      "name": "Construction de ponts",
+      "category": "jeux",
+      "description": "Défi ingénierie : construire le pont le plus solide avec spaghettis, guimauves et carton. Qui supporte le plus de poids ?",
+      "duration": 45,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "spaghettis",
+        "guimauves",
+        "cure-dents",
+        "carton"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "ingénierie",
+        "construction",
+        "défi",
+        "STEM"
+      ]
+    },
+    {
+      "id": "jeux-016",
+      "name": "Trivial pursuit adapté",
+      "category": "jeux",
+      "description": "Quiz culture générale en équipes, questions adaptées à l'âge et aux centres d'intérêt du groupe.",
+      "duration": 40,
+      "minAge": 8,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 4,
+        "max": 30
+      },
+      "materials": [
+        "cartes questions imprimées",
+        "tableau des scores"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "quiz",
+        "culture",
+        "équipe",
+        "connaissance"
+      ]
+    },
+    {
+      "id": "jeux-017",
+      "name": "Jeu de ficelle (Cat's Cradle)",
+      "category": "jeux",
+      "description": "Art de la ficelle coréen : créer des formes en faisant passer la ficelle entre les mains. Solo et à deux.",
+      "duration": 25,
+      "minAge": 5,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 2,
+        "max": 20
+      },
+      "materials": [
+        "ficelles formant des boucles"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "ficelle",
+        "adresse",
+        "traditionnel",
+        "figure"
+      ]
+    },
+    {
+      "id": "jeux-018",
+      "name": "Jeu de chiffres et lettres",
+      "category": "jeux",
+      "description": "Inspiré de Des Chiffres et des Lettres : trouver le plus grand mot ou approcher un nombre cible.",
+      "duration": 30,
+      "minAge": 8,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 2,
+        "max": 20
+      },
+      "materials": [
+        "lettres découpées",
+        "dés ou cartes chiffres",
+        "minuteur"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "lettres",
+        "chiffres",
+        "vocabulaire",
+        "calcul",
+        "mental"
+      ]
+    },
+    {
+      "id": "jeux-019",
+      "name": "Clue géant en salle",
+      "category": "jeux",
+      "description": "Version grandeur nature du Cluedo : les enfants se déplacent dans de vraies pièces-salles pour mener l'enquête.",
+      "duration": 75,
+      "minAge": 9,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 6,
+        "max": 20
+      },
+      "materials": [
+        "fiches suspects/armes/pièces",
+        "cartes indices",
+        "bloc-notes"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "mixed",
+      "tags": [
+        "Cluedo",
+        "enquête",
+        "déduction",
+        "grandeur nature"
+      ]
+    },
+    {
+      "id": "jeux-020",
+      "name": "Jeux de cartes collectifs",
+      "category": "jeux",
+      "description": "Atelier jeux de cartes : bataille, 7 familles, Uno, Mémory, Belote simplifiée. Apprendre les règles et jouer.",
+      "duration": 35,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 2,
+        "max": 20
+      },
+      "materials": [
+        "jeux de cartes variés"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "cartes",
+        "Uno",
+        "famille",
+        "mémory",
+        "règles"
+      ]
+    },
+    {
+      "id": "nature-001",
+      "name": "Land art",
+      "category": "nature",
+      "description": "Création d'œuvres artistiques éphémères avec des éléments naturels : feuilles, pierres, branches, fleurs.",
+      "duration": 60,
+      "minAge": 4,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "éléments naturels trouvés sur place"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "land art",
+        "nature",
+        "éphémère",
+        "art",
+        "forêt"
+      ]
+    },
+    {
+      "id": "nature-002",
+      "name": "Hôtel à insectes",
+      "category": "nature",
+      "description": "Construction d'un hôtel à insectes avec bois, bambou, paille, pinecônes. Comprendre la biodiversité.",
+      "duration": 90,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 16
+      },
+      "materials": [
+        "palettes bois",
+        "bambou",
+        "paille",
+        "pinecônes",
+        "outils"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "medium",
+      "groupType": "small",
+      "tags": [
+        "insectes",
+        "biodiversité",
+        "construction",
+        "écologie"
+      ]
+    },
+    {
+      "id": "nature-003",
+      "name": "Herbier illustré",
+      "category": "nature",
+      "description": "Collecte de plantes, identification avec guide, pressage et montage dans un carnet d'herbier.",
+      "duration": 75,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 16
+      },
+      "materials": [
+        "carnets",
+        "guide plantes locales",
+        "scotch ou colle",
+        "presse optionnelle"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "herbier",
+        "plantes",
+        "botanique",
+        "collecte",
+        "identification"
+      ]
+    },
+    {
+      "id": "nature-004",
+      "name": "Jardinage potager",
+      "category": "nature",
+      "description": "Plantations de légumes et aromates, entretien du jardin, sensibilisation aux cycles des plantes.",
+      "duration": 60,
+      "minAge": 4,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 3,
+        "max": 15
+      },
+      "materials": [
+        "graines",
+        "terreau",
+        "pots ou bacs",
+        "outils jardinage"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "jardinage",
+        "potager",
+        "graine",
+        "légume",
+        "cycle"
+      ]
+    },
+    {
+      "id": "nature-005",
+      "name": "Carnet de bord météo",
+      "category": "nature",
+      "description": "Observation et relevé quotidien de la météo : température, vent, nuages. Création de graphiques sur la durée.",
+      "duration": 20,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "thermomètre",
+        "carnet",
+        "codes météo imprimés"
+      ],
+      "environment": "outdoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "météo",
+        "observation",
+        "science",
+        "relevé",
+        "graphique"
+      ]
+    },
+    {
+      "id": "nature-006",
+      "name": "Chasse aux oiseaux",
+      "category": "nature",
+      "description": "Observation des oiseaux avec jumelles et guide. Identification des espèces locales, imitation des chants.",
+      "duration": 60,
+      "minAge": 6,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 12
+      },
+      "materials": [
+        "jumelles",
+        "guide ornithologique local",
+        "carnet"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "oiseaux",
+        "observation",
+        "nature",
+        "jumelles",
+        "silence"
+      ]
+    },
+    {
+      "id": "nature-007",
+      "name": "Fabrication de compost",
+      "category": "nature",
+      "description": "Mise en place d'un composteur de la structure. Apprendre ce qui se composte, le rôle des vers, le cycle.",
+      "duration": 50,
+      "minAge": 5,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "bacs à compost",
+        "déchets alimentaires triés",
+        "gants"
+      ],
+      "environment": "outdoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "compost",
+        "déchets",
+        "écologie",
+        "vers de terre",
+        "recyclage"
+      ]
+    },
+    {
+      "id": "nature-008",
+      "name": "Exploration sensorielle forêt",
+      "category": "nature",
+      "description": "Parcours les yeux bandés en forêt, guidé par un partenaire. Toucher, sentir, entendre la nature.",
+      "duration": 40,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "bandeau yeux"
+      ],
+      "environment": "outdoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "forêt",
+        "sens",
+        "confiance",
+        "nature",
+        "aveugle"
+      ]
+    },
+    {
+      "id": "nature-009",
+      "name": "Taille de savon",
+      "category": "nature",
+      "description": "Sculpture d'un animal ou objet dans un pain de savon. Développe la précision et la patience.",
+      "duration": 45,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 15
+      },
+      "materials": [
+        "pains de savon",
+        "couteaux plastiques ou outils à sculpter"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "savon",
+        "sculpture",
+        "précision",
+        "patience",
+        "animal"
+      ]
+    },
+    {
+      "id": "nature-010",
+      "name": "Fabrication de papier recyclé",
+      "category": "nature",
+      "description": "Fabrication artisanale de papier à partir de vieux journaux. Processus complet : pulpe, forme, séchage.",
+      "duration": 90,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 16
+      },
+      "materials": [
+        "vieux journaux",
+        "bassines",
+        "mixeur",
+        "cadre à papier",
+        "éponges"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "papier",
+        "recyclage",
+        "fabrication",
+        "pulpe",
+        "artisanat"
+      ]
+    },
+    {
+      "id": "nature-011",
+      "name": "Mare et étang : vie aquatique",
+      "category": "nature",
+      "description": "Observation de la vie d'une mare avec épuisettes et loupes. Identifier têtards, insectes aquatiques, plantes.",
+      "duration": 60,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "épuisettes",
+        "bacs transparents",
+        "loupes",
+        "guides"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "mare",
+        "aquatique",
+        "observation",
+        "biodiversité",
+        "insecte"
+      ]
+    },
+    {
+      "id": "nature-012",
+      "name": "Cuisine sauvage",
+      "category": "nature",
+      "description": "Cueillette et préparation de plantes sauvages comestibles : pissenlit, oseille, sureau, etc. Recettes simples.",
+      "duration": 90,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "guide plantes comestibles",
+        "paniers",
+        "ustensiles cuisine"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "medium",
+      "groupType": "small",
+      "tags": [
+        "cueillette",
+        "sauvage",
+        "cuisine",
+        "plantes",
+        "comestible"
+      ]
+    },
+    {
+      "id": "nature-013",
+      "name": "Bâton de pluie",
+      "category": "nature",
+      "description": "Fabrication d'un bâton de pluie avec un tube de carton, cure-dents, graines et peinture.",
+      "duration": 45,
+      "minAge": 5,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "tubes carton",
+        "cure-dents",
+        "graines ou riz",
+        "peinture",
+        "adhesif"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "bâton de pluie",
+        "instrument",
+        "son",
+        "nature",
+        "fabrication"
+      ]
+    },
+    {
+      "id": "nature-014",
+      "name": "Observation des nuages",
+      "category": "nature",
+      "description": "Identifier les types de nuages (cumulus, stratus, cirrus). Dessin, prédiction météo, imagination de formes.",
+      "duration": 30,
+      "minAge": 5,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 3,
+        "max": 25
+      },
+      "materials": [
+        "guide des nuages imprimé",
+        "carnet"
+      ],
+      "environment": "outdoor",
+      "weather": "cloudy",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "nuages",
+        "ciel",
+        "météo",
+        "observation",
+        "imagination"
+      ]
+    },
+    {
+      "id": "nature-015",
+      "name": "Construction cabane",
+      "category": "nature",
+      "description": "Construction d'une cabane dans les bois avec branches, feuilles et cordes. Travail d'équipe et architecture naturelle.",
+      "duration": 90,
+      "minAge": 6,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 4,
+        "max": 16
+      },
+      "materials": [
+        "branches",
+        "cordes",
+        "bâches optionnelles"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "high",
+      "groupType": "mixed",
+      "tags": [
+        "cabane",
+        "construction",
+        "bois",
+        "équipe",
+        "survie"
+      ]
+    },
+    {
+      "id": "nature-016",
+      "name": "Spirale des saisons",
+      "category": "nature",
+      "description": "Création d'une fresque collective représentant les 4 saisons avec éléments naturels pressés ou dessinés.",
+      "duration": 60,
+      "minAge": 5,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "grand papier",
+        "feuilles pressées",
+        "colle",
+        "crayons"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "saisons",
+        "fresque",
+        "botanique",
+        "cycle",
+        "art"
+      ]
+    },
+    {
+      "id": "nature-017",
+      "name": "Chasse aux mini-bêtes",
+      "category": "nature",
+      "description": "Explorer le sol, les pierres et les feuilles mortes pour trouver et identifier des invertébrés. Puis relâcher.",
+      "duration": 45,
+      "minAge": 4,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 3,
+        "max": 16
+      },
+      "materials": [
+        "pinceaux doux",
+        "boîtes loupe",
+        "guide invertébrés"
+      ],
+      "environment": "outdoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "insectes",
+        "sol",
+        "observation",
+        "biodiversité",
+        "toucher"
+      ]
+    },
+    {
+      "id": "nature-018",
+      "name": "Semis en bouteille",
+      "category": "nature",
+      "description": "Transformer une bouteille plastique en mini-serre pour faire germer des graines. Observer la croissance.",
+      "duration": 30,
+      "minAge": 4,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "bouteilles plastiques",
+        "terreau",
+        "graines rapides (cresson, radis)"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "graine",
+        "germination",
+        "bouteille",
+        "recyclage",
+        "nature"
+      ]
+    },
+    {
+      "id": "nature-019",
+      "name": "Observation des étoiles",
+      "category": "nature",
+      "description": "Initiation à l'astronomie : identifier constellations, planètes visibles. Utiliser une appli carte du ciel.",
+      "duration": 60,
+      "minAge": 7,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "carte du ciel imprimée ou appli",
+        "couvertures"
+      ],
+      "environment": "outdoor",
+      "weather": "sunny",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "étoiles",
+        "astronomie",
+        "nuit",
+        "constellation",
+        "espace"
+      ]
+    },
+    {
+      "id": "nature-020",
+      "name": "Filtration de l'eau",
+      "category": "nature",
+      "description": "Fabriquer un filtre à eau naturel avec sable, gravier, charbon et coton. Comprendre les traitements de l'eau.",
+      "duration": 50,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 16
+      },
+      "materials": [
+        "bouteilles plastiques",
+        "sable",
+        "gravier",
+        "charbon",
+        "coton",
+        "eau colorée"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "eau",
+        "filtration",
+        "science",
+        "expérience",
+        "écologie"
+      ]
+    },
+    {
+      "id": "culture-001",
+      "name": "Théâtre forum",
+      "category": "culture",
+      "description": "Technique du théâtre forum : une scène de conflit jouée, le public intervient pour changer le cours.",
+      "duration": 75,
+      "minAge": 10,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 8,
+        "max": 25
+      },
+      "materials": [
+        "espace scène dégagé",
+        "accessoires simples"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "large",
+      "tags": [
+        "théâtre",
+        "forum",
+        "citoyenneté",
+        "conflit",
+        "participation"
+      ]
+    },
+    {
+      "id": "culture-002",
+      "name": "Atelier lecture à voix haute",
+      "category": "culture",
+      "description": "Lecture expressive d'extraits de livres adaptés. Travail de la voix, du rythme, de l'émotion.",
+      "duration": 40,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 15
+      },
+      "materials": [
+        "sélection de livres adaptés à l'âge"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "lecture",
+        "voix",
+        "littérature",
+        "expression orale"
+      ]
+    },
+    {
+      "id": "culture-003",
+      "name": "Initiation au code",
+      "category": "culture",
+      "description": "Initiation à la programmation avec Scratch ou blocs visuels. Créer un mini-jeu ou une animation.",
+      "duration": 60,
+      "minAge": 8,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 12
+      },
+      "materials": [
+        "tablettes ou ordinateurs",
+        "accès Scratch"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "code",
+        "Scratch",
+        "numérique",
+        "programmation",
+        "logique"
+      ]
+    },
+    {
+      "id": "culture-004",
+      "name": "Musée éphémère",
+      "category": "culture",
+      "description": "Les enfants créent leur propre musée : choisissent des œuvres, rédigent les cartels, accueillent les visiteurs.",
+      "duration": 120,
+      "minAge": 8,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 6,
+        "max": 20
+      },
+      "materials": [
+        "reproductions d'œuvres imprimées",
+        "socles carton",
+        "étiquettes"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "musée",
+        "art",
+        "médiation",
+        "commissariat",
+        "exposition"
+      ]
+    },
+    {
+      "id": "culture-005",
+      "name": "Radio école",
+      "category": "culture",
+      "description": "Création d'une émission de radio : interviews, chroniques, météo, publicités humoristiques. Enregistrement.",
+      "duration": 90,
+      "minAge": 8,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "micro ou enregistreur",
+        "scripts",
+        "bruitages"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "radio",
+        "audio",
+        "interview",
+        "expression",
+        "médias"
+      ]
+    },
+    {
+      "id": "culture-006",
+      "name": "Calligraphie et écritures du monde",
+      "category": "culture",
+      "description": "Découverte de l'arabe, du chinois, du japonais, du grec. Initiation aux calligraphies avec pinceaux.",
+      "duration": 50,
+      "minAge": 7,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 3,
+        "max": 18
+      },
+      "materials": [
+        "pinceaux calligraphie",
+        "encre",
+        "papier calligraphie",
+        "modèles imprimés"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "calligraphie",
+        "écriture",
+        "monde",
+        "pinceau",
+        "langues"
+      ]
+    },
+    {
+      "id": "culture-007",
+      "name": "Atelier conte",
+      "category": "culture",
+      "description": "Écouter un conteur, puis inventer un conte collectif en suivant la structure héros/obstacle/résolution.",
+      "duration": 60,
+      "minAge": 4,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 4,
+        "max": 25
+      },
+      "materials": [
+        "accessoires de conteur (tissu, objet magique)",
+        "feuilles pour illus"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "conte",
+        "narration",
+        "imaginaire",
+        "oral",
+        "collectif"
+      ]
+    },
+    {
+      "id": "culture-008",
+      "name": "Festival des talents",
+      "category": "culture",
+      "description": "Chaque enfant présente un talent : chant, danse, magie, jonglage, discours, imitation. Applaudissements garantis.",
+      "duration": 60,
+      "minAge": 5,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 5,
+        "max": 30
+      },
+      "materials": [
+        "enceinte bluetooth",
+        "micro optionnel"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "large",
+      "tags": [
+        "talent",
+        "scène",
+        "confiance",
+        "expression",
+        "spectacle"
+      ]
+    },
+    {
+      "id": "culture-009",
+      "name": "Jeux mathématiques",
+      "category": "culture",
+      "description": "Tangram, puzzles logiques, tour de Hanoï, magic squares. Maths ludiques sans carnet ni crayon obligatoire.",
+      "duration": 40,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 2,
+        "max": 20
+      },
+      "materials": [
+        "tangrams",
+        "puzzles logiques",
+        "tour de Hanoï"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "maths",
+        "logique",
+        "tangram",
+        "puzzle",
+        "réflexion"
+      ]
+    },
+    {
+      "id": "culture-010",
+      "name": "Visite virtuelle de musée",
+      "category": "culture",
+      "description": "Visite guidée d'un musée en réalité virtuelle ou via Google Arts & Culture. Discussion sur les œuvres.",
+      "duration": 45,
+      "minAge": 7,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "tablettes ou ordinateur + grand écran",
+        "accès internet"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "musée virtuel",
+        "art",
+        "numérique",
+        "visite",
+        "culture"
+      ]
+    },
+    {
+      "id": "culture-011",
+      "name": "Débat sur l'image",
+      "category": "culture",
+      "description": "Décryptage d'images médiatiques, publicités, affiches. Apprendre à lire les messages cachés des images.",
+      "duration": 45,
+      "minAge": 10,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "affiches ou images imprimées",
+        "guide d'analyse d'image"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "image",
+        "médias",
+        "analyse critique",
+        "publicité",
+        "décodage"
+      ]
+    },
+    {
+      "id": "culture-012",
+      "name": "Cuisine du monde",
+      "category": "culture",
+      "description": "Préparation d'une recette traditionnelle d'un pays : sushi, guacamole, crêpes bretonnes, samosas.",
+      "duration": 90,
+      "minAge": 6,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "ingrédients selon recette",
+        "ustensiles de cuisine"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "small",
+      "tags": [
+        "cuisine",
+        "monde",
+        "recette",
+        "partage",
+        "pays"
+      ]
+    },
+    {
+      "id": "culture-013",
+      "name": "Atelier journal",
+      "category": "culture",
+      "description": "Création d'un journal de la structure : articles, interviews, photos, météo, humour. Impression finale.",
+      "duration": 90,
+      "minAge": 9,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "ordinateur",
+        "logiciel traitement texte",
+        "appareils photos"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "journal",
+        "rédaction",
+        "photo",
+        "presse",
+        "édition"
+      ]
+    },
+    {
+      "id": "culture-014",
+      "name": "Histoire locale",
+      "category": "culture",
+      "description": "Enquête sur l'histoire du quartier ou de la commune : archives, interviews d'anciens, carte ancienne.",
+      "duration": 90,
+      "minAge": 8,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "cartes anciennes",
+        "questions d'interview",
+        "carnets"
+      ],
+      "environment": "both",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "histoire",
+        "local",
+        "enquête",
+        "mémoire",
+        "patrimoine"
+      ]
+    },
+    {
+      "id": "culture-015",
+      "name": "Kahoot culturel",
+      "category": "culture",
+      "description": "Quiz interactif sur tablettes/téléphones sur l'histoire de l'art, la géographie, la musique, le cinéma.",
+      "duration": 30,
+      "minAge": 8,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 3,
+        "max": 30
+      },
+      "materials": [
+        "tablettes ou téléphones",
+        "accès wifi",
+        "projecteur"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "quiz",
+        "Kahoot",
+        "numérique",
+        "compétition",
+        "culture générale"
+      ]
+    },
+    {
+      "id": "culture-016",
+      "name": "Mime des émotions",
+      "category": "culture",
+      "description": "Jeu théâtral centré sur les émotions : joie, peur, tristesse, surprise. Expression non-verbale et empathie.",
+      "duration": 35,
+      "minAge": 4,
+      "maxAge": 12,
+      "groupSize": {
+        "min": 4,
+        "max": 25
+      },
+      "materials": [
+        "cartes émotions"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "émotions",
+        "mime",
+        "théâtre",
+        "empathie",
+        "expression"
+      ]
+    },
+    {
+      "id": "culture-017",
+      "name": "Poème acrostiche",
+      "category": "culture",
+      "description": "Écriture d'un poème acrostiche à partir d'un mot choisi (son prénom, un animal, une saison).",
+      "duration": 30,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 25
+      },
+      "materials": [
+        "feuilles",
+        "feutres"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "poème",
+        "acrostiche",
+        "écriture",
+        "créativité",
+        "lettres"
+      ]
+    },
+    {
+      "id": "culture-018",
+      "name": "Mini-conférence TED",
+      "category": "culture",
+      "description": "Chaque enfant prépare et présente un exposé de 3 min sur un sujet qu'il maîtrise ou qui le passionne.",
+      "duration": 60,
+      "minAge": 9,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "paperboard optionnel",
+        "minuteur"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "TED",
+        "prise de parole",
+        "exposé",
+        "confiance",
+        "connaissance"
+      ]
+    },
+    {
+      "id": "culture-019",
+      "name": "Projection-débat court métrage",
+      "category": "culture",
+      "description": "Visionner un court métrage (sans paroles ou sous-titré) puis en débattre : sens, émotions, message.",
+      "duration": 45,
+      "minAge": 7,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 5,
+        "max": 30
+      },
+      "materials": [
+        "vidéoprojecteur ou grand écran",
+        "liste de questions"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "cinéma",
+        "court métrage",
+        "débat",
+        "image",
+        "analyse"
+      ]
+    },
+    {
+      "id": "culture-020",
+      "name": "Chant choral",
+      "category": "culture",
+      "description": "Apprentissage d'une chanson en plusieurs voix. Canon, harmonie simple, percussions corporelles associées.",
+      "duration": 45,
+      "minAge": 5,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 6,
+        "max": 30
+      },
+      "materials": [
+        "paroles imprimées",
+        "enregistrement de référence"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "chant",
+        "chorale",
+        "voix",
+        "harmonie",
+        "musique"
+      ]
+    },
+    {
+      "id": "bienetre-001",
+      "name": "Massage en papillon",
+      "category": "bien-etre",
+      "description": "Massage du dos par paires avec consentement. Techniques douces adaptées : papillon, pluie, soleil.",
+      "duration": 25,
+      "minAge": 4,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 24
+      },
+      "materials": [
+        "tapis ou coussins"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "massage",
+        "toucher",
+        "consentement",
+        "détente",
+        "sensoriel"
+      ]
+    },
+    {
+      "id": "bienetre-002",
+      "name": "Méditation guidée",
+      "category": "bien-etre",
+      "description": "Séance de méditation guidée avec visualisation : voyage imaginaire, respiration cohérente, balayage corporel.",
+      "duration": 20,
+      "minAge": 6,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 3,
+        "max": 30
+      },
+      "materials": [
+        "tapis ou coussins",
+        "musique douce"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "méditation",
+        "respiration",
+        "calme",
+        "visualisation",
+        "pleine conscience"
+      ]
+    },
+    {
+      "id": "bienetre-003",
+      "name": "Atelier gestion des émotions",
+      "category": "bien-etre",
+      "description": "Identifier et exprimer ses émotions avec la roue des émotions. Techniques de régulation émotionnelle.",
+      "duration": 45,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "roue des émotions",
+        "cartes émotions",
+        "fiches d'expression"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "émotions",
+        "régulation",
+        "roue",
+        "expression",
+        "psychologie"
+      ]
+    },
+    {
+      "id": "bienetre-004",
+      "name": "Cahier de gratitude",
+      "category": "bien-etre",
+      "description": "Créer un cahier de gratitude : noter 3 choses positives du jour, illustrer, décorer. Rituel quotidien.",
+      "duration": 25,
+      "minAge": 6,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 3,
+        "max": 25
+      },
+      "materials": [
+        "carnets",
+        "feutres",
+        "stickers"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "gratitude",
+        "positif",
+        "journal",
+        "ritual",
+        "bien-être"
+      ]
+    },
+    {
+      "id": "bienetre-005",
+      "name": "Cohésion de groupe",
+      "category": "bien-etre",
+      "description": "Jeux de team building : toile humaine, téléphone arabe, tour en aveugle. Renforcer la confiance du groupe.",
+      "duration": 45,
+      "minAge": 6,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 6,
+        "max": 30
+      },
+      "materials": [
+        "bandeau yeux",
+        "cordes"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "large",
+      "tags": [
+        "cohésion",
+        "confiance",
+        "team building",
+        "groupe",
+        "coopération"
+      ]
+    },
+    {
+      "id": "bienetre-006",
+      "name": "Boîte à compliments",
+      "category": "bien-etre",
+      "description": "Chaque enfant glisse un compliment anonyme pour chacun dans la boîte. Lecture collective en fin de séance.",
+      "duration": 30,
+      "minAge": 6,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 4,
+        "max": 25
+      },
+      "materials": [
+        "boîte décorée",
+        "petits papiers",
+        "crayons"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "compliments",
+        "bienveillance",
+        "estime de soi",
+        "positif"
+      ]
+    },
+    {
+      "id": "bienetre-007",
+      "name": "Marche sensorielle",
+      "category": "bien-etre",
+      "description": "Marche en pleine conscience dans la nature ou le quartier. Observer, écouter, ressentir sans parler.",
+      "duration": 40,
+      "minAge": 5,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "carnet d'observation optionnel"
+      ],
+      "environment": "outdoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "marche",
+        "pleine conscience",
+        "sens",
+        "calme",
+        "nature"
+      ]
+    },
+    {
+      "id": "bienetre-008",
+      "name": "Espace de parole",
+      "category": "bien-etre",
+      "description": "Cercle de parole avec bâton : chacun exprime son vécu de la semaine, ses envies, ses difficultés. Écoute active.",
+      "duration": 40,
+      "minAge": 7,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "bâton de parole"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "parole",
+        "écoute",
+        "cercle",
+        "expression",
+        "vécu"
+      ]
+    },
+    {
+      "id": "bienetre-009",
+      "name": "Yoga du rire",
+      "category": "bien-etre",
+      "description": "Exercices de yoga combinés à des éclats de rire volontaires. Les rires deviennent spontanés et libèrent.",
+      "duration": 30,
+      "minAge": 5,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 5,
+        "max": 30
+      },
+      "materials": [
+        "espace dégagé"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "large",
+      "tags": [
+        "rire",
+        "yoga",
+        "joie",
+        "libération",
+        "corps"
+      ]
+    },
+    {
+      "id": "bienetre-010",
+      "name": "Carte des forces",
+      "category": "bien-etre",
+      "description": "Identifier ses forces et qualités personnelles avec des cartes. Écrire sa propre carte de super-héros.",
+      "duration": 40,
+      "minAge": 8,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "cartes des forces (VIA)",
+        "feuilles cartonnées",
+        "feutres"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "forces",
+        "estime de soi",
+        "qualités",
+        "identité",
+        "positif"
+      ]
+    },
+    {
+      "id": "bienetre-011",
+      "name": "Relaxation progressive",
+      "category": "bien-etre",
+      "description": "Relaxation musculaire progressive de Jacobson : contracter puis relâcher chaque groupe musculaire.",
+      "duration": 20,
+      "minAge": 7,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 3,
+        "max": 30
+      },
+      "materials": [
+        "tapis ou coussins"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "relaxation",
+        "muscles",
+        "tension",
+        "calme",
+        "corps"
+      ]
+    },
+    {
+      "id": "bienetre-012",
+      "name": "Résolution de conflits",
+      "category": "bien-etre",
+      "description": "Jeux de rôles et outils de médiation pour apprendre à résoudre les conflits sans violence.",
+      "duration": 50,
+      "minAge": 7,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 4,
+        "max": 20
+      },
+      "materials": [
+        "cartes scénarios de conflits",
+        "outil DESC"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "conflit",
+        "médiation",
+        "communication",
+        "non-violence",
+        "dialogue"
+      ]
+    },
+    {
+      "id": "bienetre-013",
+      "name": "Jardin zen miniature",
+      "category": "bien-etre",
+      "description": "Créer un jardin zen en miniature avec sable, pierres, plantes succulentes et petits bâtons.",
+      "duration": 45,
+      "minAge": 6,
+      "maxAge": 16,
+      "groupSize": {
+        "min": 3,
+        "max": 15
+      },
+      "materials": [
+        "plateaux",
+        "sable blanc",
+        "pierres",
+        "petites plantes",
+        "bâtonnets"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "zen",
+        "sable",
+        "jardin",
+        "calme",
+        "création"
+      ]
+    },
+    {
+      "id": "bienetre-014",
+      "name": "Danse libre",
+      "category": "bien-etre",
+      "description": "Expression corporelle libre sur de la musique variée. Aucune règle, juste ressentir et bouger.",
+      "duration": 30,
+      "minAge": 3,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 3,
+        "max": 30
+      },
+      "materials": [
+        "enceinte bluetooth",
+        "playlist variée"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "medium",
+      "groupType": "large",
+      "tags": [
+        "danse",
+        "liberté",
+        "corps",
+        "expression",
+        "musique"
+      ]
+    },
+    {
+      "id": "bienetre-015",
+      "name": "Mon blason personnel",
+      "category": "bien-etre",
+      "description": "Créer son blason en 4 quartiers : ce que j'aime, ce que je fais bien, ma devise, un souvenir heureux.",
+      "duration": 40,
+      "minAge": 7,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 3,
+        "max": 25
+      },
+      "materials": [
+        "feuilles blason imprimées",
+        "feutres",
+        "crayons"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "blason",
+        "identité",
+        "estime",
+        "valeurs",
+        "dessin"
+      ]
+    },
+    {
+      "id": "bienetre-016",
+      "name": "Sophrologie jeunes",
+      "category": "bien-etre",
+      "description": "Séance de sophrologie adaptée : respiration 3/5/7, visualisation positive, ancrage corporel.",
+      "duration": 25,
+      "minAge": 8,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 3,
+        "max": 25
+      },
+      "materials": [
+        "tapis ou chaises"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "sophrologie",
+        "respiration",
+        "visualisation",
+        "ancrage",
+        "calme"
+      ]
+    },
+    {
+      "id": "bienetre-017",
+      "name": "Mandala à colorier",
+      "category": "bien-etre",
+      "description": "Coloriage de mandalas imprimés en pleine conscience : concentration, choix des couleurs, calme.",
+      "duration": 30,
+      "minAge": 5,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 2,
+        "max": 30
+      },
+      "materials": [
+        "mandalas imprimés",
+        "crayons de couleur",
+        "feutres fins"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "mixed",
+      "tags": [
+        "mandala",
+        "coloriage",
+        "concentration",
+        "pleine conscience",
+        "calme"
+      ]
+    },
+    {
+      "id": "bienetre-018",
+      "name": "Atelier cuisine bien-être",
+      "category": "bien-etre",
+      "description": "Préparation de smoothies, salades de fruits ou collations healthy. Lien entre nutrition et bien-être.",
+      "duration": 45,
+      "minAge": 5,
+      "maxAge": 14,
+      "groupSize": {
+        "min": 4,
+        "max": 15
+      },
+      "materials": [
+        "fruits",
+        "légumes",
+        "blender",
+        "couteaux adaptés"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "nutrition",
+        "smoothie",
+        "cuisine",
+        "santé",
+        "bien-être"
+      ]
+    },
+    {
+      "id": "bienetre-019",
+      "name": "Écriture thérapeutique",
+      "category": "bien-etre",
+      "description": "Écriture libre de 10 min sans s'arrêter : lettres non envoyées, pensées du jour, rêves. Optionnel : partager.",
+      "duration": 25,
+      "minAge": 10,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 3,
+        "max": 20
+      },
+      "materials": [
+        "carnets",
+        "stylos"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "small",
+      "tags": [
+        "écriture",
+        "libération",
+        "pensées",
+        "journal intime",
+        "expression"
+      ]
+    },
+    {
+      "id": "bienetre-020",
+      "name": "Cercle de bienveillance",
+      "category": "bien-etre",
+      "description": "Rituel de clôture : chacun reçoit un mot bienveillant du groupe, une étoile de papier à garder.",
+      "duration": 20,
+      "minAge": 4,
+      "maxAge": 17,
+      "groupSize": {
+        "min": 4,
+        "max": 30
+      },
+      "materials": [
+        "étoiles ou cœurs découpés",
+        "stylos"
+      ],
+      "environment": "indoor",
+      "weather": "any",
+      "energyLevel": "low",
+      "groupType": "large",
+      "tags": [
+        "bienveillance",
+        "clôture",
+        "rituel",
+        "groupe",
+        "positif"
+      ]
     }
   ]
 }
