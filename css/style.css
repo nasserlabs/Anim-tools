@@ -4242,3 +4242,9 @@ body {
   width: 36px ;
   height: 36px ;
 }
+
+.bafa-faq img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
