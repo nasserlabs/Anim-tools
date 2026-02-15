@@ -3,48 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Planning hebdomadaire pour l'animation périscolaire">
     <title>Planning - Anim'Tools</title>
-    
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+    
 </head>
 <body>
-    <!-- NAVIGATION -->
-   <nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">Anim'Tools</a>
-    <ul class="nav-menu">
-      <li><a href="index.html" class="nav-link">Accueil</a></li>
-      <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
-      <li><a href="planning.html" class="nav-link active">Planning</a></li>
-      <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
-      <li><a href="administratif.html" class="nav-link">Administratif</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-      </a>
-      <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-</nav>
-
-    
-    <!-- SEARCH OVERLAY -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">Anim'Tools</a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
+          <li><a href="planning.html" class="nav-link active">Planning</a></li>
+          <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
+          <li><a href="administratif.html" class="nav-link">Administratif</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </a>
+          <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
     <div class="search-overlay" id="searchOverlay">
         <div class="search-container">
             <div class="search-header">
@@ -63,42 +54,38 @@
             <div class="search-results" id="searchResults"></div>
         </div>
     </div>
-    
-    <!-- PAGE HEADER -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">Planning</h1>
-            <p class="hero-subtitle">Organisez votre journée et votre semaine</p>
-            <p class="hero-description">
-                Planifiez vos activités, gérez les groupes et gardez une trace de vos animations.
-            </p>
-        </div>
-    </section>
-    
-    <!-- COMING SOON -->
-    <section class="section">
-        <div class="container">
-            <!-- Planning Toolbar -->
-            <div id="planningToolbar" class="planning-toolbar">
-                <!-- Généré par JavaScript -->
-            </div>
-            
-            <!-- Planning Grid -->
-            <div id="planningGrid" class="planning-grid">
-                <!-- Généré par JavaScript -->
+
+    <header class="reglem-hero">
+        <div class="reglem-hero-content">
+            <div class="reglem-hero-badge">📅 Organisation</div>
+            <h1>Planning<br><span>Votre semaine en un coup d'œil</span></h1>
+            <p>Planifiez vos activités, gérez les groupes et gardez une trace de vos animations au fil de la semaine.</p>
+            <div class="reglem-hero-stats">
+                <div class="stat-pill"><span class="stat-num">5</span><span class="stat-label">jours</span></div>
+                <div class="stat-pill"><span class="stat-num">3</span><span class="stat-label">créneaux/jour</span></div>
+                <div class="stat-pill"><span class="stat-num">PDF</span><span class="stat-label">export</span></div>
             </div>
         </div>
-    </section>
-    
-    <!-- FOOTER -->
+    </header>
+
+    <main class="reglem-main container" style="padding-top:40px;padding-bottom:80px;">
+
+        <div id="planningToolbar" class="planning-toolbar">
+            <!-- Généré par JavaScript -->
+        </div>
+
+        <div id="planningGrid" class="planning-grid">
+            <!-- Généré par JavaScript -->
+        </div>
+
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Anim'Tools</h4>
-                    <p>Votre assistant personnel pour l'animation périscolaire.</p>
+                    <p>Votre assistant personnel pour l'animation périscolaire. Conçu par des animateurs, pour des animateurs.</p>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Navigation</h4>
                     <ul>
@@ -109,7 +96,6 @@
                         <li><a href="administratif.html">Administratif</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Ressources</h4>
                     <ul>
@@ -119,20 +105,14 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
-    
     <script src="js/main.js"></script>
     <script src="js/search.js"></script>
-    
-    <!-- html2pdf.js pour export PDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    
-    <!-- Module Planning -->
     <script src="js/planning.js"></script>
 </body>
 </html>

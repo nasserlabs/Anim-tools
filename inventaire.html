@@ -3,51 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Inventaire d'activités pour l'animation périscolaire - Plus de 200 idées d'activités">
-    <title>Inventaire - Anim'Tools</title>
-    
-    <!-- Styles -->
+    <title>Boîte à idées - Anim'Tools</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+    
 </head>
 <body>
-    <!-- NAVIGATION -->
     <nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">Anim'Tools</a>
-    <ul class="nav-menu">
-      <li><a href="index.html" class="nav-link">Accueil</a></li>
-      <li><a href="inventaire.html" class="nav-link active">Inventaire</a></li>
-      <li><a href="planning.html" class="nav-link">Planning</a></li>
-      <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
-      <li><a href="administratif.html" class="nav-link">Administratif</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-      </a>
-      <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-</nav>
-
-    
-    <!-- SEARCH OVERLAY -->
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">Anim'Tools</a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="inventaire.html" class="nav-link active">Inventaire</a></li>
+          <li><a href="planning.html" class="nav-link">Planning</a></li>
+          <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
+          <li><a href="administratif.html" class="nav-link">Administratif</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </a>
+          <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
     <div class="search-overlay" id="searchOverlay">
         <div class="search-container">
             <div class="search-header">
@@ -66,153 +54,123 @@
             <div class="search-results" id="searchResults"></div>
         </div>
     </div>
-    
-    <!-- PAGE HEADER -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">Boîte à idées</h1>
-            <p class="hero-subtitle">Plus de 200 activités pour animer le périscolaire</p>
-            <p class="hero-description">
-                Découvrez des activités variées, classées par catégories, 
-                avec toutes les informations nécessaires : âge, durée, matériel, objectifs.
-            </p>
+
+    <header class="reglem-hero">
+        <div class="reglem-hero-content">
+            <div class="reglem-hero-badge">📦 Activités</div>
+            <h1>Boîte à idées<br><span>Plus de 200 activités</span></h1>
+            <p>Découvrez des activités variées, classées par catégories, avec toutes les informations nécessaires : âge, durée, matériel, objectifs.</p>
+            <div class="reglem-hero-stats">
+                <div class="stat-pill"><span class="stat-num">200+</span><span class="stat-label">activités</span></div>
+                <div class="stat-pill"><span class="stat-num">6</span><span class="stat-label">catégories</span></div>
+                <div class="stat-pill"><span class="stat-num">3-12</span><span class="stat-label">ans couverts</span></div>
+            </div>
         </div>
-    </section>
-    
-    <!-- CATEGORY FILTERS -->
-    <section class="section">
+    </header>
+
+    <section class="reglem-tabs-section" style="position:sticky;top:var(--nav-height);">
         <div class="container">
-            <div class="category-filters" id="categoryFilters">
+            <div id="categoryFilters" class="reglem-tabs" role="tablist" aria-label="Catégories d'activités">
                 <!-- Généré dynamiquement par JavaScript -->
             </div>
         </div>
     </section>
-    
-    <!-- ADVANCED FILTERS -->
-    <section class="section" style="padding-top: 0;">
-        <div class="container">
-            <div class="filters-container">
-                <div class="filters-row">
-                    <div class="filter-group">
-                        <label class="filter-label" for="ageFilter">Tranche d'âge</label>
-                        <select id="ageFilter" class="filter-select">
-                            <option value="all">Tous les âges</option>
-                            <option value="3-5">3-5 ans</option>
-                            <option value="6-8">6-8 ans</option>
-                            <option value="9-12">9-12 ans</option>
-                        </select>
+
+    <main class="reglem-main container" style="padding-top:40px;">
+
+        <section style="margin-bottom:32px;">
+            <div class="reglem-table-block" style="padding:24px;">
+                <h3 style="margin-bottom:16px;font-size:1rem;">🔍 Filtres avancés</h3>
+                <div class="filters-container" style="margin-bottom:0;background:transparent;padding:0;">
+                    <div class="filters-row">
+                        <div class="filter-group">
+                            <label class="filter-label" for="ageFilter">Tranche d'âge</label>
+                            <select id="ageFilter" class="filter-select">
+                                <option value="all">Tous les âges</option>
+                                <option value="3-5">3-5 ans</option>
+                                <option value="6-8">6-8 ans</option>
+                                <option value="9-12">9-12 ans</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label" for="durationFilter">Durée</label>
+                            <select id="durationFilter" class="filter-select">
+                                <option value="all">Toutes durées</option>
+                                <option value="short">Court (≤ 30 min)</option>
+                                <option value="medium">Moyen (30-60 min)</option>
+                                <option value="long">Long (&gt; 60 min)</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label" for="locationFilter">Lieu</label>
+                            <select id="locationFilter" class="filter-select">
+                                <option value="all">Intérieur &amp; Extérieur</option>
+                                <option value="indoor">Intérieur</option>
+                                <option value="outdoor">Extérieur</option>
+                            </select>
+                        </div>
                     </div>
-                    
-                    <div class="filter-group">
-                        <label class="filter-label" for="durationFilter">Durée</label>
-                        <select id="durationFilter" class="filter-select">
-                            <option value="all">Toutes durées</option>
-                            <option value="short">Court (≤ 30 min)</option>
-                            <option value="medium">Moyen (30-60 min)</option>
-                            <option value="long">Long (> 60 min)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <label class="filter-label" for="locationFilter">Lieu</label>
-                        <select id="locationFilter" class="filter-select">
-                            <option value="all">Intérieur & Extérieur</option>
-                            <option value="indoor">Intérieur</option>
-                            <option value="outdoor">Extérieur</option>
-                        </select>
+                    <div class="filter-actions">
+                        <button id="resetFilters" class="btn-reset-checklist">🔄 Réinitialiser</button>
                     </div>
                 </div>
-                
-                <div class="filter-actions">
-                    <button id="resetFilters" class="btn btn-ghost">Réinitialiser</button>
-                </div>
+                <div id="resultsCount" class="results-count" style="margin-top:8px;margin-bottom:0;"></div>
             </div>
-            
-            <div id="resultsCount" class="results-count"></div>
-        </div>
-    </section>
-    
-    <!-- MES FAVORIS -->
-    <section class="section" style="padding-top: 0;" id="favoritesContainer">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Mes favoris</h2>
-                <p class="section-subtitle">Vos activités préférées en un clin d'œil</p>
+        </section>
+
+        <section id="favoritesContainer" style="margin-bottom:48px;">
+            <div class="reglem-intro">
+                <h2>Mes favoris</h2>
+                <p>Vos activités préférées en un clin d'œil</p>
             </div>
-            
             <div class="grid grid-3" id="favoritesSection">
                 <!-- Généré dynamiquement par favorites.js -->
             </div>
-        </div>
-    </section>
-    
-    <!-- ACTIVITIES GRID -->
-    <section class="section" style="padding-top: 0;">
-        <div class="container">
+        </section>
+
+        <section style="margin-bottom:80px;">
+            <div class="reglem-intro">
+                <h2>Toutes les activités</h2>
+                <p>Parcourez l'ensemble du catalogue et trouvez l'activité idéale</p>
+            </div>
             <div class="grid grid-3" id="activitiesGrid">
                 <!-- Généré dynamiquement par JavaScript -->
             </div>
-        </div>
-    </section>
-    
-    <!-- INFO SECTION -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Comment utiliser cet inventaire ?</h2>
-            </div>
-            
-            <div class="grid grid-2">
-                <div class="card">
-                    <h3 class="card-title">📋 Fiches complètes</h3>
-                    <p class="card-subtitle">
-                        Chaque activité dispose d'une fiche détaillée avec : tranche d'âge, 
-                        durée estimée, niveau de difficulté, nombre de participants, matériel nécessaire, 
-                        objectifs pédagogiques et déroulement étape par étape.
-                    </p>
+        </section>
+
+        <section style="margin-bottom:80px;">
+            <div class="reglem-intro"><h2>Comment utiliser cet inventaire ?</h2></div>
+            <div class="reglem-cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
+                <div class="reglem-fiche">
+                    <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#667EEA,#764BA2);"><span class="reglem-fiche-emoji">📋</span><div><h3>Fiches complètes</h3><span class="reglem-fiche-tag">Détaillées</span></div></div>
+                    <div class="reglem-fiche-body"><p>Chaque activité dispose d'une fiche détaillée avec : tranche d'âge, durée estimée, niveau de difficulté, nombre de participants, matériel nécessaire, objectifs pédagogiques et déroulement étape par étape.</p></div>
                 </div>
-                
-                <div class="card">
-                    <h3 class="card-title">🔍 Recherche facilitée</h3>
-                    <p class="card-subtitle">
-                        Utilisez la barre de recherche ou les filtres par catégorie pour 
-                        trouver rapidement l'activité parfaite selon le moment de la journée, 
-                        les ressources disponibles ou les objectifs visés.
-                    </p>
+                <div class="reglem-fiche">
+                    <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#4FACFE,#00F2FE);"><span class="reglem-fiche-emoji">🔍</span><div><h3>Recherche facilitée</h3><span class="reglem-fiche-tag">Filtres</span></div></div>
+                    <div class="reglem-fiche-body"><p>Utilisez la barre de recherche ou les filtres par catégorie pour trouver rapidement l'activité parfaite selon le moment de la journée, les ressources disponibles ou les objectifs visés.</p></div>
                 </div>
-                
-                <div class="card">
-                    <h3 class="card-title">📅 Ajout au planning</h3>
-                    <p class="card-subtitle">
-                        Vous aimez une activité ? Ajoutez-la directement à votre planning 
-                        hebdomadaire en un clic. (Fonctionnalité à venir)
-                    </p>
+                <div class="reglem-fiche">
+                    <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#43E97B,#38F9D7);"><span class="reglem-fiche-emoji">📅</span><div><h3>Ajout au planning</h3><span class="reglem-fiche-tag">Bientôt</span></div></div>
+                    <div class="reglem-fiche-body"><p>Vous aimez une activité ? Ajoutez-la directement à votre planning hebdomadaire en un clic. (Fonctionnalité à venir)</p></div>
                 </div>
-                
-                <div class="card">
-                    <h3 class="card-title">⭐ Favoris</h3>
-                    <p class="card-subtitle">
-                        Marquez vos activités préférées pour les retrouver facilement. 
-                        Créez votre propre bibliothèque d'activités testées et approuvées. 
-                        (Fonctionnalité à venir)
-                    </p>
+                <div class="reglem-fiche">
+                    <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#FA709A,#FEE140);"><span class="reglem-fiche-emoji">⭐</span><div><h3>Favoris</h3><span class="reglem-fiche-tag">Bientôt</span></div></div>
+                    <div class="reglem-fiche-body"><p>Marquez vos activités préférées pour les retrouver facilement. Créez votre propre bibliothèque d'activités testées et approuvées. (Fonctionnalité à venir)</p></div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- CTA -->
-    <section class="section">
-        <div class="container text-center">
-            <h2 class="section-title">Organisez votre journée</h2>
-            <p class="section-subtitle mb-lg">
-                Passez à l'étape suivante et planifiez vos activités
-            </p>
-            <a href="planning.html" class="btn btn-primary">Accéder au planning</a>
-        </div>
-    </section>
-    
-    <!-- FOOTER -->
+        </section>
+
+        <section style="text-align:center;padding-bottom:60px;">
+            <div class="reglem-intro" style="text-align:center;">
+                <h2>Organisez votre journée</h2>
+                <p>Passez à l'étape suivante et planifiez vos activités</p>
+            </div>
+            <div style="margin-top:1.5rem;">
+                <a href="planning.html" class="btn btn-primary">Accéder au planning</a>
+            </div>
+        </section>
+
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -220,7 +178,6 @@
                     <h4>Anim'Tools</h4>
                     <p>Votre assistant personnel pour l'animation périscolaire. Conçu par des animateurs, pour des animateurs.</p>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Navigation</h4>
                     <ul>
@@ -231,7 +188,6 @@
                         <li><a href="administratif.html">Administratif</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Ressources</h4>
                     <ul>
@@ -241,14 +197,11 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
-    
-    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/search.js"></script>
     <script src="js/favorites.js"></script>

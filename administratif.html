@@ -3,47 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gestion administrative pour animateurs périscolaires">
     <title>Administratif - Anim'Tools</title>
-    
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+    
 </head>
 <body>
-    <!-- NAVIGATION -->
-   <nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">Anim'Tools</a>
-    <ul class="nav-menu">
-      <li><a href="index.html" class="nav-link">Accueil</a></li>
-      <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
-      <li><a href="planning.html" class="nav-link">Planning</a></li>
-      <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
-      <li><a href="administratif.html" class="nav-link active">Administratif</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-      </a>
-      <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-</nav>
-    
-    <!-- SEARCH OVERLAY -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">Anim'Tools</a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Accueil</a></li>
+          <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
+          <li><a href="planning.html" class="nav-link">Planning</a></li>
+          <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
+          <li><a href="administratif.html" class="nav-link active">Administratif</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </a>
+          <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
     <div class="search-overlay" id="searchOverlay">
         <div class="search-container">
             <div class="search-header">
@@ -62,54 +54,60 @@
             <div class="search-results" id="searchResults"></div>
         </div>
     </div>
-    
-    <!-- PAGE HEADER -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">Administratif</h1>
-            <p class="hero-subtitle">Gérez votre profil et vos documents</p>
-            <p class="hero-description">
-                Suivez votre parcours BAFA, accédez à vos documents modèles 
-                et personnalisez votre expérience.
-            </p>
+
+    <header class="reglem-hero">
+        <div class="reglem-hero-content">
+            <div class="reglem-hero-badge">⚙️ Espace personnel</div>
+            <h1>Administratif<br><span>Gérez votre profil et vos documents</span></h1>
+            <p>Suivez votre parcours BAFA, accédez à vos documents modèles et personnalisez votre expérience.</p>
         </div>
-    </section>
-    
-    <!-- COMING SOON -->
-    <section class="section">
-        <div class="container">
-            <div class="card text-center" style="max-width: 600px; margin: 0 auto;">
-                <h2 class="card-title" style="font-size: 2rem; margin-bottom: 1rem;">
-                    🚧 Fonctionnalité en développement
-                </h2>
-                <p class="card-subtitle" style="font-size: 1.125rem; line-height: 1.8;">
-                    Le module administratif est en cours de développement. 
-                    Prochainement disponible :
-                </p>
-                <ul style="text-align: left; margin: 2rem 0; line-height: 2;">
-                    <li>👤 Profil animateur</li>
-                    <li>🎓 Suivi parcours BAFA</li>
-                    <li>📚 Formations complémentaires</li>
-                    <li>📄 Documents modèles téléchargeables</li>
-                    <li>⚙️ Paramètres de l'application</li>
-                    <li>📊 Statistiques personnelles</li>
-                </ul>
-                <a href="inventaire.html" class="btn btn-primary">
-                    Découvrir les activités
-                </a>
+    </header>
+
+    <main class="reglem-main container" style="padding-top:60px;padding-bottom:80px;">
+
+        <div style="max-width:680px;margin:0 auto;">
+            <div class="reglem-table-block" style="text-align:center;padding:48px 40px;">
+                <div style="font-size:3rem;margin-bottom:16px;">🚧</div>
+                <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:12px;">Fonctionnalité en développement</h2>
+                <p style="font-size:1rem;line-height:1.7;color:var(--color-tertiary);margin-bottom:32px;">Le module administratif est en cours de développement. Prochainement disponible :</p>
+                <div class="reglem-cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));text-align:left;margin-bottom:32px;">
+                    <div class="reglem-fiche">
+                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#667EEA,#764BA2);"><span class="reglem-fiche-emoji">👤</span><div><h3>Profil animateur</h3></div></div>
+                        <div class="reglem-fiche-body"><p>Vos informations personnelles et professionnelles</p></div>
+                    </div>
+                    <div class="reglem-fiche">
+                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#F093FB,#F5576C);"><span class="reglem-fiche-emoji">🎓</span><div><h3>Parcours BAFA</h3></div></div>
+                        <div class="reglem-fiche-body"><p>Suivez et validez vos étapes de formation</p></div>
+                    </div>
+                    <div class="reglem-fiche">
+                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#4FACFE,#00F2FE);"><span class="reglem-fiche-emoji">📚</span><div><h3>Formations complémentaires</h3></div></div>
+                        <div class="reglem-fiche-body"><p>PSC1, BPJEPS, et autres certifications</p></div>
+                    </div>
+                    <div class="reglem-fiche">
+                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#43E97B,#38F9D7);"><span class="reglem-fiche-emoji">📄</span><div><h3>Documents modèles</h3></div></div>
+                        <div class="reglem-fiche-body"><p>Téléchargez les modèles de fiches et formulaires</p></div>
+                    </div>
+                    <div class="reglem-fiche">
+                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#FA709A,#FEE140);"><span class="reglem-fiche-emoji">⚙️</span><div><h3>Paramètres</h3></div></div>
+                        <div class="reglem-fiche-body"><p>Personnalisez votre expérience Anim'Tools</p></div>
+                    </div>
+                    <div class="reglem-fiche">
+                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#A18CD1,#FBC2EB);"><span class="reglem-fiche-emoji">📊</span><div><h3>Statistiques</h3></div></div>
+                        <div class="reglem-fiche-body"><p>Suivez votre activité et vos animations</p></div>
+                    </div>
+                </div>
+                <a href="inventaire.html" class="btn btn-primary">Découvrir les activités</a>
             </div>
         </div>
-    </section>
-    
-    <!-- FOOTER -->
+
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Anim'Tools</h4>
-                    <p>Votre assistant personnel pour l'animation périscolaire.</p>
+                    <p>Votre assistant personnel pour l'animation périscolaire. Conçu par des animateurs, pour des animateurs.</p>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Navigation</h4>
                     <ul>
@@ -120,7 +118,6 @@
                         <li><a href="administratif.html">Administratif</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Ressources</h4>
                     <ul>
@@ -130,13 +127,11 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
-    
     <script src="js/main.js"></script>
     <script src="js/search.js"></script>
 </body>
