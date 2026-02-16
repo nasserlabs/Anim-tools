@@ -383,7 +383,7 @@ class InventoryModule {
 
   _formatAge(age) {
     if (!age) return '?';
-    return `${age} ans`;
+    return `${age}`;
   }
 }
 
