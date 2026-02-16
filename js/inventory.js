@@ -134,7 +134,7 @@ class InventoryModule {
 
     const durLabel  = this._formatDuration(activity.duration);
     const ageLabel  = this._formatAge(activity.age);
-    const locIcon   = activity.location === 'outdoor' ? '🌿' : '🏠';
+    const locIcon   = activity.environment === 'outdoor' ? '🌿' : '🏠';
     const diffStars = '★'.repeat(activity.difficulty || 1) + '☆'.repeat(3 - (activity.difficulty || 1));
 
     const favBtn = window.favoritesManager
@@ -147,7 +147,7 @@ class InventoryModule {
         data-activity-id="${activity.id}"
         role="button"
         tabindex="0"
-        aria-label="Voir les détails : ${activity.name}"
+        aria-label="Voir les détails : ${activity.title}"
         onclick="window.inventoryModule.openActivityDetails('${activity.id}')"
         onkeydown="if(event.key==='Enter'||event.key===' ')window.inventoryModule.openActivityDetails('${activity.id}')"
       >
@@ -156,7 +156,7 @@ class InventoryModule {
           <div style="position:absolute;top:10px;right:10px;">${favBtn}</div>
         </div>
         <div class="activity-content">
-          <h3 class="activity-title">${activity.name}</h3>
+          <h3 class="activity-title">${activity.title}</h3>
           <div class="activity-meta">
             <span title="Âge">👶 ${ageLabel}</span>
             <span>·</span>
@@ -235,7 +235,7 @@ class InventoryModule {
     }
 
     if (location !== 'all') {
-      list = list.filter(a => a.location === location);
+      list = list.filter(a => a.environment === environment);
     }
 
     return list;
@@ -246,7 +246,7 @@ class InventoryModule {
   ═══════════════════════════════════════════════ */
 
   openActivityDetails(activityId) {
-    const activity = this.activities.find(a => a.id === activityId);
+    const activity = this.activities.find(a => a.id == activityId);
     if (!activity) return;
 
     // Tracking badges (appel optionnel)
@@ -271,10 +271,10 @@ class InventoryModule {
            <ol class="peek-steps">${activity.steps.map(s => `<li>${s}</li>`).join('')}</ol>
          </div>` : '';
 
-    const materialsHtml = activity.material?.length
+    const materialsHtml = activity.materials?.length
       ? `<div class="peek-section">
            <h3 class="peek-section-title">🎒 Matériel nécessaire</h3>
-           <ul class="peek-list">${activity.material.map(m => `<li>${m}</li>`).join('')}</ul>
+           <ul class="peek-list">${activity.materials.map(m => `<li>${m}</li>`).join('')}</ul>
          </div>` : '';
 
     const objectivesHtml = activity.objectives?.length
@@ -283,16 +283,15 @@ class InventoryModule {
            <ul class="peek-list">${activity.objectives.map(o => `<li>${o}</li>`).join('')}</ul>
          </div>` : '';
 
-    const partic = activity.participants
-      ? `${activity.participants.min}–${activity.participants.max} enfants`
-      : '';
+    const partic = activity.participants || '';
+
 
     const favBtn = window.favoritesManager
       ? window.favoritesManager.renderFavoriteButton(activity.id)
       : '';
 
     overlay.innerHTML = `
-      <div class="peek-modal" role="dialog" aria-modal="true" aria-label="${activity.name}">
+      <div class="peek-modal" role="dialog" aria-modal="true" aria-label="${activity.title}">
         <div class="peek-header" style="background:${grad};padding:32px 28px 24px;border-radius:16px 16px 0 0;color:#fff;position:relative;">
           <button
             class="peek-close"
@@ -306,12 +305,12 @@ class InventoryModule {
           </button>
           <div style="position:absolute;top:16px;right:16px;">${favBtn}</div>
           <div style="margin-bottom:8px;"><span style="background:rgba(255,255,255,.25);padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600;">${cat?.emoji || ''} ${label}</span></div>
-          <h2 style="font-size:1.5rem;font-weight:800;margin:0 0 16px;line-height:1.3;">${activity.name}</h2>
+          <h2 style="font-size:1.5rem;font-weight:800;margin:0 0 16px;line-height:1.3;">${activity.title}</h2>
           <div style="display:flex;flex-wrap:wrap;gap:12px;font-size:.85rem;">
             <span>👶 ${this._formatAge(activity.age)}</span>
             <span>⏱ ${this._formatDuration(activity.duration)}</span>
             ${partic ? `<span>👥 ${partic}</span>` : ''}
-            <span>${activity.location === 'outdoor' ? '🌿 Extérieur' : '🏠 Intérieur'}</span>
+            <span>${activity.environment === 'outdoor' ? '🌿 Extérieur' : '🏠 Intérieur'}</span>
             <span>${'★'.repeat(activity.difficulty || 1)}${'☆'.repeat(3 - (activity.difficulty || 1))}</span>
           </div>
         </div>
