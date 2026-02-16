@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Badges - Anim'Tools</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Anim'Tools</a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
+        <li><a href="planning.html" class="nav-link">Planning</a></li>
+        <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
+        <li><a href="administratif.html" class="nav-link">Administratif</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+        <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <div class="search-header">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Rechercher une activité..." autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Fermer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <header class="reglem-hero">
+    <div class="reglem-hero-content">
+      <div class="reglem-hero-badge">🏅 Gamification</div>
+      <h1>Mes Badges<br><span>Votre progression</span></h1>
+      <p>Explorez, créez, organisez — chaque action vous rapproche d'un nouveau badge. Débloquez-les tous !</p>
+      <div class="reglem-hero-stats" id="badgesHeroStats">
+        <!-- Rempli dynamiquement -->
+      </div>
+    </div>
+  </header>
+
+  <main class="reglem-main container" style="padding-top:48px;padding-bottom:80px;">
+
+    <!-- Stats rapides -->
+    <section style="margin-bottom:48px;">
+      <div class="reglem-cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));">
+
+        <div class="reglem-fiche">
+          <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#667EEA,#764BA2);">
+            <span class="reglem-fiche-emoji">👁️</span>
+            <div><h3>Activités vues</h3></div>
+          </div>
+          <div class="reglem-fiche-body" style="text-align:center;padding:20px;">
+            <div id="statActivities" style="font-size:2.5rem;font-weight:800;color:var(--color-accent);">0</div>
+            <p style="font-size:.85rem;color:var(--color-tertiary);margin:4px 0 0;">Détails consultés</p>
+          </div>
+        </div>
+
+        <div class="reglem-fiche">
+          <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#4FACFE,#00F2FE);">
+            <span class="reglem-fiche-emoji">🔍</span>
+            <div><h3>Recherches</h3></div>
+          </div>
+          <div class="reglem-fiche-body" style="text-align:center;padding:20px;">
+            <div id="statSearches" style="font-size:2.5rem;font-weight:800;color:var(--color-accent);">0</div>
+            <p style="font-size:.85rem;color:var(--color-tertiary);margin:4px 0 0;">Recherches effectuées</p>
+          </div>
+        </div>
+
+        <div class="reglem-fiche">
+          <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#43E97B,#38F9D7);">
+            <span class="reglem-fiche-emoji">📅</span>
+            <div><h3>Plannings</h3></div>
+          </div>
+          <div class="reglem-fiche-body" style="text-align:center;padding:20px;">
+            <div id="statPlanning" style="font-size:2.5rem;font-weight:800;color:var(--color-accent);">0</div>
+            <p style="font-size:.85rem;color:var(--color-tertiary);margin:4px 0 0;">Plannings créés</p>
+          </div>
+        </div>
+
+        <div class="reglem-fiche">
+          <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#FA709A,#FEE140);">
+            <span class="reglem-fiche-emoji">📆</span>
+            <div><h3>Jours de visite</h3></div>
+          </div>
+          <div class="reglem-fiche-body" style="text-align:center;padding:20px;">
+            <div id="statDays" style="font-size:2.5rem;font-weight:800;color:var(--color-accent);">0</div>
+            <p style="font-size:.85rem;color:var(--color-tertiary);margin:4px 0 0;">Jours différents</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Grille des badges -->
+    <section>
+      <div id="badgesContainer">
+        <div style="text-align:center;padding:48px 0;color:var(--color-tertiary);">
+          <div style="font-size:2rem;margin-bottom:8px;">⌛</div>
+          <p>Chargement des badges…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comment gagner des badges -->
+    <section style="margin-top:64px;">
+      <div class="reglem-intro"><h2>Comment obtenir des badges ?</h2></div>
+      <div class="reglem-table-block" style="padding:0;overflow:hidden;">
+        <table class="reglem-table" style="width:100%;">
+          <thead>
+            <tr><th>Badge</th><th>Condition</th><th>Catégorie</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>🔍 Explorateur</td><td>Effectuer 5 recherches</td><td>Inventaire</td></tr>
+            <tr><td>👁️ Curieux</td><td>Consulter 10 activités en détail</td><td>Inventaire</td></tr>
+            <tr><td>🎨 Créatif</td><td>Consulter 30 activités en détail</td><td>Inventaire</td></tr>
+            <tr><td>📅 Organisé</td><td>Créer 3 plannings</td><td>Planning</td></tr>
+            <tr><td>🎓 En formation</td><td>Renseigner son suivi BAFA</td><td>Administratif</td></tr>
+            <tr><td>⭐ Habitué</td><td>Visiter le site 7 jours différents</td><td>Général</td></tr>
+            <tr><td>🏆 Collectionneur</td><td>Obtenir tous les autres badges</td><td>Spécial</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Réinitialiser -->
+    <section style="margin-top:48px;text-align:center;">
+      <div class="reglem-table-block" style="padding:28px;max-width:500px;margin:0 auto;">
+        <p style="font-size:.9rem;color:var(--color-tertiary);margin-bottom:16px;">
+          Envie de repartir de zéro ? Vous pouvez réinitialiser toute votre progression.
+          <br><strong style="color:var(--color-primary);">Cette action est irréversible.</strong>
+        </p>
+        <button id="resetBadges" class="btn-reset-checklist" style="color:#ff3b30;">
+          🗑️ Réinitialiser ma progression
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Anim'Tools</h4>
+          <p>Votre assistant personnel pour l'animation périscolaire. Conçu par des animateurs, pour des animateurs.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="inventaire.html">Inventaire</a></li>
+            <li><a href="planning.html">Planning</a></li>
+            <li><a href="reglementation.html">Réglementation</a></li>
+            <li><a href="administratif.html">Administratif</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="aide.html">Aide</a></li>
+            <li><a href="badges.html">Mes badges</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/badges.js"></script>
+  <script>
+    /* Compléments spécifiques à badges.html */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Attendre que badgesManager soit prêt (il s'init dans badges.js)
+      const waitForManager = setInterval(() => {
+        if (!window.badgesManager) return;
+        clearInterval(waitForManager);
+
+        /* Stats */
+        const stats = window.badgesManager.getStats();
+        document.getElementById('statActivities').textContent = stats.activitiesViewed || 0;
+        document.getElementById('statSearches').textContent   = stats.searchesDone     || 0;
+        document.getElementById('statPlanning').textContent   = stats.planningCreated  || 0;
+        document.getElementById('statDays').textContent       = stats.daysVisited      || 0;
+
+        /* Pills dans le hero */
+        const all    = window.badgesManager.getAllBadges();
+        const earned = all.filter(b => b.earned).length;
+        const hero   = document.getElementById('badgesHeroStats');
+        if (hero) {
+          hero.innerHTML = `
+            <div class="stat-pill"><span class="stat-num">${earned}</span><span class="stat-label">badge${earned!==1?'s':''} obtenu${earned!==1?'s':''}</span></div>
+            <div class="stat-pill"><span class="stat-num">${all.length}</span><span class="stat-label">au total</span></div>
+            <div class="stat-pill"><span class="stat-num">${all.length - earned}</span><span class="stat-label">à débloquer</span></div>
+          `;
+        }
+
+        /* Réinitialisation */
+        document.getElementById('resetBadges')?.addEventListener('click', () => {
+          if (!confirm('Réinitialiser toute votre progression de badges ? Cette action est irréversible.')) return;
+          localStorage.removeItem('animtools_user');
+          window.location.reload();
+        });
+      }, 50);
+    });
+  </script>
+
+</body>
+</html>

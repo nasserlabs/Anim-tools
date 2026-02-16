@@ -1,138 +1,667 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administratif - Anim'Tools</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administratif - Anim'Tools</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg">
+  <style>
+    /* Styles spécifiques à la page Administratif */
+    .admin-tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--bg-secondary, #f5f5f7);
+      padding: 6px;
+      border-radius: 14px;
+      flex-wrap: wrap;
+    }
+
+    .admin-tab {
+      flex: 1;
+      min-width: 120px;
+      padding: 10px 16px;
+      border: none;
+      background: transparent;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--color-tertiary, #6e6e73);
+      transition: background .2s, color .2s, box-shadow .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .admin-tab.active {
+      background: #fff;
+      color: var(--color-primary, #1d1d1f);
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    }
+
+    .admin-panel {
+      display: none;
+    }
+
+    .admin-panel.active {
+      display: block;
+    }
+
+    .admin-form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    /* Documents */
+    .doc-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-color, #f2f2f7);
+      gap: 12px;
+    }
+    .doc-item:last-child { border-bottom: none; }
+    .doc-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .doc-info { flex: 1; }
+    .doc-name { font-weight: 600; font-size: .9rem; }
+    .doc-desc { font-size: .8rem; color: var(--color-tertiary, #6e6e73); margin-top: 2px; }
+    .doc-btn {
+      padding: 8px 14px;
+      background: var(--color-accent, #0071E3);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: .8rem;
+      font-weight: 600;
+      font-family: inherit;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .doc-btn:hover { opacity: .85; }
+
+    /* Alertes / notifications inline */
+    .admin-note {
+      background: #FFF9E6;
+      border-left: 4px solid #F5A623;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: .875rem;
+      color: var(--color-secondary, #3d3d3d);
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .admin-tab { font-size: .8rem; padding: 8px 10px; }
+      .admin-form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <a href="index.html" class="nav-logo">Anim'Tools</a>
-        <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Accueil</a></li>
-          <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
-          <li><a href="planning.html" class="nav-link">Planning</a></li>
-          <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
-          <li><a href="administratif.html" class="nav-link active">Administratif</a></li>
-        </ul>
-        <div class="nav-actions">
-          <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </a>
-          <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-          </button>
-        </div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Anim'Tools</a>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Accueil</a></li>
+        <li><a href="inventaire.html" class="nav-link">Inventaire</a></li>
+        <li><a href="planning.html" class="nav-link">Planning</a></li>
+        <li><a href="reglementation.html" class="nav-link">Réglementation</a></li>
+        <li><a href="administratif.html" class="nav-link active">Administratif</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn-account" aria-label="Mon compte" title="Mon compte">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+        <button class="nav-search-btn" id="searchBtn" aria-label="Rechercher">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
       </div>
-    </nav>
-    <div class="search-overlay" id="searchOverlay">
-        <div class="search-container">
-            <div class="search-header">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.35-4.35"></path>
-                </svg>
-                <input type="text" class="search-input" id="searchInput" placeholder="Rechercher une activité..." autocomplete="off">
-                <button class="search-close" id="searchClose" aria-label="Fermer">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-            <div class="search-results" id="searchResults"></div>
-        </div>
+    </div>
+  </nav>
+
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <div class="search-header">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="Rechercher une activité..." autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Fermer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="reglem-hero">
+    <div class="reglem-hero-content">
+      <div class="reglem-hero-badge">⚙️ Espace personnel</div>
+      <h1>Administratif<br><span>Gérez votre parcours</span></h1>
+      <p>Suivez votre formation BAFA, centralisez vos certifications, gardez vos notes et accédez aux documents modèles — tout en local, tout en sécurité.</p>
+      <div class="reglem-hero-stats">
+        <div class="stat-pill"><span class="stat-num" id="heroStatBafa">0/3</span><span class="stat-label">étapes BAFA</span></div>
+        <div class="stat-pill"><span class="stat-num" id="heroStatFormations">0</span><span class="stat-label">formations</span></div>
+        <div class="stat-pill"><span class="stat-num">100%</span><span class="stat-label">local &amp; privé</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="reglem-main container" style="padding-top:48px;padding-bottom:80px;" id="adminContent">
+
+    <!-- Avertissement V1 -->
+    <div class="admin-note" style="margin-bottom:32px;">
+      <strong>📱 Données locales (V1)</strong> — Toutes vos informations sont stockées dans votre navigateur uniquement.
+      Un compte en ligne arrivera en V2. <a href="badges.html" style="color:var(--color-accent);">Voir mes badges →</a>
     </div>
 
-    <header class="reglem-hero">
-        <div class="reglem-hero-content">
-            <div class="reglem-hero-badge">⚙️ Espace personnel</div>
-            <h1>Administratif<br><span>Gérez votre profil et vos documents</span></h1>
-            <p>Suivez votre parcours BAFA, accédez à vos documents modèles et personnalisez votre expérience.</p>
-        </div>
-    </header>
+    <!-- Onglets de navigation -->
+    <div class="admin-tabs" role="tablist" aria-label="Sections administratives" style="margin-bottom:32px;">
+      <button class="admin-tab active" data-tab="profil" role="tab" aria-selected="true" aria-controls="panel-profil">
+        👤 Profil
+      </button>
+      <button class="admin-tab" data-tab="bafa" role="tab" aria-selected="false" aria-controls="panel-bafa">
+        🎓 BAFA
+      </button>
+      <button class="admin-tab" data-tab="formations" role="tab" aria-selected="false" aria-controls="panel-formations">
+        📚 Formations
+      </button>
+      <button class="admin-tab" data-tab="notes" role="tab" aria-selected="false" aria-controls="panel-notes">
+        📝 Notes
+      </button>
+      <button class="admin-tab" data-tab="documents" role="tab" aria-selected="false" aria-controls="panel-documents">
+        📄 Documents
+      </button>
+    </div>
 
-    <main class="reglem-main container" style="padding-top:60px;padding-bottom:80px;">
+    <!-- PANEL : Profil animateur -->
+    <div class="admin-panel active" id="panel-profil" role="tabpanel" aria-labelledby="tab-profil">
+      <div id="profilSection">
+        <!-- Rempli par administratif.js -->
+        <div style="text-align:center;padding:48px;color:var(--color-tertiary);">Chargement…</div>
+      </div>
+    </div>
 
-        <div style="max-width:680px;margin:0 auto;">
-            <div class="reglem-table-block" style="text-align:center;padding:48px 40px;">
-                <div style="font-size:3rem;margin-bottom:16px;">🚧</div>
-                <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:12px;">Fonctionnalité en développement</h2>
-                <p style="font-size:1rem;line-height:1.7;color:var(--color-tertiary);margin-bottom:32px;">Le module administratif est en cours de développement. Prochainement disponible :</p>
-                <div class="reglem-cards-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));text-align:left;margin-bottom:32px;">
-                    <div class="reglem-fiche">
-                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#667EEA,#764BA2);"><span class="reglem-fiche-emoji">👤</span><div><h3>Profil animateur</h3></div></div>
-                        <div class="reglem-fiche-body"><p>Vos informations personnelles et professionnelles</p></div>
-                    </div>
-                    <div class="reglem-fiche">
-                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#F093FB,#F5576C);"><span class="reglem-fiche-emoji">🎓</span><div><h3>Parcours BAFA</h3></div></div>
-                        <div class="reglem-fiche-body"><p>Suivez et validez vos étapes de formation</p></div>
-                    </div>
-                    <div class="reglem-fiche">
-                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#4FACFE,#00F2FE);"><span class="reglem-fiche-emoji">📚</span><div><h3>Formations complémentaires</h3></div></div>
-                        <div class="reglem-fiche-body"><p>PSC1, BPJEPS, et autres certifications</p></div>
-                    </div>
-                    <div class="reglem-fiche">
-                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#43E97B,#38F9D7);"><span class="reglem-fiche-emoji">📄</span><div><h3>Documents modèles</h3></div></div>
-                        <div class="reglem-fiche-body"><p>Téléchargez les modèles de fiches et formulaires</p></div>
-                    </div>
-                    <div class="reglem-fiche">
-                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#FA709A,#FEE140);"><span class="reglem-fiche-emoji">⚙️</span><div><h3>Paramètres</h3></div></div>
-                        <div class="reglem-fiche-body"><p>Personnalisez votre expérience Anim'Tools</p></div>
-                    </div>
-                    <div class="reglem-fiche">
-                        <div class="reglem-fiche-header" style="background:linear-gradient(135deg,#A18CD1,#FBC2EB);"><span class="reglem-fiche-emoji">📊</span><div><h3>Statistiques</h3></div></div>
-                        <div class="reglem-fiche-body"><p>Suivez votre activité et vos animations</p></div>
-                    </div>
-                </div>
-                <a href="inventaire.html" class="btn btn-primary">Découvrir les activités</a>
-            </div>
-        </div>
+    <!-- PANEL : Parcours BAFA -->
+    <div class="admin-panel" id="panel-bafa" role="tabpanel" aria-labelledby="tab-bafa">
+      <div class="admin-note">
+        Le BAFA (Brevet d'Aptitude aux Fonctions d'Animateur) se déroule en 3 étapes. Renseignez vos informations pour suivre votre avancement.
+        <a href="reglementation.html" style="color:var(--color-accent);">Consulter la réglementation →</a>
+      </div>
+      <div id="bafaSection">
+        <div style="text-align:center;padding:48px;color:var(--color-tertiary);">Chargement…</div>
+      </div>
+    </div>
 
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Anim'Tools</h4>
-                    <p>Votre assistant personnel pour l'animation périscolaire. Conçu par des animateurs, pour des animateurs.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="inventaire.html">Inventaire</a></li>
-                        <li><a href="planning.html">Planning</a></li>
-                        <li><a href="reglementation.html">Réglementation</a></li>
-                        <li><a href="administratif.html">Administratif</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Ressources</h4>
-                    <ul>
-                        <li><a href="apropos.html">À propos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="aide.html">Aide</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
-            </div>
+    <!-- PANEL : Formations complémentaires -->
+    <div class="admin-panel" id="panel-formations" role="tabpanel" aria-labelledby="tab-formations">
+      <div class="admin-note">
+        Centralisez toutes vos certifications : PSC1, BPJEPS, CPJEPS, formations spécifiques, recyclages…
+      </div>
+      <div id="formationsSection">
+        <div style="text-align:center;padding:48px;color:var(--color-tertiary);">Chargement…</div>
+      </div>
+    </div>
+
+    <!-- PANEL : Notes -->
+    <div class="admin-panel" id="panel-notes" role="tabpanel" aria-labelledby="tab-notes">
+      <div class="admin-note">
+        Un espace libre pour vos notes personnelles : contacts utiles, rappels légaux, informations de structure, rappels de dates…
+      </div>
+      <div id="notesSection">
+        <div style="text-align:center;padding:48px;color:var(--color-tertiary);">Chargement…</div>
+      </div>
+    </div>
+
+    <!-- PANEL : Documents -->
+    <div class="admin-panel" id="panel-documents" role="tabpanel" aria-labelledby="tab-documents">
+      <div class="admin-note">
+        Documents modèles à télécharger et adapter. Ces modèles sont fournis à titre indicatif — vérifiez toujours auprès de votre structure.
+      </div>
+      <div class="reglem-table-block" style="padding:0;overflow:hidden;">
+        <!-- Fiche sanitaire -->
+        <div class="doc-item">
+          <span class="doc-icon">🏥</span>
+          <div class="doc-info">
+            <div class="doc-name">Fiche sanitaire de liaison</div>
+            <div class="doc-desc">Informations médicales de l'enfant — obligatoire pour tout séjour</div>
+          </div>
+          <button class="doc-btn" onclick="downloadDoc('fiche-sanitaire')">⬇️ Modèle</button>
         </div>
-    </footer>
-    <script src="js/main.js"></script>
-    <script src="js/search.js"></script>
+        <!-- Autorisation parentale -->
+        <div class="doc-item">
+          <span class="doc-icon">✍️</span>
+          <div class="doc-info">
+            <div class="doc-name">Autorisation parentale</div>
+            <div class="doc-desc">Sorties, photos, soins d'urgence, transport</div>
+          </div>
+          <button class="doc-btn" onclick="downloadDoc('autorisation-parentale')">⬇️ Modèle</button>
+        </div>
+        <!-- Registre de présence -->
+        <div class="doc-item">
+          <span class="doc-icon">📋</span>
+          <div class="doc-info">
+            <div class="doc-name">Registre de présence</div>
+            <div class="doc-desc">Tableau de présence journalier — à conserver 5 ans</div>
+          </div>
+          <button class="doc-btn" onclick="downloadDoc('registre-presence')">⬇️ Modèle</button>
+        </div>
+        <!-- Fiche d'activité -->
+        <div class="doc-item">
+          <span class="doc-icon">🎯</span>
+          <div class="doc-info">
+            <div class="doc-name">Fiche de préparation d'activité</div>
+            <div class="doc-desc">Objectifs, déroulement, matériel, évaluation</div>
+          </div>
+          <button class="doc-btn" onclick="downloadDoc('fiche-activite')">⬇️ Modèle</button>
+        </div>
+        <!-- Projet pédagogique -->
+        <div class="doc-item">
+          <span class="doc-icon">📖</span>
+          <div class="doc-info">
+            <div class="doc-name">Trame de projet pédagogique</div>
+            <div class="doc-desc">Structure officielle : valeurs, objectifs, moyens</div>
+          </div>
+          <button class="doc-btn" onclick="downloadDoc('projet-pedagogique')">⬇️ Modèle</button>
+        </div>
+        <!-- Rapport d'incident -->
+        <div class="doc-item">
+          <span class="doc-icon">⚠️</span>
+          <div class="doc-info">
+            <div class="doc-name">Rapport d'incident / accident</div>
+            <div class="doc-desc">À remplir dans les 24h en cas d'incident — déclaration obligatoire</div>
+          </div>
+          <button class="doc-btn" onclick="downloadDoc('rapport-incident')">⬇️ Modèle</button>
+        </div>
+        <!-- Demande de congé -->
+        <div class="doc-item">
+          <span class="doc-icon">🏖️</span>
+          <div class="doc-info">
+            <div class="doc-name">Demande de congé / absence</div>
+            <div class="doc-desc">Formulaire standard pour les demandes d'absence</div>
+          </div>
+          <button class="doc-btn" onclick="downloadDoc('demande-conge')">⬇️ Modèle</button>
+        </div>
+      </div>
+
+      <div style="margin-top:24px;padding:20px;background:var(--bg-secondary,#f5f5f7);border-radius:12px;font-size:.875rem;color:var(--color-tertiary);">
+        💡 <strong>Note :</strong> En V1, les modèles sont générés sous forme de texte brut. La génération de fichiers .docx arrive en V2.
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Anim'Tools</h4>
+          <p>Votre assistant personnel pour l'animation périscolaire. Conçu par des animateurs, pour des animateurs.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="inventaire.html">Inventaire</a></li>
+            <li><a href="planning.html">Planning</a></li>
+            <li><a href="reglementation.html">Réglementation</a></li>
+            <li><a href="administratif.html">Administratif</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Ressources</h4>
+          <ul>
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="aide.html">Aide</a></li>
+            <li><a href="badges.html">🏅 Mes badges</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Anim'Tools. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/badges.js"></script>
+  <script src="js/administratif.js"></script>
+
+  <script>
+    /* ═══════════════════════════════════════════════
+       NAVIGATION PAR ONGLETS
+    ═══════════════════════════════════════════════ */
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // Tabs
+      const tabs   = document.querySelectorAll('.admin-tab');
+      const panels = document.querySelectorAll('.admin-panel');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.tab;
+
+          tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+          panels.forEach(p => p.classList.remove('active'));
+
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          document.getElementById(`panel-${target}`)?.classList.add('active');
+        });
+      });
+
+      // Ouvrir depuis l'URL (?tab=bafa)
+      const params = new URLSearchParams(window.location.search);
+      const tabParam = params.get('tab');
+      if (tabParam) {
+        const btn = document.querySelector(`.admin-tab[data-tab="${tabParam}"]`);
+        if (btn) btn.click();
+      }
+
+      /* ── Mise à jour du hero après init du module ── */
+      const waitForAdmin = setInterval(() => {
+        if (!window.administratifModule) return;
+        clearInterval(waitForAdmin);
+
+        const d = window.administratifModule.data;
+        const doneStages = d.bafa.stages.filter(s => s.status === 'done').length;
+        document.getElementById('heroStatBafa').textContent = `${doneStages}/3`;
+        document.getElementById('heroStatFormations').textContent = d.formations.length;
+      }, 80);
+    });
+
+    /* ═══════════════════════════════════════════════
+       TÉLÉCHARGEMENT DE DOCUMENTS MODÈLES (V1 : txt)
+    ═══════════════════════════════════════════════ */
+    const DOC_TEMPLATES = {
+      'fiche-sanitaire': {
+        nom: 'Fiche_Sanitaire_Liaison.txt',
+        contenu: `FICHE SANITAIRE DE LIAISON
+Établissement : _______________________
+Année : _______
+
+ENFANT
+Nom : _______________________ Prénom : _______________________
+Date de naissance : _______________________
+Adresse : _______________________
+
+PARENTS / TUTEURS
+Contact 1 : _______________________ Tél : _______________________
+Contact 2 : _______________________ Tél : _______________________
+
+MÉDECIN TRAITANT
+Nom : _______________________ Tél : _______________________
+
+INFORMATIONS MÉDICALES
+Allergies connues : _______________________
+Traitement en cours : _______________________
+Contre-indications : _______________________
+Régime alimentaire particulier : _______________________
+
+AUTORISATIONS
+□ J'autorise l'équipe à administrer les médicaments prescrits
+□ J'autorise le transport médicalisé si nécessaire
+□ J'autorise les soins d'urgence
+
+Fait à _____________ le _____________
+Signature : _______________________`
+      },
+      'autorisation-parentale': {
+        nom: 'Autorisation_Parentale.txt',
+        contenu: `AUTORISATION PARENTALE
+Structure : _______________________
+Année scolaire : _______
+
+Je soussigné(e), _______________________ (nom du responsable légal)
+parent / tuteur légal de : _______________________ (nom de l'enfant)
+
+AUTORISATIONS (cocher les cases correspondantes)
+
+□ SORTIES À PIED dans un rayon de _____ km autour de la structure
+□ TRANSPORTS en minibus / car de ramassage
+□ PHOTOGRAPHIES dans le cadre des activités (usage interne)
+□ PHOTOGRAPHIES pour publication (site web, affichage)
+□ SOINS D'URGENCE en cas de nécessité
+□ TRAITEMENT ANTIPYRÉTIQUE (paracétamol) en cas de fièvre
+
+CONTACTS EN CAS D'URGENCE
+1. _______________________ Tél : _______________________
+2. _______________________ Tél : _______________________
+
+Fait à _____________ le _____________
+Signature du responsable légal : _______________________`
+      },
+      'registre-presence': {
+        nom: 'Registre_Presence.txt',
+        contenu: `REGISTRE DE PRÉSENCE JOURNALIER
+Structure : _______________________
+Mois / Période : _______________________
+Animateur responsable : _______________________
+
+DATE : _______________________
+Heure d'ouverture : _______  Heure de fermeture : _______
+
+NOM PRÉNOM          | HEURE ARRIVÉE | HEURE DÉPART | SIGNATURE
+--------------------|---------------|--------------|----------
+                    |               |              |
+                    |               |              |
+                    |               |              |
+                    |               |              |
+                    |               |              |
+                    |               |              |
+                    |               |              |
+                    |               |              |
+                    |               |              |
+                    |               |              |
+
+TOTAL ENFANTS : _______
+
+Observations : _______________________
+
+Signature de l'animateur : _______________________
+(Ce registre doit être conservé 5 ans)`
+      },
+      'fiche-activite': {
+        nom: 'Fiche_Preparation_Activite.txt',
+        contenu: `FICHE DE PRÉPARATION D'ACTIVITÉ
+Anim'Tools — animtools.fr
+
+INFORMATIONS GÉNÉRALES
+Titre de l'activité : _______________________
+Animateur : _______________________
+Date : _______________________
+Durée estimée : _______________________
+Lieu : _______________________
+
+PUBLIC
+Tranche d'âge : _______________________
+Nombre de participants : _______________________
+Niveau : □ Débutant  □ Intermédiaire  □ Avancé
+
+OBJECTIFS PÉDAGOGIQUES
+1. _______________________
+2. _______________________
+3. _______________________
+
+MATÉRIEL NÉCESSAIRE
+- _______________________
+- _______________________
+- _______________________
+- _______________________
+
+DÉROULEMENT
+Mise en place (__ min) : _______________________
+Phase principale (__ min) : _______________________
+Variantes / adaptations : _______________________
+Retour au calme (__ min) : _______________________
+
+ÉVALUATION
+Critères de réussite : _______________________
+Adaptations possibles : _______________________
+Notes pour la prochaine fois : _______________________`
+      },
+      'projet-pedagogique': {
+        nom: 'Trame_Projet_Pedagogique.txt',
+        contenu: `PROJET PÉDAGOGIQUE
+Structure : _______________________
+Période : _______________________
+Directeur / Responsable : _______________________
+
+1. PRÉSENTATION DE LA STRUCTURE
+Type : _______________________
+Public accueilli : _______________________
+Capacité d'accueil : _______________________
+Équipe : _______________________
+
+2. VALEURS ET PHILOSOPHIE
+Valeurs fondamentales : _______________________
+Vision de l'animation : _______________________
+
+3. OBJECTIFS GÉNÉRAUX
+3.1 Objectifs liés à l'enfant
+- _______________________
+- _______________________
+3.2 Objectifs liés à l'équipe
+- _______________________
+- _______________________
+3.3 Objectifs liés aux familles
+- _______________________
+
+4. MOYENS MIS EN ŒUVRE
+4.1 Moyens humains : _______________________
+4.2 Moyens matériels : _______________________
+4.3 Moyens financiers : _______________________
+
+5. ACTIVITÉS ET PROJETS PRÉVUS
+Thème principal : _______________________
+Projets transversaux : _______________________
+Sorties / événements : _______________________
+
+6. ÉVALUATION
+Indicateurs de réussite : _______________________
+Modalités d'évaluation : _______________________
+Bilan prévu le : _______________________`
+      },
+      'rapport-incident': {
+        nom: 'Rapport_Incident_Accident.txt',
+        contenu: `RAPPORT D'INCIDENT / ACCIDENT
+⚠️ À remplir dans les 24h — À conserver et à transmettre à la direction
+
+STRUCTURE : _______________________
+DATE DE L'INCIDENT : _______________________
+HEURE : _______________________
+LIEU PRÉCIS : _______________________
+
+ENFANT CONCERNÉ
+Nom : _______________________ Prénom : _______________________
+Date de naissance : _______________________
+
+ANIMATEUR(S) PRÉSENT(S) : _______________________
+
+DESCRIPTION DE L'INCIDENT
+(Faits objectifs, sans interprétation)
+_______________________
+_______________________
+_______________________
+
+NATURE DE LA BLESSURE / DU PROBLÈME : _______________________
+
+SOINS APPORTÉS : _______________________
+
+PERSONNES PRÉVENUES
+□ Parents contactés à ___h___
+□ Direction informée à ___h___
+□ Secours appelés (15/18) à ___h___
+□ Médecin / infirmière
+
+TÉMOINS : _______________________
+
+SUITE DONNÉE : _______________________
+
+Signature animateur : _______________________
+Signature directeur : _______________________
+
+NB : Tout accident corporel doit être déclaré à la DDCS dans les 48h.`
+      },
+      'demande-conge': {
+        nom: 'Demande_Absence_Conge.txt',
+        contenu: `DEMANDE D'ABSENCE / CONGÉ
+Structure : _______________________
+
+ANIMATEUR
+Nom : _______________________ Prénom : _______________________
+Poste : _______________________
+
+NATURE DE LA DEMANDE
+□ Congé annuel
+□ Congé sans solde
+□ Absence pour maladie
+□ Formation
+□ Autre : _______________________
+
+PÉRIODE DEMANDÉE
+Du : _______________________  Au : _______________________
+Nombre de jours : _______________________
+
+MOTIF (si nécessaire) : _______________________
+
+REMPLACEMENT
+□ Remplacement assuré par : _______________________
+□ Pas de remplacement nécessaire
+□ Remplacement à organiser
+
+Fait à _____________ le _____________
+Signature du demandeur : _______________________
+
+─────────────────────────────────────────
+RÉPONSE DE LA DIRECTION
+□ Accordé    □ Refusé    □ Reporté au : _______________________
+Motif du refus / report : _______________________
+
+Signature : _______________________  Date : _______________________`
+      },
+    };
+
+    function downloadDoc(id) {
+      const doc = DOC_TEMPLATES[id];
+      if (!doc) return;
+
+      const blob = new Blob([doc.contenu], { type: 'text/plain;charset=utf-8' });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href     = url;
+      a.download = doc.nom;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+
 </body>
 </html>
